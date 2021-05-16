@@ -1,1 +1,1 @@
-web: gunicorn -w 3 --log-file - dismart_admin.wsgi
+web: gunicorn -w 3 --log-file - dismart-admin.wsgi

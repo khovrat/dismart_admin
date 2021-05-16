@@ -28,9 +28,12 @@ urlpatterns = [url(r'^i18n/', include('django.conf.urls.i18n')),]
 urlpatterns += i18n_patterns(
     path('admin/', include('smuggler.urls')),
     path('admin/', admin.site.urls),
-    path('admin/logs/download/', download_logs, name='download_logs'),
-    path('admin/logs/watch/', watch_logs, name='watch_logs'),
     path('', RedirectView.as_view(url=reverse_lazy('admin:index'))),
     prefix_default_language=True
 )
+urlpatterns += [
+    path('admin/logs/download/', download_logs, name='download_logs'),
+    path('admin/logs/watch/', watch_logs, name='watch_logs'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

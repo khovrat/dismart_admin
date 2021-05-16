@@ -6,6 +6,7 @@ colorama==0.4.4
 dataclasses==0.8
 dj-database-url==0.5.0
 Django==3.2.3
+django-heroku==0.3.1
 django-jazzmin==2.4.7
 django-modeladmin-reorder==0.3.1
 -e git://github.com/semente/django-smuggler.git#egg=django-smuggler
@@ -20,3 +21,4 @@ sqlparse==0.4.1
 toml==0.10.2
 typed-ast==1.4.3
 typing-extensions==3.10.0.0
+whitenoise==5.2.0

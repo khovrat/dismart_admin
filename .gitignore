@@ -3,7 +3,6 @@ venv/
 data/
 migrations/
 batches/
-logs/
 static/
 __pycache__
 .mypy_cache/

@@ -14,8 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, reverse_lazy
+from django.conf.urls import include, url
+from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
+from django.views.generic import RedirectView
 
-urlpatterns = [
+from server_side import settings
+from server_side.apps.shared_logic.views import download_logs, watch_logs
+
+urlpatterns = [url(r'^i18n/', include('django.conf.urls.i18n')),]
+
+urlpatterns += i18n_patterns(
+    path('admin/', include('smuggler.urls')),
     path('admin/', admin.site.urls),
-]
+    path('admin/logs/download/', download_logs, name='download_logs'),
+    path('admin/logs/watch/', watch_logs, name='watch_logs'),
+    path('', RedirectView.as_view(url=reverse_lazy('admin:index'))),
+    prefix_default_language=True
+)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

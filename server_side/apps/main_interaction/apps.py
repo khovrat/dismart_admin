@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class DismartAdminConfig(AppConfig):
+class MainInteractionConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'dismart_admin'
+    name = 'server_side.apps.main_interaction'

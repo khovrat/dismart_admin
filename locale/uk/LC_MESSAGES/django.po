@@ -1,0 +1,593 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-15 13:02+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\server_side\apps\data_interaction\admin.py:9
+msgid "Dismart_Admin_Panel"
+msgstr "Панель адміністратора"
+
+#: .\server_side\apps\data_interaction\admin.py:10
+msgid "Dismart_Management"
+msgstr "Управління"
+
+#: .\server_side\apps\data_interaction\apps.py:10
+msgid "Tables"
+msgstr "Дані"
+
+#: .\server_side\apps\data_interaction\apps.py:17
+msgid "many"
+msgstr "Користувачі"
+
+#: .\server_side\apps\data_interaction\apps.py:29
+#: .\server_side\apps\data_interaction\models.py:171
+#: .\server_side\settings.py:160
+msgid "disasters"
+msgstr "Катастрофи"
+
+#: .\server_side\apps\data_interaction\apps.py:38
+#: .\server_side\apps\data_interaction\models.py:201
+#: .\server_side\apps\data_interaction\models.py:293
+#: .\server_side\settings.py:169
+msgid "advices"
+msgstr "Поради"
+
+#: .\server_side\apps\data_interaction\apps.py:47 .\server_side\settings.py:178
+msgid "articles"
+msgstr "Статті"
+
+#: .\server_side\apps\data_interaction\apps.py:55
+#: .\server_side\apps\data_interaction\models.py:342
+#: .\server_side\settings.py:183
+msgid "markets"
+msgstr "Ринки"
+
+#: .\server_side\apps\data_interaction\apps.py:63
+#: .\server_side\apps\data_interaction\models.py:521
+#: .\server_side\settings.py:188
+msgid "target_audiences"
+msgstr "Цільові аудиторії"
+
+#: .\server_side\apps\data_interaction\apps.py:72 .\server_side\settings.py:197
+msgid "forecasts"
+msgstr "Прогнози"
+
+#: .\server_side\apps\data_interaction\apps.py:82
+msgid "Additional"
+msgstr "Додатково"
+
+#: .\server_side\apps\data_interaction\apps.py:84 .\server_side\settings.py:275
+msgid "Download_Backup"
+msgstr "Завантажити резервну копію"
+
+#: .\server_side\apps\data_interaction\apps.py:85 .\server_side\settings.py:287
+msgid "Watch_Logs"
+msgstr "Переглянути логи"
+
+#: .\server_side\apps\data_interaction\apps.py:86 .\server_side\settings.py:293
+msgid "Download_Logs"
+msgstr "Завантажити логи"
+
+#: .\server_side\apps\data_interaction\apps.py:87
+msgid "Password_change"
+msgstr "Змінити пароль"
+
+#: .\server_side\apps\data_interaction\apps.py:89 .\server_side\settings.py:299
+msgid "Open_Google"
+msgstr "Відкрити Google"
+
+#: .\server_side\apps\data_interaction\apps.py:95
+msgid "changes_lang"
+msgstr "Змінити мову"
+
+#: .\server_side\apps\data_interaction\constants.py:5
+#: .\server_side\apps\data_interaction\constants.py:11
+msgid "Default"
+msgstr "Звичайна"
+
+#: .\server_side\apps\data_interaction\constants.py:6
+msgid "Maximum"
+msgstr "Максимальна"
+
+#: .\server_side\apps\data_interaction\constants.py:7
+msgid "Ultra"
+msgstr "Ультра"
+
+#: .\server_side\apps\data_interaction\constants.py:12
+msgid "Consult"
+msgstr "Консультація"
+
+#: .\server_side\apps\data_interaction\models.py:16
+#: .\server_side\apps\data_interaction\models.py:37
+#: .\server_side\apps\data_interaction\models.py:425
+msgid "user"
+msgstr "Користувач"
+
+#: .\server_side\apps\data_interaction\models.py:21
+msgid "subscription"
+msgstr "Підписка"
+
+#: .\server_side\apps\data_interaction\models.py:22
+msgid "subscription_help"
+msgstr "Виберіть тип підписки"
+
+#: .\server_side\apps\data_interaction\models.py:27
+#: .\server_side\apps\data_interaction\models.py:386
+msgid "img_user"
+msgstr "Зображення"
+
+#: .\server_side\apps\data_interaction\models.py:28
+#: .\server_side\apps\data_interaction\models.py:387
+msgid "help_img_user"
+msgstr "Вставте посилання на зображення"
+
+#: .\server_side\apps\data_interaction\models.py:40
+#: .\server_side\apps\data_interaction\models.py:57
+#: .\server_side\apps\data_interaction\models.py:69
+#: .\server_side\apps\data_interaction\models.py:145
+#: .\server_side\apps\data_interaction\models.py:234
+#: .\server_side\apps\data_interaction\models.py:301
+#: .\server_side\apps\data_interaction\models.py:414
+msgid "profile"
+msgstr "Профіль"
+
+#: .\server_side\apps\data_interaction\models.py:41
+#: .\server_side\settings.py:148
+msgid "profiles"
+msgstr "Профілі"
+
+#: .\server_side\apps\data_interaction\models.py:59
+msgid "review"
+msgstr "Відгук"
+
+#: .\server_side\apps\data_interaction\models.py:60
+#: .\server_side\apps\data_interaction\models.py:72
+#: .\server_side\apps\data_interaction\models.py:243
+#: .\server_side\apps\data_interaction\models.py:310
+msgid "time"
+msgstr "Час"
+
+#: .\server_side\apps\data_interaction\models.py:63
+msgid "user_review"
+msgstr "Призначений для користувача відгук"
+
+#: .\server_side\apps\data_interaction\models.py:64
+msgid "user_reviews"
+msgstr "Користувацькі відгуки"
+
+#: .\server_side\apps\data_interaction\models.py:71
+msgid "question"
+msgstr "Питання"
+
+#: .\server_side\apps\data_interaction\models.py:77
+msgid "question_type"
+msgstr "Тип питання"
+
+#: .\server_side\apps\data_interaction\models.py:78
+msgid "question_type_help"
+msgstr "Виберіть тип: консультація чи ні"
+
+#: .\server_side\apps\data_interaction\models.py:82
+msgid "user_question"
+msgstr "Користувацьке питання"
+
+#: .\server_side\apps\data_interaction\models.py:83
+msgid "user_questions"
+msgstr "Користувацькі питання"
+
+#: .\server_side\apps\data_interaction\models.py:90
+#: .\server_side\apps\data_interaction\models.py:98
+#: .\server_side\apps\data_interaction\models.py:178
+#: .\server_side\apps\data_interaction\models.py:193
+#: .\server_side\apps\data_interaction\models.py:259
+#: .\server_side\apps\data_interaction\models.py:285
+#: .\server_side\apps\data_interaction\models.py:326
+#: .\server_side\apps\data_interaction\models.py:334
+#: .\server_side\apps\data_interaction\models.py:397
+#: .\server_side\apps\data_interaction\models.py:441
+#: .\server_side\apps\data_interaction\models.py:449
+msgid "img"
+msgstr "Зображення"
+
+#: .\server_side\apps\data_interaction\models.py:91
+#: .\server_side\apps\data_interaction\models.py:179
+#: .\server_side\apps\data_interaction\models.py:260
+#: .\server_side\apps\data_interaction\models.py:327
+#: .\server_side\apps\data_interaction\models.py:442
+msgid "help_img"
+msgstr "Вставте посилання на зображення"
+
+#: .\server_side\apps\data_interaction\models.py:102
+#: .\server_side\apps\data_interaction\models.py:105
+#: .\server_side\apps\data_interaction\models.py:114
+#: .\server_side\apps\data_interaction\models.py:128
+#: .\server_side\apps\data_interaction\models.py:142
+msgid "disaster_type"
+msgstr "Тип катастрофи"
+
+#: .\server_side\apps\data_interaction\models.py:106
+msgid "disaster_types"
+msgstr "Типи катастроф"
+
+#: .\server_side\apps\data_interaction\models.py:121
+#: .\server_side\apps\data_interaction\models.py:213
+#: .\server_side\apps\data_interaction\models.py:274
+#: .\server_side\apps\data_interaction\models.py:354
+#: .\server_side\apps\data_interaction\models.py:472
+msgid "language"
+msgstr "Мова"
+
+#: .\server_side\apps\data_interaction\models.py:123
+#: .\server_side\apps\data_interaction\models.py:215
+#: .\server_side\apps\data_interaction\models.py:276
+#: .\server_side\apps\data_interaction\models.py:356
+#: .\server_side\apps\data_interaction\models.py:376
+#: .\server_side\apps\data_interaction\models.py:474
+msgid "name"
+msgstr "Назва"
+
+#: .\server_side\apps\data_interaction\models.py:124
+#: .\server_side\apps\data_interaction\models.py:216
+#: .\server_side\apps\data_interaction\models.py:475
+msgid "content"
+msgstr "Зміст"
+
+#: .\server_side\apps\data_interaction\models.py:124
+#: .\server_side\apps\data_interaction\models.py:216
+#: .\server_side\apps\data_interaction\models.py:475
+msgid "content_help"
+msgstr "Вставте необхідне текстовий зміст"
+
+#: .\server_side\apps\data_interaction\models.py:132
+msgid "disaster_type_translation"
+msgstr "Переклад катастрофи"
+
+#: .\server_side\apps\data_interaction\models.py:133
+msgid "disaster_types_translation"
+msgstr "Переклад катастроф"
+
+#: .\server_side\apps\data_interaction\models.py:148
+msgid "term"
+msgstr "Термін"
+
+#: .\server_side\apps\data_interaction\models.py:148
+msgid "term_help"
+msgstr "Виберіть термін дії катастрофи (на даний момент)"
+
+#: .\server_side\apps\data_interaction\models.py:153
+msgid "intensity"
+msgstr "Інтенсивність"
+
+#: .\server_side\apps\data_interaction\models.py:154
+msgid "intensity_help"
+msgstr "Виберіть ступінь интесивность катастрофи"
+
+#: .\server_side\apps\data_interaction\models.py:159
+msgid "readiness_degree"
+msgstr "Ступінь готовності"
+
+#: .\server_side\apps\data_interaction\models.py:160
+msgid "readiness_degree_help"
+msgstr "Виберіть ступінь готовності соціуму до катастрофи"
+
+#: .\server_side\apps\data_interaction\models.py:162
+msgid "about"
+msgstr "Опис"
+
+#: .\server_side\apps\data_interaction\models.py:162
+msgid "about_help"
+msgstr "Додайте текстовий опис катастрофи"
+
+#: .\server_side\apps\data_interaction\models.py:166
+#: .\server_side\apps\data_interaction\models.py:170
+#: .\server_side\apps\data_interaction\models.py:529
+#: .\server_side\apps\data_interaction\models.py:544
+#: .\server_side\apps\data_interaction\models.py:560
+#: .\server_side\apps\data_interaction\models.py:575
+#: .\server_side\apps\data_interaction\models.py:591
+#: .\server_side\apps\data_interaction\models.py:606
+#: .\server_side\apps\data_interaction\models.py:625
+#: .\server_side\apps\data_interaction\models.py:640
+msgid "disaster"
+msgstr "Катастрофа"
+
+#: .\server_side\apps\data_interaction\models.py:185
+msgid "advice_type"
+msgstr "Тип поради"
+
+#: .\server_side\apps\data_interaction\models.py:186
+msgid "advice_type_help"
+msgstr "Виберіть тип поради"
+
+#: .\server_side\apps\data_interaction\models.py:197
+#: .\server_side\apps\data_interaction\models.py:200
+#: .\server_side\apps\data_interaction\models.py:206
+#: .\server_side\apps\data_interaction\models.py:220
+#: .\server_side\apps\data_interaction\models.py:231
+#: .\server_side\apps\data_interaction\models.py:247
+#: .\server_side\apps\data_interaction\models.py:289
+#: .\server_side\apps\data_interaction\models.py:292
+#: .\server_side\apps\data_interaction\models.py:363
+msgid "advice"
+msgstr "Порада"
+
+#: .\server_side\apps\data_interaction\models.py:224
+msgid "advice_translation"
+msgstr "Переклад поради"
+
+#: .\server_side\apps\data_interaction\models.py:225
+msgid "advices_translation"
+msgstr "Переклад порад"
+
+#: .\server_side\apps\data_interaction\models.py:240
+#: .\server_side\apps\data_interaction\models.py:241
+#: .\server_side\apps\data_interaction\models.py:307
+#: .\server_side\apps\data_interaction\models.py:308
+msgid "rating"
+msgstr "Рейтинг"
+
+#: .\server_side\apps\data_interaction\models.py:250
+msgid "advice_rating"
+msgstr "Рейтинг поради"
+
+#: .\server_side\apps\data_interaction\models.py:251
+msgid "advices_rating"
+msgstr "Рейтинги порад"
+
+#: .\server_side\apps\data_interaction\models.py:266
+msgid "article_type"
+msgstr "Тип статті"
+
+#: .\server_side\apps\data_interaction\models.py:267
+msgid "article_type_help"
+msgstr "Виберіть необхідний тип статті"
+
+#: .\server_side\apps\data_interaction\models.py:277
+msgid "author"
+msgstr "Автор"
+
+#: .\server_side\apps\data_interaction\models.py:278
+#: .\server_side\apps\data_interaction\models.py:532
+#: .\server_side\apps\data_interaction\models.py:563
+#: .\server_side\apps\data_interaction\models.py:594
+#: .\server_side\apps\data_interaction\models.py:628
+msgid "date"
+msgstr "Дата"
+
+#: .\server_side\apps\data_interaction\models.py:279
+msgid "article_text"
+msgstr "Текст статті"
+
+#: .\server_side\apps\data_interaction\models.py:298
+#: .\server_side\apps\data_interaction\models.py:314
+msgid "article"
+msgstr "Стаття"
+
+#: .\server_side\apps\data_interaction\models.py:317
+#: .\server_side\apps\data_interaction\models.py:318
+msgid "article_rating"
+msgstr "Рейтинг статті"
+
+#: .\server_side\apps\data_interaction\models.py:338
+#: .\server_side\apps\data_interaction\models.py:341
+#: .\server_side\apps\data_interaction\models.py:347
+#: .\server_side\apps\data_interaction\models.py:374
+#: .\server_side\apps\data_interaction\models.py:401
+#: .\server_side\apps\data_interaction\models.py:526
+#: .\server_side\apps\data_interaction\models.py:540
+msgid "market"
+msgstr "Ринок"
+
+#: .\server_side\apps\data_interaction\models.py:358
+#: .\server_side\apps\data_interaction\models.py:390
+msgid "description"
+msgstr "Опис"
+
+#: .\server_side\apps\data_interaction\models.py:358
+#: .\server_side\apps\data_interaction\models.py:390
+msgid "description_help"
+msgstr "Введіть докладний опис ринку"
+
+#: .\server_side\apps\data_interaction\models.py:367
+msgid "market_translation"
+msgstr "Переклад ринку"
+
+#: .\server_side\apps\data_interaction\models.py:368
+msgid "markets_translation"
+msgstr "Переклад ринків"
+
+#: .\server_side\apps\data_interaction\models.py:377
+msgid "location"
+msgstr "Месторосположеніе"
+
+#: .\server_side\apps\data_interaction\models.py:378
+#: .\server_side\apps\data_interaction\models.py:379
+#: .\server_side\apps\data_interaction\models.py:501
+msgid "size"
+msgstr "Розмір"
+
+#: .\server_side\apps\data_interaction\models.py:381
+msgid "website"
+msgstr "Веб-сайт"
+
+#: .\server_side\apps\data_interaction\models.py:381
+msgid "help_website"
+msgstr "Додайте посилання на веб-сайт"
+
+#: .\server_side\apps\data_interaction\models.py:405
+#: .\server_side\apps\data_interaction\models.py:411
+#: .\server_side\apps\data_interaction\models.py:421
+#: .\server_side\apps\data_interaction\models.py:496
+#: .\server_side\apps\data_interaction\models.py:509
+#: .\server_side\apps\data_interaction\models.py:557
+#: .\server_side\apps\data_interaction\models.py:571
+#: .\server_side\apps\data_interaction\models.py:588
+#: .\server_side\apps\data_interaction\models.py:602
+msgid "company"
+msgstr "Компанія"
+
+#: .\server_side\apps\data_interaction\models.py:406
+msgid "companies"
+msgstr "Компанії"
+
+#: .\server_side\apps\data_interaction\models.py:416
+msgid "position"
+msgstr "Посада"
+
+#: .\server_side\apps\data_interaction\models.py:433
+msgid "workplace"
+msgstr "Робоче місце"
+
+#: .\server_side\apps\data_interaction\models.py:434
+msgid "workplaces"
+msgstr "Робочі місця"
+
+#: .\server_side\apps\data_interaction\models.py:453
+#: .\server_side\apps\data_interaction\models.py:456
+#: .\server_side\apps\data_interaction\models.py:465
+#: .\server_side\apps\data_interaction\models.py:493
+#: .\server_side\apps\data_interaction\models.py:513
+msgid "target_audience_type"
+msgstr "Тип аудиторії"
+
+#: .\server_side\apps\data_interaction\models.py:457
+msgid "target_audience_types"
+msgstr "Типи аудиторії"
+
+#: .\server_side\apps\data_interaction\models.py:479
+#: .\server_side\apps\data_interaction\models.py:520
+#: .\server_side\apps\data_interaction\models.py:622
+#: .\server_side\apps\data_interaction\models.py:636
+msgid "target_audience"
+msgstr "Цільова аудиторія"
+
+#: .\server_side\apps\data_interaction\models.py:483
+msgid "target_audience_type_translation"
+msgstr "Переклад аудиторії"
+
+#: .\server_side\apps\data_interaction\models.py:484
+msgid "target_audience_types_translation"
+msgstr "Переклад аудиторій"
+
+#: .\server_side\apps\data_interaction\models.py:499
+msgid "age_group"
+msgstr "Вікова група"
+
+#: .\server_side\apps\data_interaction\models.py:503
+msgid "features"
+msgstr "Особливості"
+
+#: .\server_side\apps\data_interaction\models.py:503
+msgid "features_help"
+msgstr "Опишіть особливості цільової аудиторії"
+
+#: .\server_side\apps\data_interaction\models.py:531
+#: .\server_side\apps\data_interaction\models.py:562
+#: .\server_side\apps\data_interaction\models.py:627
+msgid "forecast"
+msgstr "Прогноз"
+
+#: .\server_side\apps\data_interaction\models.py:534
+#: .\server_side\apps\data_interaction\models.py:565
+#: .\server_side\apps\data_interaction\models.py:596
+#: .\server_side\apps\data_interaction\models.py:630
+msgid "last_update"
+msgstr "Останнє оновлення"
+
+#: .\server_side\apps\data_interaction\models.py:551
+msgid "market_forecast"
+msgstr "Прогноз ринку"
+
+#: .\server_side\apps\data_interaction\models.py:552
+msgid "market_forecasts"
+msgstr "Прогнози ринків"
+
+#: .\server_side\apps\data_interaction\models.py:582
+msgid "company_forecast"
+msgstr "Прогноз компанії"
+
+#: .\server_side\apps\data_interaction\models.py:583
+msgid "company_forecasts"
+msgstr "Прогнози компаній"
+
+#: .\server_side\apps\data_interaction\models.py:593
+msgid "test_result"
+msgstr "Результати тесту"
+
+#: .\server_side\apps\data_interaction\models.py:613
+msgid "company_stress_test"
+msgstr "Стрес-тестування"
+
+#: .\server_side\apps\data_interaction\models.py:614
+msgid "company_stress_tests"
+msgstr "Стрес-тестування"
+
+#: .\server_side\apps\data_interaction\models.py:647
+msgid "target_audience_behaviour"
+msgstr "Поведінка аудиторії"
+
+#: .\server_side\apps\data_interaction\models.py:648
+msgid "target_audiences_behaviours"
+msgstr "Поведінка аудиторій"
+
+#: .\server_side\settings.py:121
+msgid "English"
+msgstr "Англійська"
+
+#: .\server_side\settings.py:122
+msgid "Ukrainian"
+msgstr "Українська"
+
+#: .\server_side\settings.py:123
+msgid "German"
+msgstr "Німецька"
+
+#: .\server_side\settings.py:124
+msgid "Russian"
+msgstr "Російська"
+
+#: .\server_side\settings.py:125
+msgid "Belarusian"
+msgstr "Білоруська"
+
+#: .\server_side\settings.py:143
+msgid "groups_admin"
+msgstr "Адміністрація"
+
+#: .\server_side\settings.py:259
+msgid "Welcome"
+msgstr "Для реєстрація зверніться за адресою dismart.inc@gmail.com"
+
+#: .\server_side\settings.py:264
+msgid "Home"
+msgstr "Додому"
+
+#: .\server_side\settings.py:266
+msgid "Open_client"
+msgstr "Відкрити сайт"
+
+#: .\server_side\settings.py:281
+msgid "Upload_Backup"
+msgstr "Вивантажити резервну копію"
+
+#: .\server_side\settings.py:305
+msgid "Open_Github"
+msgstr "Відкрити Github"

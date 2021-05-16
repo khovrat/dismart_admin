@@ -1,6 +1,4 @@
 from django.apps import AppConfig
-from suit.apps import DjangoSuitConfig
-from suit.menu import ParentItem, ChildItem
 from django.utils.translation import ugettext_lazy as _
 
 

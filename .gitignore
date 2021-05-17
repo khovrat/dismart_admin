@@ -4,6 +4,7 @@ data/
 migrations/
 batches/
 static/
+staticfiles/
 __pycache__
 .mypy_cache/
 .env

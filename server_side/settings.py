@@ -242,7 +242,7 @@ LOGGING = {
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -399,8 +399,22 @@ JAZZMIN_UI_TWEAKS = {
         "info": "btn-outline-info",
         "warning": "btn-outline-warning",
         "danger": "btn-outline-danger",
-        "success": "btn-outline-success"
-    }
+        "success": "btn-outline-success",
+    },
 }
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+    ]
+}
+
+SECURE_SSL_REDIRECT = not DEBUG
+
+SECURE_HSTS_SECONDS = 3600
+
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+SECURE_HSTS_PRELOAD = True
 
 django_heroku.settings(locals())

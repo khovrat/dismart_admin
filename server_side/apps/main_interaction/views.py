@@ -6,6 +6,7 @@ from rest_framework.response import Response
 
 from server_side.apps.data_interaction import crud
 from server_side.apps.data_interaction import serializers_wrapper
+from server_side.apps.main_interaction.views_base import authenticate_base
 from server_side.apps.shared_logic.loggers import view_status_logger
 
 
@@ -29,23 +30,7 @@ def get_amount_info(request):
 @renderer_classes([JSONRenderer])
 def sign_in(request):
     if request.method == "POST":
-        user = authenticate(
-            username=request.data["username"], password=request.data["password"]
-        )
-        if user:
-            if user.is_active:
-                login(request, user)
-                return Response(
-                    serializers_wrapper.get_serialize_profile(user.profile),
-                    status=status.HTTP_200_OK,
-                )
-            else:
-                return Response(
-                    serializers_wrapper.get_serialize_profile(user.profile),
-                    status=status.HTTP_400_BAD_REQUEST,
-                )
-        else:
-            return Response(status=status.HTTP_401_UNAUTHORIZED)
+        return authenticate_base(request)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
@@ -59,27 +44,22 @@ def sign_out(request):
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
-@api_view(["POST"])
+@api_view(["PUT"])
 @view_status_logger
 @renderer_classes([JSONRenderer])
 def sign_up(request):
-    if request.method == "POST":
-        profile = crud.create_profile(request.data)
-        user = authenticate(
-            username=profile.user.username, password=request.data["password"]
-        )
-        if user:
-            if user.is_active:
-                login(request, user)
-                return Response(
-                    serializers_wrapper.get_serialize_profile(user.profile),
-                    status=status.HTTP_201_CREATED,
-                )
-            else:
-                return Response(
-                    serializers_wrapper.get_serialize_profile(user.profile),
-                    status=status.HTTP_400_BAD_REQUEST,
-                )
-        else:
-            return Response(status=status.HTTP_401_UNAUTHORIZED)
+    if request.method == "PUT":
+        crud.create_profile(request.data)
+        return authenticate_base(request)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["PATCH"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def reset_password(request):
+    if request.method == "PATCH":
+        crud.update_profile_password(request.data)
+        return authenticate_base(request)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+

@@ -12,5 +12,6 @@ urlpatterns = [
     path('sign-up/', views.sign_up),
     path('reset-password/', views.reset_password),
     path('save-review/', views.save_review),
-    path('make-payment/', views.make_payment)
+    path('make-payment/', views.make_payment),
+    path('lower-subscription/', views.lower_subscription)
 ]

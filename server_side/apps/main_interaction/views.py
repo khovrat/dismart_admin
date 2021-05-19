@@ -118,3 +118,11 @@ def make_payment(request):
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
+@api_view(["PATCH"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def lower_subscription(request):
+    if request.method == "PATCH":
+        crud.update_profile_subscription(request.data)
+        return Response(status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

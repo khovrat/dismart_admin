@@ -171,3 +171,53 @@ Traceback (most recent call last):
   File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\parsers.py", line 67, in parse
     raise ParseError('JSON parse error - %s' % str(exc))
 rest_framework.exceptions.ParseError: JSON parse error - Expecting property name enclosed in double quotes: line 4 column 1 (char 61)
+2021-05-19 23:42:20,308 INFO Watching for file changes with StatReloader
+2021-05-19 23:46:49,166 WARNING Conflict: /api/change-profile/
+2021-05-19 23:48:08,143 INFO Watching for file changes with StatReloader
+2021-05-19 23:49:10,958 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\crud.py changed, reloading.
+2021-05-19 23:49:13,382 INFO Watching for file changes with StatReloader
+2021-05-19 23:49:15,740 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 136, in change_profile
+    if crud.update_profile(request.data):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\crud.py", line 65, in update_profile
+    if data['username'] != data['username_new'] and User.objects.filter(username=data['username_new']).exists():
+KeyError: 'username_new'
+2021-05-19 23:49:29,113 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\parsers.py", line 65, in parse
+    return json.load(decoded_stream, parse_constant=parse_constant)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\utils\json.py", line 31, in load
+    return json.load(*args, **kwargs)
+  File "C:\Users\artik\AppData\Local\Programs\Python\Python36-32\lib\json\__init__.py", line 299, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\artik\AppData\Local\Programs\Python\Python36-32\lib\json\__init__.py", line 367, in loads
+    return cls(**kw).decode(s)
+  File "C:\Users\artik\AppData\Local\Programs\Python\Python36-32\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\artik\AppData\Local\Programs\Python\Python36-32\lib\json\decoder.py", line 355, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 4 column 5 (char 62)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 136, in change_profile
+    if crud.update_profile(request.data):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\request.py", line 216, in data
+    self._load_data_and_files()
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\request.py", line 279, in _load_data_and_files
+    self._data, self._files = self._parse()
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\request.py", line 354, in _parse
+    parsed = parser.parse(stream, media_type, self.parser_context)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\parsers.py", line 67, in parse
+    raise ParseError('JSON parse error - %s' % str(exc))
+rest_framework.exceptions.ParseError: JSON parse error - Expecting ',' delimiter: line 4 column 5 (char 62)
+2021-05-19 23:51:15,928 INFO Watching for file changes with StatReloader
+2021-05-19 23:51:55,581 INFO Watching for file changes with StatReloader
+2021-05-19 23:54:02,882 INFO Watching for file changes with StatReloader
+2021-05-19 23:57:02,398 INFO Watching for file changes with StatReloader

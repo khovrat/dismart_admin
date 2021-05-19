@@ -18,6 +18,13 @@ def create_profile(data):
     user.save()
 
 
+def create_review(data):
+    profile = read_profile_by_username(data['username'])
+    review = dm.UserReview(user_id=profile.id,
+                           review=data['review'])
+    review.save()
+
+
 def read_amount_users():
     return dm.User.objects.count()
 
@@ -36,6 +43,10 @@ def read_amount_advices():
 
 def read_profile_by_username(username):
     return dm.Profile.objects.get(user__username=username)
+
+
+def read_profile_by_email(email):
+    return dm.Profile.objects.get(user__email=email)
 
 
 def update_profile_password(data):

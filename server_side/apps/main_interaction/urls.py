@@ -5,9 +5,11 @@ from django.views.decorators.csrf import csrf_exempt
 from server_side.apps.main_interaction import views
 
 urlpatterns = [
+    path('change-server-language/', views.change_server_language),
     path('amount-info/', views.get_amount_info),
     path('sign-in/', views.sign_in),
     path('sign-out/', views.sign_out),
     path('sign-up/', views.sign_up),
-    path('reset-password/', views.reset_password)
+    path('reset-password/', views.reset_password),
+    path('save-review/', views.save_review)
 ]

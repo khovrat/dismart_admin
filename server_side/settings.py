@@ -19,7 +19,6 @@ from django.utils.translation import ugettext_lazy as _
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -50,7 +49,6 @@ INSTALLED_APPS = [
     "admin_reorder",
     "smuggler",
 ]
-
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -85,14 +83,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "server_side.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     "default": dj_database_url.config(conn_max_age=600, default=config("DB_ID"))
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -111,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -135,7 +130,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 ADMIN_REORDER = (
     "Data for administrator",
@@ -215,24 +209,26 @@ LOGGING = {
     "handlers": {
         "console": {"class": "logging.StreamHandler", "formatter": "console"},
         "file": {
-            "level": "DEBUG",
+            "level": ["DEBUG", "ERROR"],
             "class": "logging.FileHandler",
             "formatter": "file",
             "filename": "logs/dismart_admin.log",
+            'maxBytes': 1024 * 1024 * 15,  # 15MB
+            'backupCount': 10,
         },
     },
     "loggers": {
         "": {"level": "DEBUG", "handlers": ["console", "file"], "propagate": True},
-        "django.request": {"level": "DEBUG", "handlers": ["file"]},
-        "django.db.backends": {"level": "DEBUG", "handlers": ["file"]},
-        "django.template": {"level": "DEBUG", "handlers": ["file"]},
+        "django.request": {"level": ["DEBUG", "ERROR"], "handlers": ["file", "console"]},
+        "django.db.backends": {"level": ["DEBUG", "ERROR"], "handlers": ["file"]},
+        "django.template": {"level": ["DEBUG", "ERROR"], "handlers": ["file"]},
         "server_side.apps.shared_logic.loggers.view_status_logger": {
-            "level": "DEBUG",
-            "handlers": ["file"],
+            "level": ["DEBUG", "ERROR"],
+            "handlers": ["console", "file"],
         },
         "server_side.apps.shared_logic.loggers.class_status_logger": {
-            "level": "DEBUG",
-            "handlers": ["file"],
+            "level": ["DEBUG", "ERROR"],
+            "handlers": ["console", "file"],
         },
     },
 }
@@ -416,5 +412,17 @@ SECURE_HSTS_SECONDS = 3600
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 SECURE_HSTS_PRELOAD = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_USE_TLS = True
+
+EMAIL_PORT = 587
+
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 
 django_heroku.settings(locals())

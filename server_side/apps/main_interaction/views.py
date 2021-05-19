@@ -1,3 +1,4 @@
+import stripe
 from django.contrib.auth import logout
 from django.core.mail import send_mail
 from django.utils.translation import ugettext_lazy as _
@@ -9,6 +10,7 @@ from rest_framework.response import Response
 from server_side import settings
 from server_side.apps.data_interaction import crud
 from server_side.apps.main_interaction.views_base import authenticate_base
+from server_side.apps.shared_logic import utils
 from server_side.apps.shared_logic.loggers import view_status_logger
 
 
@@ -93,6 +95,26 @@ def save_review(request):
         )
         settings.LANGUAGE_CODE = base_language
         return Response(status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["PATCH"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def make_payment(request):
+    if request.method == "PATCH":
+        token = utils.create_token(request.data)
+        description = utils.create_description_payment(request.data['username'], request.data['subscription'])
+        charge = stripe.Charge.create(
+            amount=utils.get_amount_payment(request.data['subscription']),
+            currency="usd",
+            source=token,
+            description=description
+        )
+        if charge['captured']:
+            crud.update_profile_subscription(request.data)
+            return Response(status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_418_IM_A_TEAPOT)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 

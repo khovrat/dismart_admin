@@ -13,6 +13,8 @@ import os
 import dj_database_url
 import django_heroku
 from pathlib import Path
+
+import stripe
 from decouple import config
 from django.utils.translation import ugettext_lazy as _
 
@@ -424,5 +426,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+
+stripe.api_key = config("STRIPE_API_KEY")
 
 django_heroku.settings(locals())

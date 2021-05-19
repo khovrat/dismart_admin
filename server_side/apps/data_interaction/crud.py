@@ -53,3 +53,9 @@ def update_profile_password(data):
     user = dm.User.objects.get(username=data['username'])
     user.set_password(data['password'])
     user.save()
+
+
+def update_profile_subscription(data):
+    user = dm.Profile.objects.get(user__username=data['username'])
+    user.subscription = data['subscription']
+    user.save()

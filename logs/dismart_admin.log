@@ -221,3 +221,13 @@ rest_framework.exceptions.ParseError: JSON parse error - Expecting ',' delimiter
 2021-05-19 23:51:55,581 INFO Watching for file changes with StatReloader
 2021-05-19 23:54:02,882 INFO Watching for file changes with StatReloader
 2021-05-19 23:57:02,398 INFO Watching for file changes with StatReloader
+2021-05-20 15:07:56,679 INFO Watching for file changes with StatReloader
+2021-05-20 15:10:03,572 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 158, in get_counters_info
+    data = crud.read_counters(request.data['username'])
+KeyError: 'username'
+2021-05-20 15:10:14,908 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py changed, reloading.
+2021-05-20 15:10:20,936 INFO Watching for file changes with StatReloader

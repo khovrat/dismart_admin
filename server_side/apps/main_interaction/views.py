@@ -148,3 +148,13 @@ def change_image(request):
         crud.update_profile_image(request.data)
         return Response(status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def get_counters_info(request):
+    if request.method == "GET":
+        data = crud.read_counters(request.GET['username'])
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

@@ -28,3 +28,4 @@ def get_amount_payment(subscription):
         return 100
     if subscription == "ULTRA":
         return 200
+

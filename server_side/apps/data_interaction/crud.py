@@ -61,6 +61,12 @@ def update_profile_subscription(data):
     user.save()
 
 
+def update_profile_image(data):
+    user = dm.Profile.objects.get(user__username=data['username'])
+    user.img = data['img']
+    user.save()
+
+
 def update_profile(data):
     if data['username'] != data['username_new'] and User.objects.filter(username=data['username_new']).exists():
         return False

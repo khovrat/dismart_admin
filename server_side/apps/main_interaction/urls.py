@@ -14,5 +14,6 @@ urlpatterns = [
     path('save-review/', views.save_review),
     path('make-payment/', views.make_payment),
     path('lower-subscription/', views.lower_subscription),
-    path('change-profile/', views.change_profile)
+    path('change-profile/', views.change_profile),
+    path('change-image/', views.change_image)
 ]

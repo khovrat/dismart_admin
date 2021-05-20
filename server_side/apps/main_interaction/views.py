@@ -8,7 +8,7 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 
 from server_side import settings
-from server_side.apps.data_interaction import crud
+from server_side.apps.data_interaction import crud, serializers_wrapper
 from server_side.apps.main_interaction.views_base import authenticate_base
 from server_side.apps.shared_logic import utils
 from server_side.apps.shared_logic.loggers import view_status_logger
@@ -153,8 +153,20 @@ def change_image(request):
 @api_view(["GET"])
 @view_status_logger
 @renderer_classes([JSONRenderer])
-def get_counters_info(request):
+def get_counters(request):
     if request.method == "GET":
         data = crud.read_counters(request.GET['username'])
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def get_companies(request):
+    if request.method == "GET":
+        data = serializers_wrapper.get_serialize_company(crud.read_companies_username(request.GET['username']))
+        data = utils.add_completeness(data)
+        data = utils.translate_market(data, request.GET['username'])
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

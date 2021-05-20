@@ -1,8 +1,11 @@
 import stripe
+from django.db.models import QuerySet
+
+from server_side.apps.data_interaction import crud
 
 
 def is_many(list_item):
-    return list_item.count() > 1
+    return isinstance(list_item, QuerySet)
 
 
 def create_token(data):
@@ -29,3 +32,18 @@ def get_amount_payment(subscription):
     if subscription == "ULTRA":
         return 200
 
+
+def add_completeness(data):
+    for company in data:
+        counter = 0
+        for item in company:
+            if item is not None:
+                counter += 1
+        company['completeness'] = int((counter / len(company)) * 100)
+    return data
+
+
+def translate_market(data, language):
+    for company in data:
+        company['market'] = crud.read_market_translate(company['market']['id'], language)
+    return data

@@ -376,9 +376,9 @@ class Company(models.Model):
     name = models.CharField(max_length=200, null=False, verbose_name=_("name"))
     location = models.CharField(max_length=200, null=False, verbose_name=_("location"))
     size = models.IntegerField(default=1, null=False, verbose_name=_("size"))
-    revenue = models.FloatField(default=1.0, null=True, verbose_name=_("size"))
+    revenue = models.FloatField(default=1.0, null=True, verbose_name=_("size"), blank=True)
     website = models.URLField(
-        null=True, verbose_name=_("website"), help_text=_("help_website")
+        null=True, verbose_name=_("website"), help_text=_("help_website"), blank=True
     )
     img = models.URLField(
         default=config("BASE_URL"),

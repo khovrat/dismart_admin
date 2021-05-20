@@ -16,5 +16,6 @@ urlpatterns = [
     path('lower-subscription/', views.lower_subscription),
     path('change-profile/', views.change_profile),
     path('change-image/', views.change_image),
-    path('counters/', views.get_counters_info)
+    path('counters/', views.get_counters),
+    path('companies/', views.get_companies),
 ]

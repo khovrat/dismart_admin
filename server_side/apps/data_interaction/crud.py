@@ -58,6 +58,17 @@ def read_counters(username):
     }
 
 
+def read_companies_username(username):
+    user = dm.Profile.objects.get(user__username=username)
+    return dm.Company.objects.filter(workplace__user__user_id=user.user_id)
+
+
+def read_market_translate(id_market, language):
+    if dm.MarketTranslation.objects.filter(market_id=id_market, language=language).exists():
+        return dm.MarketTranslation.objects.get(market_id=id_market, language=language)
+    return ''
+
+
 def update_profile_password(data):
     user = dm.User.objects.get(username=data["username"])
     user.set_password(data["password"])

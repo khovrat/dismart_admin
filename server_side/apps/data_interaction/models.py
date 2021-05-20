@@ -398,7 +398,7 @@ class Company(models.Model):
 
     @class_status_logger
     def __str__(self):
-        result = _("market") + ": " + str(self.market.id) + "; "
+        result = _("company") + ": " + str(self.name) + "; "
         return result
 
     class Meta:

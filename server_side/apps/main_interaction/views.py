@@ -170,3 +170,15 @@ def get_companies(request):
         data = utils.translate_market(data, request.GET['username'])
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["DELETE"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def delete_companies(request):
+    if request.method == "DELETE":
+        if crud.delete_companies_id(request.data['id']):
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            return Response(status=status.HTTP_418_IM_A_TEAPOT)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

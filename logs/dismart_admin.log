@@ -434,3 +434,28 @@ server_side.apps.data_interaction.models.MarketTranslation.DoesNotExist: MarketT
 2021-05-20 19:31:25,717 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\crud.py changed, reloading.
 2021-05-20 19:31:27,683 INFO Watching for file changes with StatReloader
 2021-05-20 19:32:11,704 INFO Watching for file changes with StatReloader
+2021-05-20 20:43:35,867 INFO Watching for file changes with StatReloader
+2021-05-20 20:45:02,919 WARNING Not Found: /api/companies/delete/
+2021-05-20 20:45:42,677 INFO Watching for file changes with StatReloader
+2021-05-20 20:45:46,473 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 168, in get_companies
+    data = serializers_wrapper.get_serialize_company(crud.read_companies_username(request.GET['username']))
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'username'
+2021-05-20 20:46:01,204 WARNING Method Not Allowed: /api/companies/delete/
+2021-05-20 20:46:41,949 INFO Watching for file changes with StatReloader
+2021-05-20 20:46:59,538 WARNING Unknown Status Code: /api/companies/delete/
+2021-05-20 20:48:25,259 INFO Watching for file changes with StatReloader
+2021-05-20 20:50:44,425 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\models.py changed, reloading.
+2021-05-20 20:50:46,229 INFO Watching for file changes with StatReloader

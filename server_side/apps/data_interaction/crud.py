@@ -100,3 +100,10 @@ def update_profile(data):
     user.last_name = data["last_name"]
     user.save()
     return True
+
+
+def delete_companies_id(id_company):
+    if dm.Company.objects.filter(pk=id_company).exists():
+        dm.Company.objects.filter(pk=id_company).delete()
+        return True
+    return False

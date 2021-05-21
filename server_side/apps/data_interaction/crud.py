@@ -128,6 +128,16 @@ def read_users():
     return dm.Profile.objects.all()
 
 
+def read_markets():
+    return dm.Market.objects.all()
+
+
+def read_market_translation_language_id(language, market_id):
+    if dm.MarketTranslation.objects.filter(market_id=market_id, language=language).exists():
+        return dm.MarketTranslation.objects.get(market_id=market_id, language=language)
+    return ''
+
+
 def update_profile_subscription(data):
     user = dm.Profile.objects.get(user__username=data["username"])
     user.subscription = data["subscription"]

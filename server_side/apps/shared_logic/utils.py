@@ -97,3 +97,20 @@ def add_all_users():
                 }
             )
     return {'all_users': data}
+
+
+def add_markets(data, language):
+    data = {
+        'companies': data,
+        'markets': []
+    }
+    markets = crud.read_markets()
+    if markets.count() != 0:
+        for market in markets:
+            data['markets'].append(
+                {
+                    'market_id': market.id,
+                    'name': crud.read_market_translation_language_id(language, market.id)
+                }
+            )
+    return data

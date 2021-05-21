@@ -170,6 +170,7 @@ def get_companies(request):
         data = serializers_wrapper.get_serialize_company(crud.read_companies_username(request.GET['username']))
         data = utils.add_completeness(data)
         data = utils.translate_market(data, request.GET['language'])
+        data = utils.add_markets(data, request.GET['language'])
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 

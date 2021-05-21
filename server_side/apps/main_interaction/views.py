@@ -284,8 +284,9 @@ def delete_user_companies(request):
 @renderer_classes([JSONRenderer])
 def get_reviews(request):
     if request.method == "GET":
-        data = crud.read_reviews()
-        return Response(serializers_wrapper.get_serialize_user_review(data), status=status.HTTP_200_OK)
+        data = serializers_wrapper.get_serialize_user_review(crud.read_reviews())
+        data = utils.change_date(data)
+        return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
@@ -294,6 +295,7 @@ def get_reviews(request):
 @renderer_classes([JSONRenderer])
 def get_user_reviews(request):
     if request.method == "GET":
-        data = crud.read_reviews_username(request.GET['username'])
-        return Response(serializers_wrapper.get_serialize_user_review(data), status=status.HTTP_200_OK)
+        data = serializers_wrapper.get_serialize_user_review(crud.read_reviews_username(request.GET['username']))
+        data = utils.change_data(data)
+        return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

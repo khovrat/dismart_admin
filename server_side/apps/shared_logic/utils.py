@@ -114,3 +114,9 @@ def add_markets(data, language):
                 }
             )
     return data
+
+
+def change_data(data):
+    for item in data:
+        item['time'] = datetime.datetime.strptime(item['time'], '%Y-%m-%dT%H:%M:%S.%fZ').strftime('%d.%m.%Y')
+    return data

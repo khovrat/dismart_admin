@@ -20,4 +20,7 @@ urlpatterns = [
     path('companies/', views.get_companies),
     path('companies/delete/', views.delete_companies),
     path('companies/detail/', views.detail_companies),
+    path('companies/detail/edit/', views.change_companies),
+    path('companies/detail/image/', views.change_companies_image),
+    path('workplace/', views.get_workplace),
 ]

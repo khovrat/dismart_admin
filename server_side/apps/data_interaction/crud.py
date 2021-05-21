@@ -116,6 +116,29 @@ def update_profile(data):
     return True
 
 
+def update_company(data):
+    if (
+            data["name"] != data["name_new"]
+            and dm.Company.objects.filter(name=data["name_new"]).exists()
+    ):
+        return False
+    company = dm.Company.objects.get(name=data["name"])
+    company.name = data["name_new"]
+    company.website = data["website"]
+    company.size = data["size"]
+    company.revenue = data["revenue"]
+    company.location = data["location"]
+    company.description = data["description"]
+    company.save()
+    return True
+
+
+def update_company_image(data):
+    company = dm.Company.objects.get(name=data["name"])
+    company.img = data["img"]
+    company.save()
+
+
 def delete_companies_id(id_company):
     if dm.Company.objects.filter(pk=id_company).exists():
         dm.Company.objects.filter(pk=id_company).delete()

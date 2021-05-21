@@ -14,7 +14,6 @@ def authenticate_base(request):
         if user.is_active:
             login(request, user)
             data = serializers_wrapper.get_serialize_profile(user.profile)
-            data.update(utils.add_position(request.data["username"]))
             return Response(
                 data,
                 status=status.HTTP_200_OK,

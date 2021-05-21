@@ -95,7 +95,7 @@ def read_counters(username):
 
 def read_companies_username(username):
     user = dm.Profile.objects.get(user__username=username)
-    return dm.Company.objects.filter(workplace__user__user_id=user.user_id)
+    return dm.Company.objects.filter(workplace__user__user_id=user.user_id).order_by('name')[1:]
 
 
 def read_companies_id(id_company):

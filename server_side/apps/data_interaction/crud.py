@@ -4,6 +4,8 @@ import server_side.apps.data_interaction.models as dm
 
 
 def create_profile(data):
+    if User.objects.filter(username=data["username"]).exists():
+        return False
     user = User(
         username=data["username"],
         first_name=data["first_name"],
@@ -17,6 +19,39 @@ def create_profile(data):
     if "subscription" in data:
         user.profile.subscription = data["subscription"]
     user.save()
+    return True
+
+
+def create_company(data):
+    if dm.Company.objects.filter(name=data["name"]).exists():
+        return False
+    company = dm.Company(
+        name=data["name"],
+        website=data["website"],
+        size=data["size"],
+        revenue=float(data["revenue"].replace(',', '.')),
+        location=data["location"],
+        description=data["description"],
+        img=data["img"],
+        market_id=data["market_id"]
+
+    )
+    company.save()
+    return True
+
+
+def create_workplace(data):
+    if dm.Workplace.objects.filter(user__user__username=data["username"],
+                                   company__name=data["name"],
+                                   position=data["position"]).exists():
+        return False
+    workplace = dm.Workplace(
+        user_id=dm.Profile.objects.get(user__username=data["username"]).id,
+        company_id=dm.Company.objects.get(name=data["name"]).id,
+        position=data["position"]
+    )
+    workplace.save()
+    return True
 
 
 def create_review(data):
@@ -52,7 +87,7 @@ def read_profile_by_email(email):
 def read_counters(username):
     return {
         "ratings": dm.AdviceRating.objects.filter(user__user__username=username).count()
-        + dm.ArticleRating.objects.filter(user__user__username=username).count(),
+                   + dm.ArticleRating.objects.filter(user__user__username=username).count(),
         "articles": dm.Article.objects.filter(author=username).count(),
         "disasters": dm.Disaster.objects.filter(user__user__username=username).count(),
     }
@@ -103,8 +138,8 @@ def update_profile_image(data):
 
 def update_profile(data):
     if (
-        data["username"] != data["username_new"]
-        and User.objects.filter(username=data["username_new"]).exists()
+            data["username"] != data["username_new"]
+            and User.objects.filter(username=data["username_new"]).exists()
     ):
         return False
     user = dm.User.objects.get(username=data["username"])
@@ -126,7 +161,7 @@ def update_company(data):
     company.name = data["name_new"]
     company.website = data["website"]
     company.size = data["size"]
-    company.revenue = data["revenue"]
+    company.revenue = float(data["revenue"].replace(',', '.'))
     company.location = data["location"]
     company.description = data["description"]
     company.save()
@@ -142,5 +177,16 @@ def update_company_image(data):
 def delete_companies_id(id_company):
     if dm.Company.objects.filter(pk=id_company).exists():
         dm.Company.objects.filter(pk=id_company).delete()
+        return True
+    return False
+
+
+def delete_workplace_username_company_position(data):
+    if dm.Workplace.objects.filter(user__user__username=data["username"],
+                                   company__name=data["name"],
+                                   position=data["position"]).exists():
+        dm.Workplace.objects.filter(user__user__username=data["username"],
+                                    company__name=data["name"],
+                                    position=data["position"]).delete()
         return True
     return False

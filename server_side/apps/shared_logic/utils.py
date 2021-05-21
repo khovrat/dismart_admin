@@ -62,6 +62,7 @@ def add_users(data, id_company):
         for workplace in users:
             data['users'].append(
                 {
+                    'username': workplace.user.user.username,
                     'fist_name': workplace.user.user.first_name,
                     'last_name': workplace.user.user.last_name,
                     'position': workplace.position,

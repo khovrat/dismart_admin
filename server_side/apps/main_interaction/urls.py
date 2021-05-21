@@ -18,9 +18,12 @@ urlpatterns = [
     path('change-image/', views.change_image),
     path('counters/', views.get_counters),
     path('companies/', views.get_companies),
+    path('companies/add/', views.add_companies),
     path('companies/delete/', views.delete_companies),
     path('companies/detail/', views.detail_companies),
     path('companies/detail/edit/', views.change_companies),
     path('companies/detail/image/', views.change_companies_image),
+    path('companies/detail/users/add/', views.add_user_companies),
+    path('companies/detail/users/delete/', views.delete_user_companies),
     path('workplace/', views.get_workplace),
 ]

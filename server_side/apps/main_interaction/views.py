@@ -63,8 +63,10 @@ def sign_out(request):
 @renderer_classes([JSONRenderer])
 def sign_up(request):
     if request.method == "PUT":
-        crud.create_profile(request.data)
-        return authenticate_base(request)
+        if crud.create_profile(request.data):
+            return authenticate_base(request)
+        else:
+            return Response(status=status.HTTP_409_CONFLICT)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 
@@ -228,4 +230,48 @@ def change_companies_image(request):
     if request.method == "PATCH":
         crud.update_company_image(request.data)
         return Response(status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["PUT"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def add_companies(request):
+    if request.method == "PUT":
+        crud.create_company(request.data)
+        base_language = settings.LANGUAGE_CODE
+        settings.LANGUAGE_CODE = request.data['language']
+        subject = _('Thanks, ') + request.data['username']
+        send_mail(
+            subject,
+            _('YourCompanyIsVeryImportantForUs'),
+            settings.EMAIL_HOST_USER,
+            [request.data['email']]
+        )
+        settings.LANGUAGE_CODE = base_language
+        return Response(status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["PUT"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def add_user_companies(request):
+    if request.method == "PUT":
+        if crud.create_workplace(request.data):
+            return Response(status=status.HTTP_200_OK)
+        else:
+            return Response(status=status.HTTP_409_CONFLICT)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["DELETE"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def delete_user_companies(request):
+    if request.method == "DELETE":
+        if crud.delete_workplace_username_company_position(request.data):
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            return Response(status=status.HTTP_418_IM_A_TEAPOT)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

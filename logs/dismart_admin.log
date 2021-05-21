@@ -494,3 +494,22 @@ ValueError: time data '2021-05-14 16:05:02.368593+00:00' does not match format '
 2021-05-21 10:34:51,910 INFO Watching for file changes with StatReloader
 2021-05-21 10:35:40,514 INFO Watching for file changes with StatReloader
 2021-05-21 10:35:51,534 INFO Watching for file changes with StatReloader
+2021-05-21 12:10:08,639 INFO Watching for file changes with StatReloader
+2021-05-21 12:11:16,978 WARNING Session data corrupted
+2021-05-21 12:11:17,113 WARNING Session data corrupted
+2021-05-21 12:11:26,572 WARNING Session data corrupted
+2021-05-21 12:13:13,199 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 217, in change_companies
+    if crud.update_company(request.data):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\crud.py", line 129, in update_company
+    company.revenue = float(data["revenue"])
+ValueError: could not convert string to float: '2000,0'
+2021-05-21 12:14:21,449 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\crud.py changed, reloading.
+2021-05-21 12:14:26,317 INFO Watching for file changes with StatReloader
+2021-05-21 12:20:30,682 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py changed, reloading.
+2021-05-21 12:20:32,973 INFO Watching for file changes with StatReloader
+2021-05-21 12:37:03,337 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py changed, reloading.
+2021-05-21 12:37:05,158 INFO Watching for file changes with StatReloader

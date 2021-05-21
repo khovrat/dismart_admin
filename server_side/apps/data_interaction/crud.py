@@ -124,6 +124,10 @@ def update_profile_password(data):
     user.save()
 
 
+def read_users():
+    return dm.Profile.objects.all()
+
+
 def update_profile_subscription(data):
     user = dm.Profile.objects.get(user__username=data["username"])
     user.subscription = data["subscription"]

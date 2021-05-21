@@ -195,6 +195,7 @@ def detail_companies(request):
         if company is not None:
             data = serializers_wrapper.get_serialize_company(company)
             data = utils.add_users(data, request.GET['id'])
+            data.update(utils.add_all_users())
             data = utils.translate_market(data, request.GET['language'])
             return Response(data, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_404_NOT_FOUND)

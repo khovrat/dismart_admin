@@ -84,3 +84,16 @@ def add_position(username):
         'position': workplaces[0].position,
         'company': workplaces[0].company.name
     }
+
+
+def add_all_users():
+    users = crud.read_users()
+    data = []
+    if users.count() != 0:
+        for user in users:
+            data.append(
+                {
+                    'username': user.user.username
+                }
+            )
+    return {'all_users': data}

@@ -1,3 +1,5 @@
+import datetime
+
 import stripe
 from django.db.models import QuerySet
 
@@ -44,6 +46,40 @@ def add_completeness(data):
 
 
 def translate_market(data, language):
-    for company in data:
-        company['market'] = crud.read_market_translate(company['market']['id'], language)
+    if isinstance(data, list):
+        for company in data:
+            company['market'] = crud.read_market_translate(company['market']['id'], language)
+        return data
+    data['market'] = crud.read_market_translate(data['market']['id'], language)
     return data
+
+
+def add_users(data, id_company):
+    users = crud.read_workplace_company(id_company)
+    data['users_count'] = users.count()
+    data['users'] = []
+    if users.count() != 0:
+        for workplace in users:
+            data['users'].append(
+                {
+                    'fist_name': workplace.user.user.first_name,
+                    'last_name': workplace.user.user.last_name,
+                    'position': workplace.position,
+                    'date_joined': workplace.user.user.date_joined.strftime('%d.%m.%Y'),
+                    'img': workplace.user.img
+                }
+            )
+    return data
+
+
+def add_position(username):
+    workplaces = crud.read_workplace_username(username)
+    if workplaces.count() == 0:
+        return {
+            'position': "",
+            'company': ""
+        }
+    return {
+        'position': workplaces[0].position,
+        'company': workplaces[0].company.name
+    }

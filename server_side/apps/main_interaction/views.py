@@ -167,7 +167,7 @@ def get_companies(request):
     if request.method == "GET":
         data = serializers_wrapper.get_serialize_company(crud.read_companies_username(request.GET['username']))
         data = utils.add_completeness(data)
-        data = utils.translate_market(data, request.GET['username'])
+        data = utils.translate_market(data, request.GET['language'])
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
@@ -181,4 +181,19 @@ def delete_companies(request):
             return Response(status=status.HTTP_204_NO_CONTENT)
         else:
             return Response(status=status.HTTP_418_IM_A_TEAPOT)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def detail_companies(request):
+    if request.method == "GET":
+        company = crud.read_companies_id(request.GET['id'])
+        if company is not None:
+            data = serializers_wrapper.get_serialize_company(company)
+            data = utils.add_users(data, request.GET['id'])
+            data = utils.translate_market(data, request.GET['language'])
+            return Response(data, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_404_NOT_FOUND)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

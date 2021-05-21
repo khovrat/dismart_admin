@@ -3,6 +3,7 @@ from rest_framework import status
 from rest_framework.response import Response
 
 from server_side.apps.data_interaction import serializers_wrapper
+from server_side.apps.shared_logic import utils
 
 
 def authenticate_base(request):
@@ -12,13 +13,14 @@ def authenticate_base(request):
     if user:
         if user.is_active:
             login(request, user)
+            data = serializers_wrapper.get_serialize_profile(user.profile)
+            data.update(utils.add_position(request.data["username"]))
             return Response(
-                serializers_wrapper.get_serialize_profile(user.profile),
+                data,
                 status=status.HTTP_200_OK,
             )
         else:
             return Response(
-                serializers_wrapper.get_serialize_profile(user.profile),
                 status=status.HTTP_400_BAD_REQUEST,
             )
     else:

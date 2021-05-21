@@ -19,4 +19,5 @@ urlpatterns = [
     path('counters/', views.get_counters),
     path('companies/', views.get_companies),
     path('companies/delete/', views.delete_companies),
+    path('companies/detail/', views.detail_companies),
 ]

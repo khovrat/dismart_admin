@@ -63,10 +63,24 @@ def read_companies_username(username):
     return dm.Company.objects.filter(workplace__user__user_id=user.user_id)
 
 
+def read_companies_id(id_company):
+    if dm.Company.objects.filter(pk=id_company).exists():
+        return dm.Company.objects.get(pk=id_company)
+    return None
+
+
 def read_market_translate(id_market, language):
     if dm.MarketTranslation.objects.filter(market_id=id_market, language=language).exists():
         return dm.MarketTranslation.objects.get(market_id=id_market, language=language)
     return ''
+
+
+def read_workplace_company(id_company):
+    return dm.Workplace.objects.filter(company_id=id_company)
+
+
+def read_workplace_username(username):
+    return dm.Workplace.objects.filter(user__user__username=username)
 
 
 def update_profile_password(data):

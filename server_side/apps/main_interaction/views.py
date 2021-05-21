@@ -296,6 +296,6 @@ def get_reviews(request):
 def get_user_reviews(request):
     if request.method == "GET":
         data = serializers_wrapper.get_serialize_user_review(crud.read_reviews_username(request.GET['username']))
-        data = utils.change_data(data)
+        data = utils.change_date(data)
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

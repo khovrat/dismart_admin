@@ -26,4 +26,6 @@ urlpatterns = [
     path('companies/detail/users/add/', views.add_user_companies),
     path('companies/detail/users/delete/', views.delete_user_companies),
     path('workplace/', views.get_workplace),
+    path('reviews/', views.get_reviews),
+    path('reviews/personal/', views.get_user_reviews),
 ]

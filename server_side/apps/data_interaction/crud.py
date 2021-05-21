@@ -138,6 +138,14 @@ def read_market_translation_language_id(language, market_id):
     return ''
 
 
+def read_reviews():
+    return dm.UserReview.objects.all()
+
+
+def read_reviews_username(username):
+    return dm.UserReview.objects.filter(user__user__username=username)
+
+
 def update_profile_subscription(data):
     user = dm.Profile.objects.get(user__username=data["username"])
     user.subscription = data["subscription"]

@@ -124,7 +124,7 @@ def change_date(data):
 
 def add_rating_advices(data, username):
     for advice in data:
-        advice["rating_my"] = crud.read_advice_rating_username_id(username, advice["advice"]["id"])
+        advice["rating_my"] = crud.read_advice_rating_username_id(username, advice["advice"]["id"]).rating
         advice["amount"] = crud.read_advice_rating_id(advice["advice"]["id"]).count()
         advice["rating"] = get_average_rating(crud.read_advice_rating_id(advice["advice"]["id"]))
     return data

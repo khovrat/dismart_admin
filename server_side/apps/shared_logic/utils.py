@@ -162,7 +162,7 @@ def filter_advice(data, filter_):
     new_data = []
     for advice in data:
         if float(advice["rating"]) <= float(filter_["rating"]) and float(advice["amount"]) <= float(filter_["amount"]):
-            new_data.append(data)
+            new_data.append(advice)
     return new_data
 
 

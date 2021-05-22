@@ -667,3 +667,4 @@ Traceback (most recent call last):
   File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 164, in filter_advice
     if float(advice["rating"]) <= float(filter_["rating"]) and float(advice["amount"]) <= float(filter_["amount"]):
 ValueError: could not convert string to float: '2,5'
+2021-05-22 14:37:31,450 INFO Watching for file changes with StatReloader

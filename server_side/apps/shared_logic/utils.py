@@ -161,7 +161,7 @@ def get_max_amount(data):
 def filter_advice(data, filter_):
     new_data = []
     for advice in data:
-        if int(advice["rating"]) <= int(filter_["rating"]) and int(advice["amount"]) <= int(filter_["amount"]):
+        if float(advice["rating"]) <= float(filter_["rating"]) and float(advice["amount"]) <= float(filter_["amount"]):
             new_data.append(data)
     return new_data
 

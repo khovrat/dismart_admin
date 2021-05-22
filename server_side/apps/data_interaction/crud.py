@@ -56,8 +56,7 @@ def create_workplace(data):
 
 def create_advice_rating(data):
     if dm.AdviceRating.objects.filter(user__user__username=data["username"], advice_id=data["id"]).exists():
-        advice_rating = dm.AdviceRating.objects.get(user__user__username=data["username"], advice_id=data["id"])
-        advice_rating.rating = data["rating"]
+        update_advice_rating(data)
         return True
     advice_rating = dm.AdviceRating(
         user_id=dm.Profile.objects.get(user__username=data["username"]).id,
@@ -232,6 +231,12 @@ def update_company_image(data):
     company = dm.Company.objects.get(name=data["name"])
     company.img = data["img"]
     company.save()
+
+
+def update_advice_rating(data):
+    advice_rating = dm.AdviceRating.objects.get(user__user__username=data["username"], advice_id=data["id"])
+    advice_rating.rating = data["rating"]
+    advice_rating.save()
 
 
 def delete_companies_id(id_company):

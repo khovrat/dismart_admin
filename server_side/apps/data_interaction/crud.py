@@ -56,7 +56,9 @@ def create_workplace(data):
 
 def create_advice_rating(data):
     if dm.AdviceRating.objects.filter(user__user__username=data["username"], advice_id=data["id"]).exists():
-        return False
+        advice_rating = dm.AdviceRating.objects.get(user__user__username=data["username"], advice_id=data["id"])
+        advice_rating.rating = data["rating"]
+        return True
     advice_rating = dm.AdviceRating(
         user_id=dm.Profile.objects.get(user__username=data["username"]).id,
         advice_id=data["id"],

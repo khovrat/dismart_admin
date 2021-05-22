@@ -299,3 +299,52 @@ def get_user_reviews(request):
         data = utils.change_date(data)
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def get_advices(request):
+    if request.method == "GET":
+        data = serializers_wrapper.get_serialize_advice_translation(
+            crud.read_advice_translation_language(request.GET["language"]))
+        data = utils.add_rating_advices(data, request.GET["username"])
+        data = utils.add_disaster_type_translation(data, request.GET["language"])
+        data = {
+            "advices": data,
+            "disasters": utils.get_disasters_type(request.GET["language"]),
+            "max_amount": utils.get_max_amount(data)
+        }
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def filter_advices(request):
+    if request.method == "GET":
+        data = serializers_wrapper.get_serialize_advice_translation(
+            crud.read_advice_translation_language(request.GET["language"]))
+        data = utils.add_rating_advices(data, request.GET["username"])
+        data = utils.add_disaster_type_translation(data, request.GET["language"])
+        data = {
+            "advices": data,
+            "disasters": utils.get_disasters_type(request.GET["language"]),
+            "max_amount": utils.get_max_amount(data)
+        }
+        data["advices"] = utils.filter_advice(data["advices"], request.GET)
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["PUT"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def rate_advices(request):
+    if request.method == "PUT":
+        if crud.create_advice_rating(request.data):
+            return Response(status=status.HTTP_201_CREATED)
+        else:
+            return Response(status=status.HTTP_418_IM_A_TEAPOT)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

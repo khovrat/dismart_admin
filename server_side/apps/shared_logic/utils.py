@@ -120,3 +120,53 @@ def change_date(data):
     for item in data:
         item['time'] = datetime.datetime.strptime(item['time'], '%Y-%m-%dT%H:%M:%S.%fZ').strftime('%d.%m.%Y')
     return data
+
+
+def add_rating_advices(data, username):
+    for advice in data:
+        advice["rating_my"] = crud.read_advice_rating_username_id(username, advice["advice"]["id"])
+        advice["amount"] = crud.read_advice_rating_id(advice["advice"]["id"]).count()
+        advice["rating"] = get_average_rating(crud.read_advice_rating_id(advice["advice"]["id"]))
+    return data
+
+
+def get_average_rating(ratings):
+    if ratings.count() == 0:
+        return round(0, 2)
+    sum_ = 0
+    for rating in ratings:
+        sum_ += rating.rating
+    return round(sum_ / ratings.count(), 2)
+
+
+def get_disasters_type(language):
+    disaster_types = crud.read_disaster_type_translation_language(language)
+    data = []
+    for disaster_type in disaster_types:
+        data.append({
+            'id': disaster_type.type.id,
+            'name': disaster_type.name
+        })
+    return data
+
+
+def get_max_amount(data):
+    max_ = 0
+    for item in data:
+        if item["amount"] > max_:
+            max_ = item["amount"]
+    return max_
+
+
+def filter_advice(data, filter_):
+    new_data = []
+    for advice in data:
+        if int(advice["rating"]) <= int(filter_["rating"]) and int(advice["amount"]) <= int(filter_["amount"]):
+            new_data.append(data)
+    return new_data
+
+
+def add_disaster_type_translation(data, language):
+    for item in data:
+        item["advice"]["type"] = crud.read_disaster_type_translation_language_id(item["advice"]["type"]["id"], language).name
+    return data

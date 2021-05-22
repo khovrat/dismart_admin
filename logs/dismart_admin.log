@@ -519,3 +519,141 @@ ValueError: could not convert string to float: '2000,0'
 2021-05-21 17:33:52,985 INFO Watching for file changes with StatReloader
 2021-05-21 17:57:25,249 INFO Watching for file changes with StatReloader
 2021-05-21 18:35:13,121 INFO Watching for file changes with StatReloader
+2021-05-22 13:38:00,271 INFO Watching for file changes with StatReloader
+2021-05-22 13:39:49,251 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 311, in get_advices
+    data = utils.add_rating_advices(data, request.GET["username"])
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'username'
+2021-05-22 13:40:15,718 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 311, in get_advices
+    data = utils.add_rating_advices(data, request.GET["username"])
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 129, in add_rating_advices
+    advice["rating"] = get_average_rating(crud.read_advice_rating_id(advice["advice"]["id"]))
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 137, in get_average_rating
+    return round(sum_ / ratings.count(), 2)
+ZeroDivisionError: division by zero
+2021-05-22 13:41:30,281 INFO Watching for file changes with StatReloader
+2021-05-22 13:41:33,529 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 314, in get_advices
+    "disasters": utils.get_disasters_type(request.GET["language"]),
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 147, in get_disasters_type
+    'id': disaster_type.disaster.id,
+AttributeError: 'DisasterTypeTranslation' object has no attribute 'disaster'
+2021-05-22 13:42:38,926 INFO Watching for file changes with StatReloader
+2021-05-22 13:43:44,031 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 328, in filter_advices
+    data = serializers_wrapper.get_serialize_advice_translation(utils.filter_advice(data, request.GET))
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 164, in filter_advice
+    if advice["rating"] <= filter_["rating"] and advice["amount"] <= filter_["amount"]:
+KeyError: 'rating'
+2021-05-22 13:44:45,744 INFO Watching for file changes with StatReloader
+2021-05-22 13:46:03,145 INFO Watching for file changes with StatReloader
+2021-05-22 13:46:22,224 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 328, in filter_advices
+    data = serializers_wrapper.get_serialize_advice_translation(utils.filter_advice(data, request.GET))
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 164, in filter_advice
+    if advice["rating"] <= filter_["rating"] and advice["amount"] <= filter_["amount"]:
+KeyError: 'rating'
+2021-05-22 13:46:45,124 INFO Watching for file changes with StatReloader
+2021-05-22 13:46:47,547 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 328, in filter_advices
+    data = serializers_wrapper.get_serialize_advice_translation(utils.filter_advice(data, request.GET))
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 164, in filter_advice
+    if advice["rating"] <= filter_["rating"] and advice["amount"] <= filter_["amount"]:
+KeyError: 'rating'
+2021-05-22 13:47:53,937 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 328, in filter_advices
+    data = serializers_wrapper.get_serialize_advice_translation(utils.filter_advice(data, request.GET))
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 164, in filter_advice
+    if advice["rating"] <= filter_["rating"] and advice["amount"] <= filter_["amount"]:
+KeyError: 'rating'
+2021-05-22 13:48:34,736 INFO Watching for file changes with StatReloader
+2021-05-22 13:48:39,577 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 334, in filter_advices
+    data["advices"] = utils.filter_advice(data["advices"], request.GET)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 164, in filter_advice
+    if advice["rating"] <= filter_["rating"] and advice["amount"] <= filter_["amount"]:
+TypeError: '<=' not supported between instances of 'int' and 'str'
+2021-05-22 13:49:06,183 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py changed, reloading.
+2021-05-22 13:49:08,873 INFO Watching for file changes with StatReloader
+2021-05-22 13:49:35,567 INFO Watching for file changes with StatReloader
+2021-05-22 13:53:00,750 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py changed, reloading.
+2021-05-22 13:53:02,718 INFO Watching for file changes with StatReloader
+2021-05-22 14:07:04,353 INFO Watching for file changes with StatReloader
+2021-05-22 14:07:25,101 ERROR Internal Server Error: /api/advices/filter/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\renderers.py", line 103, in render
+    allow_nan=not self.strict, separators=separators
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "C:\Users\artik\AppData\Local\Programs\Python\Python36-32\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\artik\AppData\Local\Programs\Python\Python36-32\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\artik\AppData\Local\Programs\Python\Python36-32\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "C:\Users\artik\AppData\Local\Programs\Python\Python36-32\lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'DisasterTypeTranslation' is not JSON serializable
+2021-05-22 14:09:07,376 INFO Watching for file changes with StatReloader
+2021-05-22 14:09:58,439 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'rating'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 336, in filter_advices
+    data["advices"] = utils.filter_advice(data["advices"], request.GET)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 164, in filter_advice
+    if int(advice["rating"]) <= int(filter_["rating"]) and int(advice["amount"]) <= int(filter_["amount"]):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'rating'

@@ -28,4 +28,7 @@ urlpatterns = [
     path('workplace/', views.get_workplace),
     path('reviews/', views.get_reviews),
     path('reviews/personal/', views.get_user_reviews),
+    path('advices/', views.get_advices),
+    path('advices/filter/', views.filter_advices),
+    path('advices/rate/', views.rate_advices)
 ]

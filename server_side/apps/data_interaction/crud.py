@@ -54,6 +54,18 @@ def create_workplace(data):
     return True
 
 
+def create_advice_rating(data):
+    if dm.AdviceRating.objects.filter(user__user__username=data["username"], advice_id=data["id"]).exists():
+        return False
+    advice_rating = dm.AdviceRating(
+        user_id=dm.Profile.objects.get(user__username=data["username"]).id,
+        advice_id=data["id"],
+        rating=data["rating"]
+    )
+    advice_rating.save()
+    return True
+
+
 def create_review(data):
     profile = read_profile_by_username(data["username"])
     review = dm.UserReview(user_id=profile.id, review=data["review"])
@@ -144,6 +156,30 @@ def read_reviews():
 
 def read_reviews_username(username):
     return dm.UserReview.objects.filter(user__user__username=username)
+
+
+def read_advice_translation_language(language):
+    return dm.AdviceTranslation.objects.filter(language=language)
+
+
+def read_advice_rating_id(id_advice):
+    return dm.AdviceRating.objects.filter(advice_id=id_advice)
+
+
+def read_advice_rating_username_id(username, id_advice):
+    if dm.AdviceRating.objects.filter(user__user__username=username, advice_id=id_advice).exists():
+        return dm.AdviceRating.objects.get(user__user__username=username, advice_id=id_advice)
+    return ''
+
+
+def read_disaster_type_translation_language(language):
+    return dm.DisasterTypeTranslation.objects.filter(language=language)
+
+
+def read_disaster_type_translation_language_id(id_type, language):
+    if dm.DisasterTypeTranslation.objects.filter(type_id=id_type, language=language).exists():
+        return dm.DisasterTypeTranslation.objects.get(type_id=id_type, language=language)
+    return ''
 
 
 def update_profile_subscription(data):

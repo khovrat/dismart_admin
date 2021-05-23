@@ -189,12 +189,19 @@ def filter_aid(data, filter_):
 
 def add_disaster_type_translation_advice(data, language):
     for item in data:
-        item["advice"]["type"] = crud.read_disaster_type_translation_language_id(item["advice"]["type"]["id"],
-                                                                                 language).name
+        type_ = crud.read_disaster_type_translation_language_id(item["advice"]["type"]["id"], language)
+        if type_ != '':
+            item["advice"]["type"] = type_.name
+        else:
+            item["advice"]["type"] = type_
     return data
 
 
 def add_disaster_type_translation_article(data, language):
     for item in data:
-        item["type"] = crud.read_disaster_type_translation_language_id(item["type"]["id"], language).name
+        type_ = crud.read_disaster_type_translation_language_id(item["type"]["id"], language)
+        if type_ != '':
+            item["type"] = type_.name
+        else:
+            item["type"] = type_
     return data

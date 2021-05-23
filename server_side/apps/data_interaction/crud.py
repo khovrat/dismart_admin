@@ -287,9 +287,9 @@ def update_article_rating(data):
 
 
 def update_article(data):
-    if not dm.Article.objects.filter(author=data["username"], name=data["name"]).exists():
+    if not dm.Article.objects.filter(author=data["username"], name=data["name_old"]).exists():
         return False
-    article = dm.Article.objects.get(author=data["username"], name=data["name"])
+    article = dm.Article.objects.get(author=data["username"], name=data["name_old"])
     article.name = data["name"]
     article.language = data["language"]
     article.type_id = data["type"]

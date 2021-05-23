@@ -32,9 +32,9 @@ urlpatterns = [
     path('advices/filter/', views.filter_advices),
     path('advices/rate/', views.rate_advices),
     path('articles/', views.get_articles),
-    path('articles/create/', views.filter_articles),
-    path('articles/delete/', views.filter_articles),
-    path('articles/update/', views.filter_articles),
+    path('articles/create/', views.create_articles),
+    path('articles/delete/', views.delete_articles),
+    path('articles/update/', views.update_articles),
     path('articles/filter/', views.filter_articles),
     path('articles/rate/', views.rate_articles),
 ]

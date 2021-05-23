@@ -317,8 +317,8 @@ def delete_workplace_username_company_position(data):
     return False
 
 
-def delete_article_author_name(username, name):
-    if dm.Article.objects.filter(author=username, name=name).exists():
-        dm.Article.objects.filter(author=username, name=name).delete()
+def delete_article_id(id_article):
+    if dm.Article.objects.filter(pk=id_article).exists():
+        dm.Article.objects.filter(pk=id_article).delete()
         return True
     return False

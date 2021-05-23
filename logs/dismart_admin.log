@@ -672,3 +672,26 @@ ValueError: could not convert string to float: '2,5'
 2021-05-22 19:04:40,831 INFO Watching for file changes with StatReloader
 2021-05-22 19:05:12,187 INFO Watching for file changes with StatReloader
 2021-05-22 19:30:07,250 INFO Watching for file changes with StatReloader
+2021-05-23 11:06:06,615 INFO Watching for file changes with StatReloader
+2021-05-23 11:06:56,698 INFO Watching for file changes with StatReloader
+2021-05-23 11:07:01,047 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 361, in get_articles
+    data = utils.add_disaster_type_translation(data, request.GET["language"])
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 192, in add_disaster_type_translation
+    item["advice"]["type"] = crud.read_disaster_type_translation_language_id(item["advice"]["type"]["id"],
+KeyError: 'advice'
+2021-05-23 11:08:36,691 INFO Watching for file changes with StatReloader
+2021-05-23 11:08:43,079 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 361, in get_articles
+    data = utils.add_disaster_type_translation_article(data, request.GET["language"])
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 199, in add_disaster_type_translation_article
+    item["type"] = crud.read_disaster_type_translation_language_id(item["type"]["id"], language).name
+AttributeError: 'str' object has no attribute 'name'
+2021-05-23 11:10:06,348 INFO Watching for file changes with StatReloader
+2021-05-23 11:11:01,826 INFO Watching for file changes with StatReloader

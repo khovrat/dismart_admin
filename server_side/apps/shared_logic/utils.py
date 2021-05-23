@@ -124,7 +124,11 @@ def change_date(data):
 
 def add_rating_advices(data, username):
     for advice in data:
-        advice["rating_my"] = crud.read_advice_rating_username_id(username, advice["advice"]["id"]).rating
+        rating = crud.read_advice_rating_username_id(username, advice["advice"]["id"])
+        if rating == '':
+            advice["rating_my"] = rating
+        else:
+            advice["rating_my"] = rating.rating
         advice["amount"] = crud.read_advice_rating_id(advice["advice"]["id"]).count()
         advice["rating"] = get_average_rating(crud.read_advice_rating_id(advice["advice"]["id"]))
     return data
@@ -132,7 +136,11 @@ def add_rating_advices(data, username):
 
 def add_rating_articles(data, username):
     for article in data:
-        article["rating_my"] = crud.read_article_rating_username_id(username, article["id"]).rating
+        rating = crud.read_article_rating_username_id(username, article["id"])
+        if rating == '':
+            article["rating_my"] = rating
+        else:
+            article["rating_my"] = rating.rating
         article["amount"] = crud.read_article_rating_id(article["id"]).count()
         article["rating"] = get_average_rating(crud.read_article_rating_id(article["id"]))
     return data
@@ -179,8 +187,14 @@ def filter_aid(data, filter_):
     return new_data
 
 
-def add_disaster_type_translation(data, language):
+def add_disaster_type_translation_advice(data, language):
     for item in data:
         item["advice"]["type"] = crud.read_disaster_type_translation_language_id(item["advice"]["type"]["id"],
                                                                                  language).name
+    return data
+
+
+def add_disaster_type_translation_article(data, language):
+    for item in data:
+        item["type"] = crud.read_disaster_type_translation_language_id(item["type"]["id"], language).name
     return data

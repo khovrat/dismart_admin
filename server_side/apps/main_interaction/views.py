@@ -309,7 +309,7 @@ def get_advices(request):
         data = serializers_wrapper.get_serialize_advice_translation(
             crud.read_advice_translation_language(request.GET["language"]))
         data = utils.add_rating_advices(data, request.GET["username"])
-        data = utils.add_disaster_type_translation(data, request.GET["language"])
+        data = utils.add_disaster_type_translation_advice(data, request.GET["language"])
         data = {
             "advices": data,
             "disasters": utils.get_disasters_type(request.GET["language"]),
@@ -327,7 +327,7 @@ def filter_advices(request):
         data = serializers_wrapper.get_serialize_advice_translation(
             crud.read_advice_translation_language(request.GET["language"]))
         data = utils.add_rating_advices(data, request.GET["username"])
-        data = utils.add_disaster_type_translation(data, request.GET["language"])
+        data = utils.add_disaster_type_translation_advice(data, request.GET["language"])
         data = {
             "advices": data,
             "disasters": utils.get_disasters_type(request.GET["language"]),
@@ -358,6 +358,7 @@ def get_articles(request):
         data = serializers_wrapper.get_serialize_article(
             crud.read_article_language(request.GET["language"]))
         data = utils.add_rating_articles(data, request.GET["username"])
+        data = utils.add_disaster_type_translation_article(data, request.GET["language"])
         data = {
             "articles": data,
             "disasters": utils.get_disasters_type(request.GET["language"]),
@@ -375,6 +376,7 @@ def filter_articles(request):
         data = serializers_wrapper.get_serialize_article(
             crud.read_article_language(request.GET["language"]))
         data = utils.add_rating_articles(data, request.GET["username"])
+        data = utils.add_disaster_type_translation_article(data, request.GET["language"])
         data = {
             "articles": data,
             "disasters": utils.get_disasters_type(request.GET["language"]),
@@ -414,7 +416,7 @@ def create_articles(request):
 @renderer_classes([JSONRenderer])
 def delete_articles(request):
     if request.method == "DELETE":
-        if crud.delete_article_author_name(request.data["username"], request.data["name"]):
+        if crud.delete_article_id(request.data["id"]):
             return Response(status=status.HTTP_204_NO_CONTENT)
         else:
             return Response(status=status.HTTP_404_NOT_FOUND)

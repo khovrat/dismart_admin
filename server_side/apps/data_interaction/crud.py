@@ -94,7 +94,8 @@ def create_article(data):
         name=data["name"],
         type_id=data["type"],
         language=data["language"],
-        img=data["img"]
+        img=data["img"],
+        text=data["text"]
     )
     article.save()
     return True

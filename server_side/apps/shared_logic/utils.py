@@ -130,13 +130,26 @@ def add_rating_advices(data, username):
     return data
 
 
+def add_rating_articles(data, username):
+    for article in data:
+        article["rating_my"] = crud.read_article_rating_username_id(username, article["id"]).rating
+        article["amount"] = crud.read_article_rating_id(article["id"]).count()
+        article["rating"] = get_average_rating(crud.read_article_rating_id(article["id"]))
+    return data
+
+
 def get_average_rating(ratings):
     if ratings.count() == 0:
         return round(0, 2)
     sum_ = 0
+    index_ = 1
+    sum_index = 0
+    ratings = ratings.order_by('time')
     for rating in ratings:
-        sum_ += rating.rating
-    return round(sum_ / ratings.count(), 2)
+        sum_ += rating.rating * index_
+        sum_index += index_
+        index_ += 1
+    return round(sum_ / sum_index, 2)
 
 
 def get_disasters_type(language):
@@ -158,7 +171,7 @@ def get_max_amount(data):
     return max_
 
 
-def filter_advice(data, filter_):
+def filter_aid(data, filter_):
     new_data = []
     for advice in data:
         if float(advice["rating"]) <= float(filter_["rating"]) and float(advice["amount"]) <= float(filter_["amount"]):
@@ -168,5 +181,6 @@ def filter_advice(data, filter_):
 
 def add_disaster_type_translation(data, language):
     for item in data:
-        item["advice"]["type"] = crud.read_disaster_type_translation_language_id(item["advice"]["type"]["id"], language).name
+        item["advice"]["type"] = crud.read_disaster_type_translation_language_id(item["advice"]["type"]["id"],
+                                                                                 language).name
     return data

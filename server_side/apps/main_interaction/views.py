@@ -333,7 +333,7 @@ def filter_advices(request):
             "disasters": utils.get_disasters_type(request.GET["language"]),
             "max_amount": utils.get_max_amount(data)
         }
-        data["advices"] = utils.filter_advice(data["advices"], request.GET)
+        data["advices"] = utils.filter_aid(data["advices"], request.GET)
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
@@ -345,6 +345,89 @@ def rate_advices(request):
     if request.method == "PUT":
         if crud.create_advice_rating(request.data):
             return Response(status=status.HTTP_201_CREATED)
+        else:
+            return Response(status=status.HTTP_418_IM_A_TEAPOT)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def get_articles(request):
+    if request.method == "GET":
+        data = serializers_wrapper.get_serialize_article(
+            crud.read_article_language(request.GET["language"]))
+        data = utils.add_rating_articles(data, request.GET["username"])
+        data = {
+            "articles": data,
+            "disasters": utils.get_disasters_type(request.GET["language"]),
+            "max_amount": utils.get_max_amount(data)
+        }
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def filter_articles(request):
+    if request.method == "GET":
+        data = serializers_wrapper.get_serialize_article(
+            crud.read_article_language(request.GET["language"]))
+        data = utils.add_rating_articles(data, request.GET["username"])
+        data = {
+            "articles": data,
+            "disasters": utils.get_disasters_type(request.GET["language"]),
+            "max_amount": utils.get_max_amount(data)
+        }
+        data["articles"] = utils.filter_aid(data["articles"], request.GET)
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["PUT"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def rate_articles(request):
+    if request.method == "PUT":
+        if crud.create_article_rating(request.data):
+            return Response(status=status.HTTP_201_CREATED)
+        else:
+            return Response(status=status.HTTP_418_IM_A_TEAPOT)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["PUT"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def create_articles(request):
+    if request.method == "PUT":
+        if crud.create_article(request.data):
+            return Response(status=status.HTTP_201_CREATED)
+        else:
+            return Response(status=status.HTTP_409_CONFLICT)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["DELETE"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def delete_articles(request):
+    if request.method == "DELETE":
+        if crud.delete_article_author_name(request.data["username"], request.data["name"]):
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["PATCH"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def update_articles(request):
+    if request.method == "PATCH":
+        if crud.update_article(request.data):
+            return Response(status=status.HTTP_200_OK)
         else:
             return Response(status=status.HTTP_418_IM_A_TEAPOT)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

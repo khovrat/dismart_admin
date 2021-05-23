@@ -276,7 +276,7 @@ class Article(models.Model):
     name = models.CharField(max_length=200, null=False, verbose_name=_("name"))
     author = models.CharField(max_length=200, null=False, verbose_name=_("author"))
     date = models.DateField(auto_now_add=True, blank=True, verbose_name=_("date"))
-    text = models.BinaryField(verbose_name=_("article_text"))
+    text = models.URLField(verbose_name=_("article_text"))
 
     @class_status_logger
     def img_tag(self):
@@ -286,11 +286,11 @@ class Article(models.Model):
 
     @class_status_logger
     def __str__(self):
-        return _("advice") + ": " + str(self.id) + "; "
+        return _("article") + ": " + str(self.id) + ": " + str(self.name) + "; "
 
     class Meta:
-        verbose_name = _("advice")
-        verbose_name_plural = _("advices")
+        verbose_name = _("article")
+        verbose_name_plural = _("articles")
 
 
 class ArticleRating(models.Model):

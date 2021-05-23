@@ -668,3 +668,7 @@ Traceback (most recent call last):
     if float(advice["rating"]) <= float(filter_["rating"]) and float(advice["amount"]) <= float(filter_["amount"]):
 ValueError: could not convert string to float: '2,5'
 2021-05-22 14:37:31,450 INFO Watching for file changes with StatReloader
+2021-05-22 19:02:57,898 INFO Watching for file changes with StatReloader
+2021-05-22 19:04:40,831 INFO Watching for file changes with StatReloader
+2021-05-22 19:05:12,187 INFO Watching for file changes with StatReloader
+2021-05-22 19:30:07,250 INFO Watching for file changes with StatReloader

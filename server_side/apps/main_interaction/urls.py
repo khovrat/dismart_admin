@@ -30,5 +30,11 @@ urlpatterns = [
     path('reviews/personal/', views.get_user_reviews),
     path('advices/', views.get_advices),
     path('advices/filter/', views.filter_advices),
-    path('advices/rate/', views.rate_advices)
+    path('advices/rate/', views.rate_advices),
+    path('articles/', views.get_articles),
+    path('articles/create/', views.filter_articles),
+    path('articles/delete/', views.filter_articles),
+    path('articles/update/', views.filter_articles),
+    path('articles/filter/', views.filter_articles),
+    path('articles/rate/', views.rate_articles),
 ]

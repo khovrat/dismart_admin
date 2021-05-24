@@ -441,7 +441,8 @@ def update_articles(request):
 def get_news(request):
     if request.method == "GET":
         data = {
-            "news": utils.get_search_request(request.GET["language"])
+            "news": utils.get_search_request(request.GET["language"]),
+            "disasters": utils.get_disasters_type(request.GET["language"])
         }
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
@@ -453,7 +454,8 @@ def get_news(request):
 def filter_news(request):
     if request.method == "GET":
         data = {
-            "news": utils.filter_search_request(request.GET["language"], request.GET["id"])
+            "news": utils.filter_search_request(request.GET["language"], request.GET["id"]),
+            "disasters": utils.get_disasters_type(request.GET["language_base"])
         }
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

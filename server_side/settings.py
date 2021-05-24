@@ -48,8 +48,10 @@ INSTALLED_APPS = [
     "server_side.apps.main_interaction.apps.MainInteractionConfig",
     "server_side.apps.module_interaction.apps.ModuleInteractionConfig",
     "server_side.apps.shared_logic.apps.SharedLogicConfig",
+    "server_side.apps.module_interaction.dismartbot",
     "admin_reorder",
     "smuggler",
+    "django_tgbot",
 ]
 
 MIDDLEWARE = [

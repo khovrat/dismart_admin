@@ -37,4 +37,6 @@ urlpatterns = [
     path('articles/update/', views.update_articles),
     path('articles/filter/', views.filter_articles),
     path('articles/rate/', views.rate_articles),
+    path('news/', views.get_news),
+    path('news/filter/', views.filter_news)
 ]

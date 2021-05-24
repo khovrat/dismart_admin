@@ -205,3 +205,42 @@ def add_disaster_type_translation_article(data, language):
         else:
             item["type"] = type_
     return data
+
+
+def get_search_request(language):
+    search = ''
+    disasters = crud.read_disaster_type_translation_language(language=language)
+    if disasters.count() != 0:
+        for disaster in disasters:
+            search += disaster.name + ' OR '
+    search += get_base_search_request(language)
+    return search
+
+
+def filter_search_request(language, type_):
+    search = ''
+    if ' ' in type_:
+        types = type_.split()
+        for item in types:
+            disaster = crud.read_disaster_type_translation_language_id(item, language)
+            if disaster != '':
+                search += disaster.name + ' OR '
+    else:
+        disaster = crud.read_disaster_type_translation_language_id(type_, language)
+        if disaster != '':
+            search += disaster.name + ' OR '
+    search += get_base_search_request(language)
+    return search
+
+
+def get_base_search_request(language):
+    if language == 'uk':
+        return 'катастрофа OR біда OR халепа OR проблема OR криза'
+    if language == 'en':
+        return 'catastrophe OR trouble OR problem OR crisis OR disaster'
+    if language == 'de':
+        return 'Katastrophe OR Ärger OR Kalamität OR Problem ODER Krise'
+    if language == 'ru':
+        return 'катастрофа OR беда OR неприятность OR проблема OR кризис'
+    if language == 'be':
+        return 'катастрофа OR бяда OR праблема OR праблема OR крызіс'

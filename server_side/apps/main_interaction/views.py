@@ -433,3 +433,27 @@ def update_articles(request):
         else:
             return Response(status=status.HTTP_418_IM_A_TEAPOT)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def get_news(request):
+    if request.method == "GET":
+        data = {
+            "news": utils.get_search_request(request.GET["language"])
+        }
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def filter_news(request):
+    if request.method == "GET":
+        data = {
+            "news": utils.filter_search_request(request.GET["language"], request.GET["id"])
+        }
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

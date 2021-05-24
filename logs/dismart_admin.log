@@ -699,3 +699,5 @@ AttributeError: 'str' object has no attribute 'name'
 2021-05-24 10:00:51,894 INFO Watching for file changes with StatReloader
 2021-05-24 10:01:45,019 INFO Watching for file changes with StatReloader
 2021-05-24 10:02:36,399 INFO Watching for file changes with StatReloader
+2021-05-24 10:06:35,371 INFO Watching for file changes with StatReloader
+2021-05-24 10:10:55,150 INFO Watching for file changes with StatReloader

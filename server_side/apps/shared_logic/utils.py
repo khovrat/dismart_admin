@@ -217,7 +217,22 @@ def get_search_request(language):
     return search
 
 
-def filter_search_request(language, type_):
+def filter_search_request(base_language, type_):
+    search = ''
+    if ' ' in base_language:
+        languages = base_language.split()
+        for num, language in enumerate(languages):
+            search += get_search_disaster_language(type_, language)
+            search += get_base_search_request(language)
+            if num != len(languages) - 1:
+                search += ' OR '
+    else:
+        search += get_search_disaster_language(type_, base_language)
+        search += get_base_search_request(base_language)
+    return search
+
+
+def get_search_disaster_language(type_, language):
     search = ''
     if ' ' in type_:
         types = type_.split()
@@ -229,7 +244,6 @@ def filter_search_request(language, type_):
         disaster = crud.read_disaster_type_translation_language_id(type_, language)
         if disaster != '':
             search += disaster.name + ' OR '
-    search += get_base_search_request(language)
     return search
 
 

@@ -6,7 +6,7 @@ from .models import TelegramState
 from .bot import TelegramBot
 
 
-@processor(state_manager, from_states='asked_for_name', message_types=message_types.Text, update_types=update_types.Message)
+@processor(state_manager, from_states='', message_types=message_types.Text, update_types=update_types.Message)
 def say_hello(bot, update, state):
     text = update.get_message().get_text()
     if text == 'Alireza':

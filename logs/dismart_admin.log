@@ -1543,3 +1543,6 @@ Traceback (most recent call last):
     reply = send_welcome(text_q)
 TypeError: send_welcome() missing 1 required positional argument: 'base_language'
 2021-05-25 14:11:46,878 INFO Watching for file changes with StatReloader
+2021-05-25 14:16:11,555 INFO Watching for file changes with StatReloader
+2021-05-25 14:19:53,468 INFO Watching for file changes with StatReloader
+2021-05-25 14:20:04,664 INFO Watching for file changes with StatReloader

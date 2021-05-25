@@ -646,3 +646,29 @@ class TargetAudienceBehaviour(models.Model):
     class Meta:
         verbose_name = _("target_audience_behaviour")
         verbose_name_plural = _("target_audiences_behaviours")
+
+
+class TelegramUser(models.Model):
+    user = models.TextField(
+        verbose_name=_("user"), help_text=_("user_help"), unique=True
+    )
+    language = models.TextField(
+        verbose_name=_("language"), help_text=_("language_help")
+    )
+
+    @class_status_logger
+    def __str__(self):
+        return (
+            _("user")
+            + ": "
+            + str(self.user)
+            + "; "
+            + _("language")
+            + ": "
+            + str(self.language)
+            + "; "
+        )
+
+    class Meta:
+        verbose_name = _("user_telegram")
+        verbose_name_plural = _("users_telegram")

@@ -101,6 +101,13 @@ def create_article(data):
     return True
 
 
+def create_telegram_user(user, language):
+    if dm.TelegramUser.objects.filter(user=user, language=language).exists:
+        return
+    user = dm.TelegramUser(user=user, language=language)
+    user.save()
+
+
 def read_amount_users():
     return dm.User.objects.count()
 
@@ -229,6 +236,10 @@ def read_article_language(language):
     return dm.Article.objects.filter(language=language)
 
 
+def read_telegram_user_user(user):
+    return dm.TelegramUser.objects.get(user=user)
+
+
 def update_profile_subscription(data):
     user = dm.Profile.objects.get(user__username=data["username"])
     user.subscription = data["subscription"]
@@ -301,6 +312,12 @@ def update_article(data):
     article.img = data["img"]
     article.save()
     return True
+
+
+def update_telegram_user(user, language):
+    user = dm.TelegramUser.objects.get(user=user)
+    user.language = language
+    user.save()
 
 
 def delete_companies_id(id_company):

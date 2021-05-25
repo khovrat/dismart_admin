@@ -1546,3 +1546,38 @@ TypeError: send_welcome() missing 1 required positional argument: 'base_language
 2021-05-25 14:16:11,555 INFO Watching for file changes with StatReloader
 2021-05-25 14:19:53,468 INFO Watching for file changes with StatReloader
 2021-05-25 14:20:04,664 INFO Watching for file changes with StatReloader
+2021-05-25 14:33:14,696 INFO Watching for file changes with StatReloader
+2021-05-25 14:44:56,154 INFO Watching for file changes with StatReloader
+2021-05-25 14:45:49,031 INFO Watching for file changes with StatReloader
+2021-05-25 14:47:13,107 INFO Watching for file changes with StatReloader
+2021-05-25 14:47:22,328 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 45, in webhook
+    request_t['originalDetectIntentRequest']['payload']['data']['callbackQuery']['from']['id']
+KeyError: 'callbackQuery'
+2021-05-25 14:47:38,423 INFO Watching for file changes with StatReloader
+2021-05-25 14:50:55,824 INFO Watching for file changes with StatReloader
+2021-05-25 14:51:01,430 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 24, in webhook
+    request_t['originalDetectIntentRequest']['payload']['data']['from']['id']
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\crud.py", line 238, in read_telegram_user_user
+    return dm.TelegramUser.objects.get(user=user)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\query.py", line 442, in get
+    num if not limit or num < limit else 'more than %s' % (limit - 1),
+server_side.apps.data_interaction.models.TelegramUser.MultipleObjectsReturned: get() returned more than one TelegramUser -- it returned 2!
+2021-05-25 14:55:59,751 INFO Watching for file changes with StatReloader

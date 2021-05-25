@@ -493,7 +493,6 @@ def get_disasters(request):
         data = utils.add_disaster_type_translation_article(
             data, request.GET["language"]
         )
-        data["user"] = request.GET["username"]
         data = {
             "disasters": data,
             "types": utils.get_disasters_type(request.GET["language"]),
@@ -551,7 +550,6 @@ def filter_disasters(request):
         data = utils.add_disaster_type_translation_article(
             data, request.GET["language"]
         )
-        data["user"] = request.GET["username"]
         data = {
             "disasters": data,
             "types": utils.get_disasters_type(request.GET["language"]),

@@ -108,7 +108,7 @@ def create_disaster(data):
         intensity=data["intensity"],
         type_id=data["type"],
         term=data["term"],
-        readiness_degree=data["readiness_"],
+        readiness_degree=data["readiness"],
         about=data["about"]
     )
     disaster.save()

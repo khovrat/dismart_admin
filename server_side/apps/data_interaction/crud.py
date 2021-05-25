@@ -201,6 +201,10 @@ def read_advice_rating_username_id(username, id_advice):
     return ''
 
 
+def read_article():
+    return dm.Article.objects.all()
+
+
 def read_article_rating_id(id_article):
     return dm.ArticleRating.objects.filter(article_id=id_article)
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-15 13:02+0300\n"
+"POT-Creation-Date: 2021-05-25 13:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,60 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: .\dismartbot\processors.py:52
+#: .\server_side\apps\module_interaction\bot_commands.py:11
+msgid "Welcome_message_telegram"
+msgstr "Сардэчна віншуєм у нашаму тэлеграму. Выберыце патрэбны параметр"
+
+#: .\dismartbot\processors.py:57
+#: .\server_side\apps\module_interaction\bot_commands.py:14
+msgid "Go_to_site"
+msgstr "Сайт"
+
+#: .\dismartbot\processors.py:58
+#: .\server_side\apps\module_interaction\bot_commands.py:15
+msgid "Change_language"
+msgstr "Мова"
+
+#: .\dismartbot\processors.py:59
+#: .\server_side\apps\module_interaction\bot_commands.py:16
+msgid "Start_conversation"
+msgstr "Дзеянне"
+
+#: .\dismartbot\processors.py:69
+#: .\server_side\apps\module_interaction\bot_commands.py:80
+msgid "Change_language_message"
+msgstr "Якую мову вы хочаце?"
+
+#: .\dismartbot\processors.py:86
+#: .\server_side\apps\module_interaction\bot_commands.py:96
+msgid "Start_conversation_message"
+msgstr "Якое дзеянне вы хочаце?"
+
+#: .\dismartbot\processors.py:92 .\dismartbot\processors.py:108
+#: .\dismartbot\processors.py:124 .\dismartbot\processors.py:140
+#: .\server_side\apps\module_interaction\bot_commands.py:69
+#: .\server_side\apps\module_interaction\bot_commands.py:99
+msgid "Article"
+msgstr "Артыкул"
+
+#: .\dismartbot\processors.py:92 .\dismartbot\processors.py:108
+#: .\dismartbot\processors.py:124 .\dismartbot\processors.py:140
+#: .\server_side\apps\module_interaction\bot_commands.py:70
+#: .\server_side\apps\module_interaction\bot_commands.py:100
+msgid "Video"
+msgstr "Відэа"
+
+#: .\dismartbot\processors.py:102 .\dismartbot\processors.py:118
+#: .\dismartbot\processors.py:134
+msgid "Your_link"
+msgstr "Спасылка"
+
+#: .\dismartbot\processors.py:150
+#: .\server_side\apps\module_interaction\bot_commands.py:27
+msgid "Go_to_expert: "
+msgstr "Эксперт тут:"
+
 #: .\server_side\apps\data_interaction\admin.py:9
 msgid "Dismart_Admin_Panel"
 msgstr "Панэль адміністратара"
@@ -28,74 +82,9 @@ msgstr "Панэль адміністратара"
 msgid "Dismart_Management"
 msgstr "Кіраванне"
 
-#: .\server_side\apps\data_interaction\apps.py:10
+#: .\server_side\apps\data_interaction\apps.py:8
 msgid "Tables"
 msgstr "Дадзеныя"
-
-#: .\server_side\apps\data_interaction\apps.py:17
-msgid "many"
-msgstr "Карыстальнікі"
-
-#: .\server_side\apps\data_interaction\apps.py:29
-#: .\server_side\apps\data_interaction\models.py:171
-#: .\server_side\settings.py:160
-msgid "disasters"
-msgstr "Катастрофы"
-
-#: .\server_side\apps\data_interaction\apps.py:38
-#: .\server_side\apps\data_interaction\models.py:201
-#: .\server_side\apps\data_interaction\models.py:293
-#: .\server_side\settings.py:169
-msgid "advices"
-msgstr "Парады"
-
-#: .\server_side\apps\data_interaction\apps.py:47 .\server_side\settings.py:178
-msgid "articles"
-msgstr "Артыкулы"
-
-#: .\server_side\apps\data_interaction\apps.py:55
-#: .\server_side\apps\data_interaction\models.py:342
-#: .\server_side\settings.py:183
-msgid "markets"
-msgstr "Рынкі"
-
-#: .\server_side\apps\data_interaction\apps.py:63
-#: .\server_side\apps\data_interaction\models.py:521
-#: .\server_side\settings.py:188
-msgid "target_audiences"
-msgstr "Мэтавыя аўдыторыі"
-
-#: .\server_side\apps\data_interaction\apps.py:72 .\server_side\settings.py:197
-msgid "forecasts"
-msgstr "Прагнозы"
-
-#: .\server_side\apps\data_interaction\apps.py:82
-msgid "Additional"
-msgstr "Дадаткова"
-
-#: .\server_side\apps\data_interaction\apps.py:84 .\server_side\settings.py:275
-msgid "Download_Backup"
-msgstr "Загрузіць рэзервовую копію"
-
-#: .\server_side\apps\data_interaction\apps.py:85 .\server_side\settings.py:287
-msgid "Watch_Logs"
-msgstr "Прагледзець логі"
-
-#: .\server_side\apps\data_interaction\apps.py:86 .\server_side\settings.py:293
-msgid "Download_Logs"
-msgstr "Загрузіць логі"
-
-#: .\server_side\apps\data_interaction\apps.py:87
-msgid "Password_change"
-msgstr "Змяніць пароль"
-
-#: .\server_side\apps\data_interaction\apps.py:89 .\server_side\settings.py:299
-msgid "Open_Google"
-msgstr "Адкрыць Google"
-
-#: .\server_side\apps\data_interaction\apps.py:95
-msgid "changes_lang"
-msgstr "Змяніць мову"
 
 #: .\server_side\apps\data_interaction\constants.py:5
 #: .\server_side\apps\data_interaction\constants.py:11
@@ -149,7 +138,7 @@ msgid "profile"
 msgstr "Профіль"
 
 #: .\server_side\apps\data_interaction\models.py:41
-#: .\server_side\settings.py:148
+#: .\server_side\settings.py:147
 msgid "profiles"
 msgstr "Профілі"
 
@@ -308,6 +297,11 @@ msgstr "Дадайце тэкставае апісанне катастрофы"
 msgid "disaster"
 msgstr "Катастрофа"
 
+#: .\server_side\apps\data_interaction\models.py:171
+#: .\server_side\settings.py:159
+msgid "disasters"
+msgstr "Катастрофы"
+
 #: .\server_side\apps\data_interaction\models.py:185
 msgid "advice_type"
 msgstr "Тып савета"
@@ -322,11 +316,14 @@ msgstr "Вылучыце тып савета"
 #: .\server_side\apps\data_interaction\models.py:220
 #: .\server_side\apps\data_interaction\models.py:231
 #: .\server_side\apps\data_interaction\models.py:247
-#: .\server_side\apps\data_interaction\models.py:289
-#: .\server_side\apps\data_interaction\models.py:292
 #: .\server_side\apps\data_interaction\models.py:363
 msgid "advice"
 msgstr "Савет"
+
+#: .\server_side\apps\data_interaction\models.py:201
+#: .\server_side\settings.py:168
+msgid "advices"
+msgstr "Парады"
 
 #: .\server_side\apps\data_interaction\models.py:224
 msgid "advice_translation"
@@ -375,10 +372,17 @@ msgstr "Дата"
 msgid "article_text"
 msgstr "Тэкст артыкула"
 
+#: .\server_side\apps\data_interaction\models.py:289
+#: .\server_side\apps\data_interaction\models.py:292
 #: .\server_side\apps\data_interaction\models.py:298
 #: .\server_side\apps\data_interaction\models.py:314
 msgid "article"
 msgstr "Артыкул"
+
+#: .\server_side\apps\data_interaction\models.py:293
+#: .\server_side\settings.py:177
+msgid "articles"
+msgstr "Артыкулы"
 
 #: .\server_side\apps\data_interaction\models.py:317
 #: .\server_side\apps\data_interaction\models.py:318
@@ -389,11 +393,15 @@ msgstr "Рэйтынг артыкула"
 #: .\server_side\apps\data_interaction\models.py:341
 #: .\server_side\apps\data_interaction\models.py:347
 #: .\server_side\apps\data_interaction\models.py:374
-#: .\server_side\apps\data_interaction\models.py:401
 #: .\server_side\apps\data_interaction\models.py:526
 #: .\server_side\apps\data_interaction\models.py:540
 msgid "market"
 msgstr "Рынак"
+
+#: .\server_side\apps\data_interaction\models.py:342
+#: .\server_side\settings.py:182
+msgid "markets"
+msgstr "Рынкі"
 
 #: .\server_side\apps\data_interaction\models.py:358
 #: .\server_side\apps\data_interaction\models.py:390
@@ -431,6 +439,7 @@ msgstr "Вэб-сайт"
 msgid "help_website"
 msgstr "Дадайце спасылку на вэб-сайт"
 
+#: .\server_side\apps\data_interaction\models.py:401
 #: .\server_side\apps\data_interaction\models.py:405
 #: .\server_side\apps\data_interaction\models.py:411
 #: .\server_side\apps\data_interaction\models.py:421
@@ -498,6 +507,11 @@ msgstr "Асаблівасці"
 msgid "features_help"
 msgstr "Апішыце асаблівасці мэтавай аўдыторыі"
 
+#: .\server_side\apps\data_interaction\models.py:521
+#: .\server_side\settings.py:187
+msgid "target_audiences"
+msgstr "Мэтавыя аўдыторыі"
+
 #: .\server_side\apps\data_interaction\models.py:531
 #: .\server_side\apps\data_interaction\models.py:562
 #: .\server_side\apps\data_interaction\models.py:627
@@ -547,6 +561,28 @@ msgstr "Паводзіны аўдыторыі"
 msgid "target_audiences_behaviours"
 msgstr "Паводзіны аўдыторый"
 
+#: .\server_side\apps\main_interaction\views.py:91
+#: .\server_side\apps\main_interaction\views.py:246
+msgid "Thanks, "
+msgstr ""
+
+#: .\server_side\apps\main_interaction\views.py:94
+msgid "YourReviewIsVeryImportantForUs"
+msgstr ""
+
+#: .\server_side\apps\main_interaction\views.py:249
+msgid "YourCompanyIsVeryImportantForUs"
+msgstr ""
+
+#: .\server_side\apps\module_interaction\bot_commands.py:38
+msgid "Bye"
+msgstr "Бывай"
+
+#: .\server_side\apps\module_interaction\bot_commands.py:71
+#: .\server_side\apps\module_interaction\bot_commands.py:101
+msgid "Archive"
+msgstr "Архіў"
+
 #: .\server_side\settings.py:121
 msgid "English"
 msgstr "Англійская"
@@ -567,26 +603,79 @@ msgstr "Руская"
 msgid "Belarusian"
 msgstr "Беларуская"
 
-#: .\server_side\settings.py:143
+#: .\server_side\settings.py:142
 msgid "groups_admin"
 msgstr "Адміністрацыя"
 
-#: .\server_side\settings.py:259
+#: .\server_side\settings.py:196
+msgid "forecasts"
+msgstr "Прагнозы"
+
+#: .\server_side\settings.py:261
 msgid "Welcome"
 msgstr "Для рэгістрацыі звярніцеся па адрасе dismart.inc@gmail.com"
 
-#: .\server_side\settings.py:264
+#: .\server_side\settings.py:266
 msgid "Home"
 msgstr "Дадому"
 
-#: .\server_side\settings.py:266
+#: .\server_side\settings.py:268
 msgid "Open_client"
 msgstr "Адкрыць сайт"
 
-#: .\server_side\settings.py:281
+#: .\server_side\settings.py:277
+msgid "Download_Backup"
+msgstr "Загрузіць рэзервовую копію"
+
+#: .\server_side\settings.py:283
 msgid "Upload_Backup"
 msgstr "Выгрузіць рэзервовую копію"
 
-#: .\server_side\settings.py:305
+#: .\server_side\settings.py:289
+msgid "Watch_Logs"
+msgstr "Прагледзець логі"
+
+#: .\server_side\settings.py:295
+msgid "Download_Logs"
+msgstr "Загрузіць логі"
+
+#: .\server_side\settings.py:301
+msgid "Open_Google"
+msgstr "Адкрыць Google"
+
+#: .\server_side\settings.py:307
 msgid "Open_Github"
 msgstr "Адкрыць Github"
+
+#: .\templates\errors\error404.html:8 .\templates\errors\error500.html:8
+msgid "sadly_rhetor"
+msgstr ""
+
+#: .\templates\errors\error404.html:15 .\templates\errors\error500.html:15
+msgid "error"
+msgstr ""
+
+#: .\templates\errors\error404.html:16
+msgid "page_not_found"
+msgstr ""
+
+#: .\templates\errors\error404.html:30 .\templates\errors\error500.html:30
+msgid "sorry_about_that"
+msgstr ""
+
+#: .\templates\errors\error404.html:33 .\templates\errors\error500.html:33
+msgid "return_home"
+msgstr ""
+
+#: .\templates\errors\error500.html:16
+msgid "internal_server_error"
+msgstr ""
+
+#~ msgid "many"
+#~ msgstr "Карыстальнікі"
+
+#~ msgid "Additional"
+#~ msgstr "Дадаткова"
+
+#~ msgid "Password_change"
+#~ msgstr "Змяніць пароль"

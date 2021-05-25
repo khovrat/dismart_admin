@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-15 13:02+0300\n"
+"POT-Creation-Date: 2021-05-25 13:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: .\dismartbot\processors.py:52
+#: .\server_side\apps\module_interaction\bot_commands.py:11
+msgid "Welcome_message_telegram"
+msgstr "Welcome to our telegram. Select the desired option"
+
+#: .\dismartbot\processors.py:57
+#: .\server_side\apps\module_interaction\bot_commands.py:14
+msgid "Go_to_site"
+msgstr "Site"
+
+#: .\dismartbot\processors.py:58
+#: .\server_side\apps\module_interaction\bot_commands.py:15
+msgid "Change_language"
+msgstr "Language"
+
+#: .\dismartbot\processors.py:59
+#: .\server_side\apps\module_interaction\bot_commands.py:16
+msgid "Start_conversation"
+msgstr "Action"
+
+#: .\dismartbot\processors.py:69
+#: .\server_side\apps\module_interaction\bot_commands.py:80
+msgid "Change_language_message"
+msgstr "What language do you want?"
+
+#: .\dismartbot\processors.py:86
+#: .\server_side\apps\module_interaction\bot_commands.py:96
+msgid "Start_conversation_message"
+msgstr "What action do you want?"
+
+#: .\dismartbot\processors.py:92 .\dismartbot\processors.py:108
+#: .\dismartbot\processors.py:124 .\dismartbot\processors.py:140
+#: .\server_side\apps\module_interaction\bot_commands.py:69
+#: .\server_side\apps\module_interaction\bot_commands.py:99
+msgid "Article"
+msgstr "Article"
+
+#: .\dismartbot\processors.py:92 .\dismartbot\processors.py:108
+#: .\dismartbot\processors.py:124 .\dismartbot\processors.py:140
+#: .\server_side\apps\module_interaction\bot_commands.py:70
+#: .\server_side\apps\module_interaction\bot_commands.py:100
+msgid "Video"
+msgstr "Video"
+
+#: .\dismartbot\processors.py:102 .\dismartbot\processors.py:118
+#: .\dismartbot\processors.py:134
+msgid "Your_link"
+msgstr "Link"
+
+#: .\dismartbot\processors.py:150
+#: .\server_side\apps\module_interaction\bot_commands.py:27
+msgid "Go_to_expert: "
+msgstr "Expert here: "
+
 #: .\server_side\apps\data_interaction\admin.py:9
 msgid "Dismart_Admin_Panel"
 msgstr "Admin Panel"
@@ -26,74 +80,9 @@ msgstr "Admin Panel"
 msgid "Dismart_Management"
 msgstr "Control"
 
-#: .\server_side\apps\data_interaction\apps.py:10
+#: .\server_side\apps\data_interaction\apps.py:8
 msgid "Tables"
 msgstr "Data"
-
-#: .\server_side\apps\data_interaction\apps.py:17
-msgid "many"
-msgstr "Users"
-
-#: .\server_side\apps\data_interaction\apps.py:29
-#: .\server_side\apps\data_interaction\models.py:171
-#: .\server_side\settings.py:160
-msgid "disasters"
-msgstr "Disasters"
-
-#: .\server_side\apps\data_interaction\apps.py:38
-#: .\server_side\apps\data_interaction\models.py:201
-#: .\server_side\apps\data_interaction\models.py:293
-#: .\server_side\settings.py:169
-msgid "advices"
-msgstr "Advices"
-
-#: .\server_side\apps\data_interaction\apps.py:47 .\server_side\settings.py:178
-msgid "articles"
-msgstr "Articles"
-
-#: .\server_side\apps\data_interaction\apps.py:55
-#: .\server_side\apps\data_interaction\models.py:342
-#: .\server_side\settings.py:183
-msgid "markets"
-msgstr "Markets"
-
-#: .\server_side\apps\data_interaction\apps.py:63
-#: .\server_side\apps\data_interaction\models.py:521
-#: .\server_side\settings.py:188
-msgid "target_audiences"
-msgstr "Target Audiences"
-
-#: .\server_side\apps\data_interaction\apps.py:72 .\server_side\settings.py:197
-msgid "forecasts"
-msgstr "Forecasts"
-
-#: .\server_side\apps\data_interaction\apps.py:82
-msgid "Additional"
-msgstr "Advanced"
-
-#: .\server_side\apps\data_interaction\apps.py:84 .\server_side\settings.py:275
-msgid "Download_Backup"
-msgstr "Upload backup"
-
-#: .\server_side\apps\data_interaction\apps.py:85 .\server_side\settings.py:287
-msgid "Watch_Logs"
-msgstr "View logs"
-
-#: .\server_side\apps\data_interaction\apps.py:86 .\server_side\settings.py:293
-msgid "Download_Logs"
-msgstr "Upload logs"
-
-#: .\server_side\apps\data_interaction\apps.py:87
-msgid "Password_change"
-msgstr "Change password"
-
-#: .\server_side\apps\data_interaction\apps.py:89 .\server_side\settings.py:299
-msgid "Open_Google"
-msgstr "Open Google"
-
-#: .\server_side\apps\data_interaction\apps.py:95
-msgid "changes_lang"
-msgstr "Change language"
 
 #: .\server_side\apps\data_interaction\constants.py:5
 #: .\server_side\apps\data_interaction\constants.py:11
@@ -147,7 +136,7 @@ msgid "profile"
 msgstr "Profile"
 
 #: .\server_side\apps\data_interaction\models.py:41
-#: .\server_side\settings.py:148
+#: .\server_side\settings.py:147
 msgid "profiles"
 msgstr "Profiles"
 
@@ -306,6 +295,11 @@ msgstr "Add a text description of the crash"
 msgid "disaster"
 msgstr "Catastrophe"
 
+#: .\server_side\apps\data_interaction\models.py:171
+#: .\server_side\settings.py:159
+msgid "disasters"
+msgstr "Disasters"
+
 #: .\server_side\apps\data_interaction\models.py:185
 msgid "advice_type"
 msgstr "Advice type"
@@ -320,11 +314,14 @@ msgstr "Select advice type"
 #: .\server_side\apps\data_interaction\models.py:220
 #: .\server_side\apps\data_interaction\models.py:231
 #: .\server_side\apps\data_interaction\models.py:247
-#: .\server_side\apps\data_interaction\models.py:289
-#: .\server_side\apps\data_interaction\models.py:292
 #: .\server_side\apps\data_interaction\models.py:363
 msgid "advice"
 msgstr "Advice"
+
+#: .\server_side\apps\data_interaction\models.py:201
+#: .\server_side\settings.py:168
+msgid "advices"
+msgstr "Advices"
 
 #: .\server_side\apps\data_interaction\models.py:224
 msgid "advice_translation"
@@ -373,10 +370,17 @@ msgstr "Date"
 msgid "article_text"
 msgstr "Text of the article"
 
+#: .\server_side\apps\data_interaction\models.py:289
+#: .\server_side\apps\data_interaction\models.py:292
 #: .\server_side\apps\data_interaction\models.py:298
 #: .\server_side\apps\data_interaction\models.py:314
 msgid "article"
 msgstr "Article"
+
+#: .\server_side\apps\data_interaction\models.py:293
+#: .\server_side\settings.py:177
+msgid "articles"
+msgstr "Articles"
 
 #: .\server_side\apps\data_interaction\models.py:317
 #: .\server_side\apps\data_interaction\models.py:318
@@ -387,11 +391,15 @@ msgstr "Article Rating"
 #: .\server_side\apps\data_interaction\models.py:341
 #: .\server_side\apps\data_interaction\models.py:347
 #: .\server_side\apps\data_interaction\models.py:374
-#: .\server_side\apps\data_interaction\models.py:401
 #: .\server_side\apps\data_interaction\models.py:526
 #: .\server_side\apps\data_interaction\models.py:540
 msgid "market"
 msgstr "Market"
+
+#: .\server_side\apps\data_interaction\models.py:342
+#: .\server_side\settings.py:182
+msgid "markets"
+msgstr "Markets"
 
 #: .\server_side\apps\data_interaction\models.py:358
 #: .\server_side\apps\data_interaction\models.py:390
@@ -429,6 +437,7 @@ msgstr "Website"
 msgid "help_website"
 msgstr "Add website link"
 
+#: .\server_side\apps\data_interaction\models.py:401
 #: .\server_side\apps\data_interaction\models.py:405
 #: .\server_side\apps\data_interaction\models.py:411
 #: .\server_side\apps\data_interaction\models.py:421
@@ -496,6 +505,11 @@ msgstr "Features"
 msgid "features_help"
 msgstr "Describe the characteristics of the target audience"
 
+#: .\server_side\apps\data_interaction\models.py:521
+#: .\server_side\settings.py:187
+msgid "target_audiences"
+msgstr "Target Audiences"
+
 #: .\server_side\apps\data_interaction\models.py:531
 #: .\server_side\apps\data_interaction\models.py:562
 #: .\server_side\apps\data_interaction\models.py:627
@@ -545,6 +559,28 @@ msgstr "Audience Behavior"
 msgid "target_audiences_behaviours"
 msgstr "Audiences Behavior"
 
+#: .\server_side\apps\main_interaction\views.py:91
+#: .\server_side\apps\main_interaction\views.py:246
+msgid "Thanks, "
+msgstr ""
+
+#: .\server_side\apps\main_interaction\views.py:94
+msgid "YourReviewIsVeryImportantForUs"
+msgstr ""
+
+#: .\server_side\apps\main_interaction\views.py:249
+msgid "YourCompanyIsVeryImportantForUs"
+msgstr ""
+
+#: .\server_side\apps\module_interaction\bot_commands.py:38
+msgid "Bye"
+msgstr "Bye"
+
+#: .\server_side\apps\module_interaction\bot_commands.py:71
+#: .\server_side\apps\module_interaction\bot_commands.py:101
+msgid "Archive"
+msgstr "Archive"
+
 #: .\server_side\settings.py:121
 msgid "English"
 msgstr "English"
@@ -565,26 +601,79 @@ msgstr "Russian"
 msgid "Belarusian"
 msgstr "Belarusian"
 
-#: .\server_side\settings.py:143
+#: .\server_side\settings.py:142
 msgid "groups_admin"
 msgstr "Administration"
 
-#: .\server_side\settings.py:259
+#: .\server_side\settings.py:196
+msgid "forecasts"
+msgstr "Forecasts"
+
+#: .\server_side\settings.py:261
 msgid "Welcome"
 msgstr "To register, please contact dismart.inc@gmail.com"
 
-#: .\server_side\settings.py:264
+#: .\server_side\settings.py:266
 msgid "Home"
 msgstr "Home"
 
-#: .\server_side\settings.py:266
+#: .\server_side\settings.py:268
 msgid "Open_client"
 msgstr "Open site"
 
-#: .\server_side\settings.py:281
+#: .\server_side\settings.py:277
+msgid "Download_Backup"
+msgstr "Upload backup"
+
+#: .\server_side\settings.py:283
 msgid "Upload_Backup"
 msgstr "Upload backup"
 
-#: .\server_side\settings.py:305
+#: .\server_side\settings.py:289
+msgid "Watch_Logs"
+msgstr "View logs"
+
+#: .\server_side\settings.py:295
+msgid "Download_Logs"
+msgstr "Upload logs"
+
+#: .\server_side\settings.py:301
+msgid "Open_Google"
+msgstr "Open Google"
+
+#: .\server_side\settings.py:307
 msgid "Open_Github"
 msgstr "Open Github"
+
+#: .\templates\errors\error404.html:8 .\templates\errors\error500.html:8
+msgid "sadly_rhetor"
+msgstr ""
+
+#: .\templates\errors\error404.html:15 .\templates\errors\error500.html:15
+msgid "error"
+msgstr ""
+
+#: .\templates\errors\error404.html:16
+msgid "page_not_found"
+msgstr ""
+
+#: .\templates\errors\error404.html:30 .\templates\errors\error500.html:30
+msgid "sorry_about_that"
+msgstr ""
+
+#: .\templates\errors\error404.html:33 .\templates\errors\error500.html:33
+msgid "return_home"
+msgstr ""
+
+#: .\templates\errors\error500.html:16
+msgid "internal_server_error"
+msgstr ""
+
+#~ msgid "many"
+#~ msgstr "Users"
+
+#~ msgid "Additional"
+#~ msgstr "Advanced"
+
+#~ msgid "Password_change"
+#~ msgstr "Change password"

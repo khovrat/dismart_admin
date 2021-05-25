@@ -701,3 +701,845 @@ AttributeError: 'str' object has no attribute 'name'
 2021-05-24 10:02:36,399 INFO Watching for file changes with StatReloader
 2021-05-24 10:06:35,371 INFO Watching for file changes with StatReloader
 2021-05-24 10:10:55,150 INFO Watching for file changes with StatReloader
+2021-05-24 21:25:52,052 INFO Watching for file changes with StatReloader
+2021-05-24 21:26:58,560 INFO Watching for file changes with StatReloader
+2021-05-24 21:28:13,728 INFO Watching for file changes with StatReloader
+2021-05-24 21:29:05,885 INFO Watching for file changes with StatReloader
+2021-05-24 21:29:59,111 INFO Watching for file changes with StatReloader
+2021-05-24 21:37:13,652 INFO Watching for file changes with StatReloader
+2021-05-24 21:41:22,094 INFO Watching for file changes with StatReloader
+2021-05-24 21:42:35,925 INFO Watching for file changes with StatReloader
+2021-05-24 21:44:50,130 INFO Watching for file changes with StatReloader
+2021-05-24 21:57:50,857 INFO Watching for file changes with StatReloader
+2021-05-24 21:58:36,848 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 23, in start_interaction
+    send_welcome(bot, chat_id, user.language_code)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 36, in send_welcome
+    InlineKeyboardButton.a(_('Go_to_site'), url='https://dismart.herokuapp.com/'),
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\types\inlinekeyboardbutton.py", line 27, in a
+    return super().a(**locals())
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\types\__init__.py", line 136, in a
+    key, expected_type, type(kwargs[key])
+ValueError: Type mismatch for argument text.
+Expected type: <class 'str'>
+Actual type: <class 'django.utils.functional.lazy.<locals>.__proxy__'>
+2021-05-24 21:59:39,046 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 23, in start_interaction
+    send_welcome(bot, chat_id, user.language_code)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 36, in send_welcome
+    InlineKeyboardButton.a(_('Go_to_site'), url='https://dismart.herokuapp.com/'),
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\types\inlinekeyboardbutton.py", line 27, in a
+    return super().a(**locals())
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\types\__init__.py", line 136, in a
+    key, expected_type, type(kwargs[key])
+ValueError: Type mismatch for argument text.
+Expected type: <class 'str'>
+Actual type: <class 'django.utils.functional.lazy.<locals>.__proxy__'>
+2021-05-24 22:00:20,641 INFO Watching for file changes with StatReloader
+2021-05-24 22:00:41,152 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 23, in start_interaction
+    send_welcome(bot, chat_id, user.language_code)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 39, in send_welcome
+    InlineKeyboardButton.a(t1, url='https://dismart.herokuapp.com/'),
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\types\inlinekeyboardbutton.py", line 27, in a
+    return super().a(**locals())
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\types\__init__.py", line 136, in a
+    key, expected_type, type(kwargs[key])
+ValueError: Type mismatch for argument text.
+Expected type: <class 'str'>
+Actual type: <class 'django.utils.functional.lazy.<locals>.__proxy__'>
+2021-05-24 22:01:43,443 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 23, in start_interaction
+    send_welcome(bot, chat_id, user.language_code)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 39, in send_welcome
+    InlineKeyboardButton.a(t1, url='https://dismart.herokuapp.com/'),
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\types\inlinekeyboardbutton.py", line 27, in a
+    return super().a(**locals())
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\types\__init__.py", line 136, in a
+    key, expected_type, type(kwargs[key])
+ValueError: Type mismatch for argument text.
+Expected type: <class 'str'>
+Actual type: <class 'django.utils.functional.lazy.<locals>.__proxy__'>
+2021-05-24 22:02:45,811 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 23, in start_interaction
+    send_welcome(bot, chat_id, user.language_code)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 39, in send_welcome
+    InlineKeyboardButton.a(t1, url='https://dismart.herokuapp.com/'),
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\types\inlinekeyboardbutton.py", line 27, in a
+    return super().a(**locals())
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\types\__init__.py", line 136, in a
+    key, expected_type, type(kwargs[key])
+ValueError: Type mismatch for argument text.
+Expected type: <class 'str'>
+Actual type: <class 'django.utils.functional.lazy.<locals>.__proxy__'>
+2021-05-24 22:02:49,763 INFO Watching for file changes with StatReloader
+2021-05-24 22:08:46,150 INFO Watching for file changes with StatReloader
+2021-05-24 22:24:29,842 INFO Watching for file changes with StatReloader
+2021-05-24 22:25:42,417 INFO Watching for file changes with StatReloader
+2021-05-24 22:55:24,206 INFO Watching for file changes with StatReloader
+2021-05-24 22:55:57,877 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 29, in main_interaction
+    send_wiki(bot, chat_id,)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 95, in send_wiki
+    text=wiki.get_text(),
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in get_text
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in <listcomp>
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 20, in get_article
+    return page.url
+AttributeError: 'str' object has no attribute 'url'
+2021-05-24 22:56:05,753 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 29, in main_interaction
+    send_wiki(bot, chat_id,)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 95, in send_wiki
+    text=wiki.get_text(),
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in get_text
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in <listcomp>
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 17, in get_article
+    page = wikipedia.page(titles[random.randint(0, LIMIT - 1)])
+IndexError: list index out of range
+2021-05-24 22:56:15,348 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 29, in main_interaction
+    send_wiki(bot, chat_id,)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 95, in send_wiki
+    text=wiki.get_text(),
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in get_text
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in <listcomp>
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 17, in get_article
+    page = wikipedia.page(titles[random.randint(0, LIMIT - 1)])
+IndexError: list index out of range
+2021-05-24 22:57:05,098 INFO Watching for file changes with StatReloader
+2021-05-24 22:57:31,424 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 29, in main_interaction
+    send_wiki(bot, chat_id,)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 95, in send_wiki
+    text=wiki.get_text(),
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in get_text
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in <listcomp>
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 17, in get_article
+    page = wikipedia.page(titles[random.randint(0, LIMIT - 1)])
+IndexError: list index out of range
+2021-05-24 22:58:08,535 INFO Watching for file changes with StatReloader
+2021-05-24 22:58:38,855 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 29, in main_interaction
+    send_wiki(bot, chat_id,)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 95, in send_wiki
+    text=wiki.get_text(),
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in get_text
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in <listcomp>
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 17, in get_article
+    page = wikipedia.page(titles[random.randint(0, LIMIT - 1)])
+IndexError: list index out of range
+2021-05-24 22:59:15,635 INFO Watching for file changes with StatReloader
+2021-05-24 23:00:19,391 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 29, in main_interaction
+    send_wiki(bot, chat_id,)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 95, in send_wiki
+    text=wiki.get_text(),
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in get_text
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in <listcomp>
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 20, in get_article
+    return page.url
+AttributeError: 'str' object has no attribute 'url'
+2021-05-24 23:01:08,687 INFO Watching for file changes with StatReloader
+2021-05-24 23:01:37,631 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 29, in main_interaction
+    send_wiki(bot, chat_id,)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 95, in send_wiki
+    text=wiki.get_text(),
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in get_text
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 9, in <listcomp>
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\wiki.py", line 20, in get_article
+    return page.url
+AttributeError: 'str' object has no attribute 'url'
+2021-05-24 23:02:36,991 INFO Watching for file changes with StatReloader
+2021-05-24 23:06:10,629 INFO Watching for file changes with StatReloader
+2021-05-24 23:13:47,468 INFO Watching for file changes with StatReloader
+2021-05-24 23:15:24,498 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 33, in main_interaction
+    send_article(bot, chat_id)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 131, in send_article
+    text="<a href='%s'>%s</a>" % (articles.get_text(), _('Your_link')),
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\articles.py", line 6, in get_text
+    texts = get_article()
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\articles.py", line 18, in get_article
+    articles_links.append(article.text)
+AttributeError: 'ArticleRating' object has no attribute 'text'
+2021-05-24 23:15:25,651 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 33, in main_interaction
+    send_article(bot, chat_id)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 131, in send_article
+    text="<a href='%s'>%s</a>" % (articles.get_text(), _('Your_link')),
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\articles.py", line 6, in get_text
+    texts = get_article()
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\articles.py", line 18, in get_article
+    articles_links.append(article.text)
+AttributeError: 'ArticleRating' object has no attribute 'text'
+2021-05-24 23:15:28,695 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 33, in main_interaction
+    send_article(bot, chat_id)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 131, in send_article
+    text="<a href='%s'>%s</a>" % (articles.get_text(), _('Your_link')),
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\articles.py", line 6, in get_text
+    texts = get_article()
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\articles.py", line 18, in get_article
+    articles_links.append(article.text)
+AttributeError: 'ArticleRating' object has no attribute 'text'
+2021-05-24 23:15:33,840 ERROR Internal Server Error: /dismartbot/update/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 24, in handle_bot_request
+    raise e
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 21, in handle_bot_request
+    bot.handle_update(update)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\bot.py", line 38, in handle_update
+    processor(self, update, db_state)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django_tgbot\decorators.py", line 22, in function_runner
+    func(bot=bot, update=update, state=state, *args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 33, in main_interaction
+    send_article(bot, chat_id)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\processors.py", line 131, in send_article
+    text="<a href='%s'>%s</a>" % (articles.get_text(), _('Your_link')),
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\articles.py", line 6, in get_text
+    texts = get_article()
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\modules\articles.py", line 18, in get_article
+    articles_links.append(article.text)
+AttributeError: 'ArticleRating' object has no attribute 'text'
+2021-05-24 23:15:48,997 INFO Watching for file changes with StatReloader
+2021-05-24 23:27:49,034 INFO Watching for file changes with StatReloader
+2021-05-24 23:28:57,526 INFO Watching for file changes with StatReloader
+2021-05-24 23:29:34,874 INFO Watching for file changes with StatReloader
+2021-05-24 23:30:36,028 INFO Watching for file changes with StatReloader
+2021-05-24 23:31:19,225 INFO Watching for file changes with StatReloader
+2021-05-24 23:31:47,834 INFO Watching for file changes with StatReloader
+2021-05-24 23:32:30,952 INFO Watching for file changes with StatReloader
+2021-05-24 23:33:13,482 INFO Watching for file changes with StatReloader
+2021-05-24 23:34:34,102 INFO Watching for file changes with StatReloader
+2021-05-24 23:35:26,790 INFO Watching for file changes with StatReloader
+2021-05-24 23:36:21,083 INFO Watching for file changes with StatReloader
+2021-05-24 23:36:51,553 INFO Watching for file changes with StatReloader
+2021-05-24 23:37:25,243 INFO Watching for file changes with StatReloader
+2021-05-24 23:41:55,359 INFO Watching for file changes with StatReloader
+2021-05-24 23:42:15,195 INFO Watching for file changes with StatReloader
+2021-05-24 23:42:36,899 INFO Watching for file changes with StatReloader
+2021-05-24 23:43:00,206 INFO Watching for file changes with StatReloader
+2021-05-25 09:11:23,770 INFO Watching for file changes with StatReloader
+2021-05-25 09:11:42,773 INFO D:\University\Diploma\Dismart\server_side\dismartbot\views.py changed, reloading.
+2021-05-25 09:11:47,389 INFO Watching for file changes with StatReloader
+2021-05-25 09:13:01,540 INFO D:\University\Diploma\Dismart\server_side\dismartbot\views.py changed, reloading.
+2021-05-25 09:13:03,536 INFO Watching for file changes with StatReloader
+2021-05-25 09:17:38,743 ERROR Internal Server Error: /dismartbot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 43, in webhook
+    req = request.get_json(silent=True, force=True)
+AttributeError: 'WSGIRequest' object has no attribute 'get_json'
+2021-05-25 09:18:01,621 ERROR Internal Server Error: /dismartbot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 43, in webhook
+    req = request.get_json(silent=True, force=True)
+AttributeError: 'WSGIRequest' object has no attribute 'get_json'
+2021-05-25 09:21:41,492 INFO Watching for file changes with StatReloader
+2021-05-25 09:24:39,887 INFO Watching for file changes with StatReloader
+2021-05-25 09:25:07,460 INFO Watching for file changes with StatReloader
+2021-05-25 09:27:38,444 INFO Watching for file changes with StatReloader
+2021-05-25 09:31:35,797 INFO D:\University\Diploma\Dismart\server_side\dismartbot\views.py changed, reloading.
+2021-05-25 09:31:37,936 INFO Watching for file changes with StatReloader
+2021-05-25 09:32:53,268 INFO Watching for file changes with StatReloader
+2021-05-25 09:33:43,182 INFO Watching for file changes with StatReloader
+2021-05-25 09:51:58,670 INFO D:\University\Diploma\Dismart\server_side\dismartbot\views.py changed, reloading.
+2021-05-25 09:52:23,048 INFO Watching for file changes with StatReloader
+2021-05-25 10:01:33,442 INFO Watching for file changes with StatReloader
+2021-05-25 10:07:39,014 INFO D:\University\Diploma\Dismart\server_side\dismartbot\views.py changed, reloading.
+2021-05-25 10:07:45,439 INFO Watching for file changes with StatReloader
+2021-05-25 10:09:02,968 INFO Watching for file changes with StatReloader
+2021-05-25 10:09:45,867 ERROR Internal Server Error: /dismartbot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\dismartbot\views.py", line 47, in webhook
+    word = req.get('originalDetectIntentRequest').get('inputs').get('rawInputs').get('query')
+AttributeError: 'NoneType' object has no attribute 'get'
+2021-05-25 10:10:08,339 INFO Watching for file changes with StatReloader
+2021-05-25 10:11:37,707 INFO Watching for file changes with StatReloader
+2021-05-25 10:14:13,763 INFO Watching for file changes with StatReloader
+2021-05-25 10:20:09,772 INFO D:\University\Diploma\Dismart\server_side\server_side\urls.py changed, reloading.
+2021-05-25 10:20:12,716 INFO Watching for file changes with StatReloader
+2021-05-25 10:20:57,619 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py changed, reloading.
+2021-05-25 10:20:59,961 INFO Watching for file changes with StatReloader
+2021-05-25 10:31:13,842 INFO Watching for file changes with StatReloader
+2021-05-25 10:33:56,479 INFO Watching for file changes with StatReloader
+2021-05-25 10:34:42,862 INFO Watching for file changes with StatReloader
+2021-05-25 10:42:15,114 INFO Watching for file changes with StatReloader
+2021-05-25 10:43:07,161 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py changed, reloading.
+2021-05-25 10:43:09,628 INFO Watching for file changes with StatReloader
+2021-05-25 10:43:34,022 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py changed, reloading.
+2021-05-25 10:43:36,026 INFO Watching for file changes with StatReloader
+2021-05-25 10:44:01,199 INFO Watching for file changes with StatReloader
+2021-05-25 10:44:43,909 INFO Watching for file changes with StatReloader
+2021-05-25 10:45:42,676 INFO Watching for file changes with StatReloader
+2021-05-25 10:46:04,081 INFO Watching for file changes with StatReloader
+2021-05-25 10:46:43,892 INFO Watching for file changes with StatReloader
+2021-05-25 10:57:00,162 INFO Watching for file changes with StatReloader
+2021-05-25 10:57:43,398 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 10, in webhook
+    text = request_t['originalDetectIntentRequest']['payload']['data']['text']
+KeyError: 'data'
+2021-05-25 11:05:54,434 INFO Watching for file changes with StatReloader
+2021-05-25 11:06:26,678 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 10, in webhook
+    text = request_t['originalDetectIntentRequest']['payload']['data']['text']
+KeyError: 'data'
+2021-05-25 11:10:22,394 INFO Watching for file changes with StatReloader
+2021-05-25 11:12:30,981 INFO Watching for file changes with StatReloader
+2021-05-25 11:15:15,782 INFO Watching for file changes with StatReloader
+2021-05-25 11:15:55,357 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 10, in webhook
+    text = request_t['originalDetectIntentRequest']['payload']['data']['text']
+KeyError: 'data'
+2021-05-25 11:17:36,632 INFO Watching for file changes with StatReloader
+2021-05-25 11:18:28,282 INFO Watching for file changes with StatReloader
+2021-05-25 11:19:06,175 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 10, in webhook
+    text = request_t['originalDetectIntentRequest']['payload']['data']['text']
+KeyError: 'data'
+2021-05-25 11:19:56,836 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py changed, reloading.
+2021-05-25 11:19:59,216 INFO Watching for file changes with StatReloader
+2021-05-25 11:20:10,838 INFO Watching for file changes with StatReloader
+2021-05-25 11:20:22,821 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 10, in webhook
+    text = request_t['originalDetectIntentRequest']['payload']['data']['text']
+KeyError: 'data'
+2021-05-25 11:23:41,120 INFO Watching for file changes with StatReloader
+2021-05-25 11:23:57,515 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 311, in check_response
+    "instead." % name
+ValueError: The view server_side.apps.module_interaction.views.webhook didn't return an HttpResponse object. It returned None instead.
+2021-05-25 11:25:41,303 INFO Watching for file changes with StatReloader
+2021-05-25 11:28:28,434 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py changed, reloading.
+2021-05-25 11:28:30,432 INFO Watching for file changes with StatReloader
+2021-05-25 11:28:38,219 INFO Watching for file changes with StatReloader
+2021-05-25 11:29:42,801 INFO Watching for file changes with StatReloader
+2021-05-25 11:30:33,685 INFO Watching for file changes with StatReloader
+2021-05-25 11:39:26,233 INFO Watching for file changes with StatReloader
+2021-05-25 11:43:33,725 INFO Watching for file changes with StatReloader
+2021-05-25 11:45:53,961 INFO Watching for file changes with StatReloader
+2021-05-25 11:46:07,038 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 311, in check_response
+    "instead." % name
+ValueError: The view server_side.apps.module_interaction.views.webhook didn't return an HttpResponse object. It returned None instead.
+2021-05-25 11:47:40,372 INFO Watching for file changes with StatReloader
+2021-05-25 11:47:53,365 INFO Watching for file changes with StatReloader
+2021-05-25 11:50:02,519 INFO Watching for file changes with StatReloader
+2021-05-25 11:50:52,781 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 10, in webhook
+    text = request_t['originalDetectIntentRequest']['payload']['data']['text']
+KeyError: 'text'
+2021-05-25 12:01:26,576 INFO Watching for file changes with StatReloader
+2021-05-25 12:01:42,859 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 12, in webhook
+    text = request_t['originalDetectIntentRequest']['payload']['data']['text']
+KeyError: 'text'
+2021-05-25 12:03:31,451 INFO Watching for file changes with StatReloader
+2021-05-25 12:03:38,430 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 24, in webhook
+    return change_language()
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\bot_commands.py", line 92, in change_language
+    aog_sr = tg.card_response(fulfillmentText, buttons)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\modules\df_response_lib.py", line 369, in card_response
+    "postback": str(button[1])
+IndexError: list index out of range
+2021-05-25 12:04:18,042 INFO Watching for file changes with StatReloader
+2021-05-25 12:04:28,395 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\middleware\locale.py", line 34, in process_response
+    if (response.status_code == 404 and not language_from_path and
+AttributeError: 'dict' object has no attribute 'status_code'
+2021-05-25 12:05:36,465 INFO Watching for file changes with StatReloader
+2021-05-25 12:05:46,247 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\middleware\locale.py", line 34, in process_response
+    if (response.status_code == 404 and not language_from_path and
+AttributeError: 'dict' object has no attribute 'status_code'
+2021-05-25 12:06:07,800 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 311, in check_response
+    "instead." % name
+ValueError: The view server_side.apps.module_interaction.views.webhook didn't return an HttpResponse object. It returned None instead.
+2021-05-25 12:06:40,227 INFO Watching for file changes with StatReloader
+2021-05-25 12:06:53,429 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\middleware\locale.py", line 34, in process_response
+    if (response.status_code == 404 and not language_from_path and
+AttributeError: 'dict' object has no attribute 'status_code'
+2021-05-25 12:12:19,688 INFO Watching for file changes with StatReloader
+2021-05-25 12:14:42,214 INFO Watching for file changes with StatReloader
+2021-05-25 12:20:00,861 INFO Watching for file changes with StatReloader
+2021-05-25 12:20:22,289 INFO Watching for file changes with StatReloader
+2021-05-25 12:22:19,065 INFO Watching for file changes with StatReloader
+2021-05-25 12:23:14,227 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\bot_commands.py changed, reloading.
+2021-05-25 12:23:16,043 INFO Watching for file changes with StatReloader
+2021-05-25 12:25:33,730 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\bot_commands.py changed, reloading.
+2021-05-25 12:25:35,968 INFO Watching for file changes with StatReloader
+2021-05-25 12:25:50,391 INFO Watching for file changes with StatReloader
+2021-05-25 12:29:30,640 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\bot_commands.py changed, reloading.
+2021-05-25 12:29:32,866 INFO Watching for file changes with StatReloader
+2021-05-25 12:30:12,684 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\bot_commands.py changed, reloading.
+2021-05-25 12:30:14,717 INFO Watching for file changes with StatReloader
+2021-05-25 12:30:58,024 INFO Watching for file changes with StatReloader
+2021-05-25 12:34:30,082 INFO Watching for file changes with StatReloader
+2021-05-25 12:34:49,010 INFO Watching for file changes with StatReloader
+2021-05-25 12:35:30,062 INFO Watching for file changes with StatReloader
+2021-05-25 12:36:15,817 INFO Watching for file changes with StatReloader
+2021-05-25 12:36:38,791 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 31, in webhook
+    reply = send_wiki()
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\bot_commands.py", line 38, in send_wiki
+    fulfillmentText = wiki.get_text() #"<a href='%s'>%s</a>" % (, _('Your_link')),
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\modules\wiki.py", line 9, in get_text
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\modules\wiki.py", line 9, in <listcomp>
+    texts = [get_article(language) for language in SEARCH_ENGINE.keys()]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\modules\wiki.py", line 20, in get_article
+    return page.url
+AttributeError: 'str' object has no attribute 'url'
+2021-05-25 12:37:13,474 INFO Watching for file changes with StatReloader
+2021-05-25 12:37:56,522 INFO Watching for file changes with StatReloader
+2021-05-25 12:39:59,632 INFO Watching for file changes with StatReloader
+2021-05-25 12:40:48,812 INFO Watching for file changes with StatReloader
+2021-05-25 12:44:17,108 INFO Watching for file changes with StatReloader
+2021-05-25 12:44:23,547 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 13, in webhook
+    text = utils.get_string('text', request_t['originalDetectIntentRequest']['payload']['data'])
+KeyError: 'data'
+2021-05-25 12:45:12,762 INFO Watching for file changes with StatReloader
+2021-05-25 12:52:23,050 INFO Watching for file changes with StatReloader
+2021-05-25 12:52:38,881 INFO Watching for file changes with StatReloader
+2021-05-25 12:53:26,012 INFO Watching for file changes with StatReloader
+2021-05-25 12:53:53,335 INFO Watching for file changes with StatReloader
+2021-05-25 12:54:49,739 INFO Watching for file changes with StatReloader
+2021-05-25 12:55:35,166 INFO Watching for file changes with StatReloader
+2021-05-25 12:56:23,531 INFO Watching for file changes with StatReloader
+2021-05-25 12:56:54,436 INFO Watching for file changes with StatReloader
+2021-05-25 12:57:34,472 INFO Watching for file changes with StatReloader
+2021-05-25 12:58:40,329 INFO Watching for file changes with StatReloader
+2021-05-25 12:58:51,861 INFO Watching for file changes with StatReloader
+2021-05-25 12:59:23,902 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\modules\df_response_lib.py changed, reloading.
+2021-05-25 12:59:25,849 INFO Watching for file changes with StatReloader
+2021-05-25 12:59:48,403 INFO Watching for file changes with StatReloader
+2021-05-25 13:00:27,519 INFO Watching for file changes with StatReloader
+2021-05-25 13:02:27,062 INFO Watching for file changes with StatReloader
+2021-05-25 13:03:55,909 INFO Watching for file changes with StatReloader
+2021-05-25 13:13:00,820 INFO Watching for file changes with StatReloader
+2021-05-25 13:14:15,494 INFO Watching for file changes with StatReloader
+2021-05-25 13:14:27,701 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 31, in webhook
+    reply = send_wiki()
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\bot_commands.py", line 38, in send_wiki
+    fulfillmentText = "@bold [%s](%s)/a>" % _('Your_link'), articles.get_text()
+TypeError: not enough arguments for format string
+2021-05-25 13:17:33,841 INFO Watching for file changes with StatReloader
+2021-05-25 13:19:02,672 INFO Watching for file changes with StatReloader
+2021-05-25 13:21:35,408 INFO Watching for file changes with StatReloader
+2021-05-25 13:21:50,991 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 30, in webhook
+    reply = send_wiki()
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\bot_commands.py", line 38, in send_wiki
+    fulfillmentText = wiki.get_text()
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\modules\wiki.py", line 9, in get_text
+    language = SEARCH_ENGINE.keys()[random.randint(0, len(SEARCH_ENGINE) - 1)]
+TypeError: 'dict_keys' object does not support indexing
+2021-05-25 13:23:12,195 INFO Watching for file changes with StatReloader
+2021-05-25 13:24:54,643 INFO Watching for file changes with StatReloader
+2021-05-25 13:27:30,355 INFO Watching for file changes with StatReloader
+2021-05-25 13:30:06,210 INFO Watching for file changes with StatReloader
+2021-05-25 13:45:21,744 INFO Watching for file changes with StatReloader
+2021-05-25 13:47:59,015 INFO Watching for file changes with StatReloader
+2021-05-25 13:50:16,317 INFO Watching for file changes with StatReloader
+2021-05-25 14:02:24,321 INFO Watching for file changes with StatReloader
+2021-05-25 14:04:00,389 INFO Watching for file changes with StatReloader
+2021-05-25 14:04:16,696 INFO Watching for file changes with StatReloader
+2021-05-25 14:04:58,072 INFO Watching for file changes with StatReloader
+2021-05-25 14:05:24,836 WARNING Session data corrupted
+2021-05-25 14:05:25,062 WARNING Session data corrupted
+2021-05-25 14:11:05,463 INFO Watching for file changes with StatReloader
+2021-05-25 14:11:21,530 ERROR Internal Server Error: /bot/webhook/
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\views.py", line 31, in webhook
+    reply = send_welcome(text_q)
+TypeError: send_welcome() missing 1 required positional argument: 'base_language'
+2021-05-25 14:11:46,878 INFO Watching for file changes with StatReloader

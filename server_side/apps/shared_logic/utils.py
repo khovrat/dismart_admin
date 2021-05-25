@@ -258,3 +258,9 @@ def get_base_search_request(language):
         return 'катастрофа OR беда OR неприятность OR проблема OR кризис'
     if language == 'be':
         return 'катастрофа OR бяда OR праблема OR праблема OR крызіс'
+
+
+def get_string(str_, dict_):
+    if str_ in dict_:
+        return dict_[str_]
+    return ''

@@ -1581,3 +1581,20 @@ Traceback (most recent call last):
     num if not limit or num < limit else 'more than %s' % (limit - 1),
 server_side.apps.data_interaction.models.TelegramUser.MultipleObjectsReturned: get() returned more than one TelegramUser -- it returned 2!
 2021-05-25 14:55:59,751 INFO Watching for file changes with StatReloader
+2021-05-25 22:59:36,600 INFO Watching for file changes with StatReloader
+2021-05-25 23:04:31,309 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py changed, reloading.
+2021-05-25 23:04:37,967 INFO Watching for file changes with StatReloader
+2021-05-25 23:11:17,425 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py changed, reloading.
+2021-05-25 23:11:21,323 INFO Watching for file changes with StatReloader
+2021-05-25 23:15:44,959 INFO Watching for file changes with StatReloader
+2021-05-25 23:17:48,374 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py changed, reloading.
+2021-05-25 23:17:50,902 INFO Watching for file changes with StatReloader
+2021-05-25 23:20:27,752 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py changed, reloading.
+2021-05-25 23:20:29,633 INFO Watching for file changes with StatReloader
+2021-05-25 23:20:44,612 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py changed, reloading.
+2021-05-25 23:20:46,704 INFO Watching for file changes with StatReloader
+2021-05-25 23:21:30,401 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py changed, reloading.
+2021-05-25 23:21:32,468 INFO Watching for file changes with StatReloader
+2021-05-25 23:23:08,075 WARNING Not Found: /uk/aid/
+2021-05-25 23:23:29,526 WARNING Not Found: /favicon.ico
+2021-05-25 23:41:38,249 INFO Watching for file changes with StatReloader

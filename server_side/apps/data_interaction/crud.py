@@ -101,6 +101,20 @@ def create_article(data):
     return True
 
 
+def create_disaster(data):
+    profile = read_profile_by_username(data["username"])
+    disaster = dm.Disaster(
+        user_id=profile.id,
+        intensity=data["intensity"],
+        type_id=data["type"],
+        term=data["term"],
+        readiness_degree=data["readiness_"],
+        about=data["about"]
+    )
+    disaster.save()
+    return True
+
+
 def create_telegram_user(user, language):
     if dm.TelegramUser.objects.filter(user=user, language=language).exists:
         return
@@ -166,12 +180,6 @@ def read_workplace_username(username):
     return dm.Workplace.objects.filter(user__user__username=username)
 
 
-def update_profile_password(data):
-    user = dm.User.objects.get(username=data["username"])
-    user.set_password(data["password"])
-    user.save()
-
-
 def read_users():
     return dm.Profile.objects.all()
 
@@ -196,6 +204,10 @@ def read_reviews_username(username):
 
 def read_advice_translation_language(language):
     return dm.AdviceTranslation.objects.filter(language=language)
+
+
+def read_advice_translation_language_type(language, id_type):
+    return dm.AdviceTranslation.objects.filter(language=language, advice__type_id=id_type)
 
 
 def read_advice_rating_id(id_advice):
@@ -236,8 +248,26 @@ def read_article_language(language):
     return dm.Article.objects.filter(language=language)
 
 
+def read_article_language_type(language, id_type):
+    return dm.Article.objects.filter(language=language, type_id=id_type)
+
+
 def read_telegram_user_user(user):
     return dm.TelegramUser.objects.get(user=user)
+
+
+def read_disaster_user(username):
+    return dm.Disaster.objects.filter(user__user__username=username)
+
+
+def read_disaster_user_type(username, type_id):
+    return dm.Disaster.objects.filter(user__user__username=username, type_id=type_id)
+
+
+def update_profile_password(data):
+    user = dm.User.objects.get(username=data["username"])
+    user.set_password(data["password"])
+    user.save()
 
 
 def update_profile_subscription(data):
@@ -314,6 +344,19 @@ def update_article(data):
     return True
 
 
+def update_disaster(data):
+    if not dm.Disaster.objects.filter(pk=data["id"]).exists():
+        return False
+    disaster = dm.Disaster.objects.get(pk=data["id"])
+    disaster.intensity = data["intensity"]
+    disaster.term = data["term"]
+    disaster.readiness_degree = data["readiness"]
+    disaster.type_id = data["type"]
+    disaster.about = data["about"]
+    disaster.save()
+    return True
+
+
 def update_telegram_user(user, language):
     user = dm.TelegramUser.objects.get(user=user)
     user.language = language
@@ -341,5 +384,12 @@ def delete_workplace_username_company_position(data):
 def delete_article_id(id_article):
     if dm.Article.objects.filter(pk=id_article).exists():
         dm.Article.objects.filter(pk=id_article).delete()
+        return True
+    return False
+
+
+def delete_disaster_id(id_disaster):
+    if dm.Disaster.objects.filter(pk=id_disaster).exists():
+        dm.Disaster.objects.filter(pk=id_disaster).delete()
         return True
     return False

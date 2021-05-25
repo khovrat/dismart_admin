@@ -38,5 +38,10 @@ urlpatterns = [
     path('articles/filter/', views.filter_articles),
     path('articles/rate/', views.rate_articles),
     path('news/', views.get_news),
-    path('news/filter/', views.filter_news)
+    path('news/filter/', views.filter_news),
+    path('disasters/', views.get_disasters),
+    path('disasters/create/', views.create_disasters),
+    path('disasters/update/', views.update_disasters),
+    path('disasters/delete/', views.delete_disasters),
+    path('disasters/filter/', views.filter_disasters),
 ]

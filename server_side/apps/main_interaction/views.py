@@ -560,3 +560,84 @@ def filter_disasters(request):
         data["disasters"] = utils.filter_disasters(data["disasters"], request.GET)
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def get_audience(request):
+    if request.method == "GET":
+        data = serializers_wrapper.get_serialize_audience(
+            crud.read_audiences_company(request.GET["company"])
+        )
+        data = utils.add_img(data)
+        data = utils.add_audience_type_translation(
+            data, request.GET["language"]
+        )
+        data = utils.transform_age_group(data)
+        data = {
+             "audiences": data,
+             "types": utils.get_audience_type(request.GET["language"]),
+             "max_size": utils.get_max_size(data),
+        }
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["PUT"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def create_audience(request):
+    if request.method == "PUT":
+        if crud.create_audience(request.data):
+            return Response(status=status.HTTP_201_CREATED)
+        else:
+            return Response(status=status.HTTP_409_CONFLICT)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["PATCH"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def update_audience(request):
+    if request.method == "PATCH":
+        if crud.update_audience(request.data):
+            return Response(status=status.HTTP_200_OK)
+        else:
+            return Response(status=status.HTTP_418_IM_A_TEAPOT)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["DELETE"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def delete_audience(request):
+    if request.method == "DELETE":
+        if crud.delete_audience_id(request.data["id"]):
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def filter_audience(request):
+    if request.method == "GET":
+        data = serializers_wrapper.get_serialize_audience(
+            crud.read_audiences_company(request.GET["company"])
+        )
+        data = utils.add_img(data)
+        data = utils.add_audience_type_translation(
+            data, request.GET["language"]
+        )
+        data = {
+            "audiences": data,
+            "types": utils.get_audience_type(request.GET["language"]),
+            "max_size": utils.get_max_size(data),
+        }
+        data = utils.transform_age_group(data)
+        data["audiences"] = utils.filter_audiences(data["audiences"], request.GET)
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

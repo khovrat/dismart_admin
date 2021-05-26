@@ -165,6 +165,14 @@ def get_disasters_type(language):
     return data
 
 
+def get_audience_type(language):
+    audience_types = crud.read_audience_type_translation_language(language)
+    data = []
+    for audience_type in audience_types:
+        data.append({"id": audience_type.type.id, "name": audience_type.name})
+    return data
+
+
 def get_companies_user(username):
     companies = crud.read_companies_username(username)
     data = []
@@ -189,6 +197,13 @@ def get_max_term(data):
     return max_
 
 
+def get_max_size(data):
+    max_ = 0
+    for item in data:
+        if item["size"] > max_:
+            max_ = item["size"]
+    return max_
+
 def filter_aid(data, filter_):
     new_data = []
     for advice in data:
@@ -211,6 +226,18 @@ def filter_disasters(data, filter_):
     return new_data
 
 
+def filter_audiences(data, filter_):
+    new_data = []
+    for audience in data:
+        if (
+            float(audience["size"]) <= float(filter_["size"])
+            and float(audience["age_left"]) >= float(filter_["age_left"])
+            and float(audience["age_right"]) <= float(filter_["age_right"])
+        ):
+            new_data.append(audience)
+    return new_data
+
+
 def add_disaster_type_translation_advice(data, language):
     for item in data:
         type_ = crud.read_disaster_type_translation_language_id(
@@ -226,6 +253,18 @@ def add_disaster_type_translation_advice(data, language):
 def add_disaster_type_translation_article(data, language):
     for item in data:
         type_ = crud.read_disaster_type_translation_language_id(
+            item["type"]["id"], language
+        )
+        if type_ != "":
+            item["type"] = type_.name
+        else:
+            item["type"] = type_
+    return data
+
+
+def add_audience_type_translation(data, language):
+    for item in data:
+        type_ = crud.read_audience_type_translation_language_id(
             item["type"]["id"], language
         )
         if type_ != "":
@@ -297,4 +336,14 @@ def get_string(str_, dict_):
 def add_img(data):
     for item in data:
         item["img"] = item["type"]["img"]
+    return data
+
+
+def transform_age_group(data):
+    for item in data:
+        age_group = item["age_group"]
+        item.pop("age_group")
+        ages = age_group.split("-")
+        item["age_left"] = ages[0]
+        item["age_right"] = ages[1]
     return data

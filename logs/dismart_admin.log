@@ -1598,3 +1598,19 @@ server_side.apps.data_interaction.models.TelegramUser.MultipleObjectsReturned: g
 2021-05-25 23:23:08,075 WARNING Not Found: /uk/aid/
 2021-05-25 23:23:29,526 WARNING Not Found: /favicon.ico
 2021-05-25 23:41:38,249 INFO Watching for file changes with StatReloader
+2021-05-26 18:04:51,979 INFO Watching for file changes with StatReloader
+2021-05-26 18:36:00,784 INFO Watching for file changes with StatReloader
+2021-05-26 18:37:39,682 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py changed, reloading.
+2021-05-26 18:37:42,102 INFO Watching for file changes with StatReloader
+2021-05-26 18:49:05,299 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\crud.py changed, reloading.
+2021-05-26 18:49:07,658 INFO Watching for file changes with StatReloader
+2021-05-26 18:51:09,562 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py changed, reloading.
+2021-05-26 18:51:11,603 INFO Watching for file changes with StatReloader
+2021-05-26 18:51:58,382 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\crud.py changed, reloading.
+2021-05-26 18:52:00,455 INFO Watching for file changes with StatReloader
+2021-05-26 18:57:05,973 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\crud.py changed, reloading.
+2021-05-26 18:57:08,602 INFO Watching for file changes with StatReloader
+2021-05-26 19:01:01,774 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py changed, reloading.
+2021-05-26 19:01:03,931 INFO Watching for file changes with StatReloader
+2021-05-26 19:02:25,409 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py changed, reloading.
+2021-05-26 19:02:27,830 INFO Watching for file changes with StatReloader

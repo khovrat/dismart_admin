@@ -44,4 +44,9 @@ urlpatterns = [
     path('disasters/update/', views.update_disasters),
     path('disasters/delete/', views.delete_disasters),
     path('disasters/filter/', views.filter_disasters),
+    path('audience/', views.get_audience),
+    path('audience/create/', views.create_audience),
+    path('audience/update/', views.update_audience),
+    path('audience/delete/', views.delete_audience),
+    path('audience/filter/', views.filter_audience),
 ]

@@ -115,6 +115,18 @@ def create_disaster(data):
     return True
 
 
+def create_audience(data):
+    audience = dm.TargetAudience(
+        company_id=data["company"],
+        type_id=data["type"],
+        size=data["size"],
+        age_group=data["age_left"] + '-' + data["age_right"],
+        features=data["features"]
+    )
+    audience.save()
+    return True
+
+
 def create_telegram_user(user, language):
     if dm.TelegramUser.objects.filter(user=user, language=language).exists:
         return
@@ -244,6 +256,16 @@ def read_disaster_type_translation_language_id(id_type, language):
     return ''
 
 
+def read_audience_type_translation_language(language):
+    return dm.TargetAudienceTypeTranslation.objects.filter(language=language)
+
+
+def read_audience_type_translation_language_id(id_type, language):
+    if dm.TargetAudienceTypeTranslation.objects.filter(type_id=id_type, language=language).exists():
+        return dm.TargetAudienceTypeTranslation.objects.get(type_id=id_type, language=language)
+    return ''
+
+
 def read_article_language(language):
     return dm.Article.objects.filter(language=language)
 
@@ -262,6 +284,10 @@ def read_disaster_user(username):
 
 def read_disaster_user_type(username, type_id):
     return dm.Disaster.objects.filter(user__user__username=username, type_id=type_id)
+
+
+def read_audiences_company(company):
+    return dm.TargetAudience.objects.filter(company_id=company)
 
 
 def update_profile_password(data):
@@ -357,6 +383,18 @@ def update_disaster(data):
     return True
 
 
+def update_audience(data):
+    if not dm.TargetAudience.objects.filter(pk=data["id"]).exists():
+        return False
+    audience = dm.TargetAudience.objects.get(pk=data["id"])
+    audience.type_id = data["type"]
+    audience.size = data["size"]
+    audience.age_group = data["age_left"] + '-' + data["age_right"]
+    audience.features = data["features"]
+    audience.save()
+    return True
+
+
 def update_telegram_user(user, language):
     user = dm.TelegramUser.objects.get(user=user)
     user.language = language
@@ -391,5 +429,12 @@ def delete_article_id(id_article):
 def delete_disaster_id(id_disaster):
     if dm.Disaster.objects.filter(pk=id_disaster).exists():
         dm.Disaster.objects.filter(pk=id_disaster).delete()
+        return True
+    return False
+
+
+def delete_audience_id(id_audience):
+    if dm.TargetAudience.objects.filter(pk=id_audience).exists():
+        dm.TargetAudience.objects.filter(pk=id_audience).delete()
         return True
     return False

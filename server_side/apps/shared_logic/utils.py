@@ -165,6 +165,14 @@ def get_disasters_type(language):
     return data
 
 
+def get_companies_user(username):
+    companies = crud.read_companies_username(username)
+    data = []
+    for company in companies:
+        data.append({"id": company.id, "name": company.name})
+    return data
+
+
 def get_max_amount(data):
     max_ = 0
     for item in data:

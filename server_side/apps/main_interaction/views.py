@@ -496,6 +496,7 @@ def get_disasters(request):
         data = {
             "disasters": data,
             "types": utils.get_disasters_type(request.GET["language"]),
+            "companies": utils.get_companies_user(request.GET["username"]),
             "max_term": utils.get_max_term(data),
         }
         return Response(data, status=status.HTTP_200_OK)
@@ -553,6 +554,7 @@ def filter_disasters(request):
         data = {
             "disasters": data,
             "types": utils.get_disasters_type(request.GET["language"]),
+            "companies": utils.get_companies_user(request.GET["username"]),
             "max_term": utils.get_max_term(data),
         }
         data["disasters"] = utils.filter_disasters(data["disasters"], request.GET)

@@ -161,6 +161,8 @@ class Disaster(models.Model):
     )
     about = models.TextField(verbose_name=_("about"), help_text=_("about_help"))
 
+    about_clean = models.TextField(verbose_name=_("about"), help_text=_("about_help"), null=True, blank=True, default="")
+
     @class_status_logger
     def __str__(self):
         result = _("disaster") + ": " + str(self.type.id) + "; "
@@ -502,6 +504,7 @@ class TargetAudience(models.Model):
     features = models.TextField(
         verbose_name=_("features"), help_text=_("features_help")
     )
+    features_clean = models.TextField(verbose_name=_("features"), help_text=_("features_help"), null=True, blank=True, default="")
 
     @class_status_logger
     def __str__(self):

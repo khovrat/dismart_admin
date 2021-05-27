@@ -665,5 +665,7 @@ def forecast_audience(request):
             "audience": data,
             "indicators": af_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"])
         }
+        if data["indicators"] == '':
+            return Response(data, status=status.HTTP_418_IM_A_TEAPOT)
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

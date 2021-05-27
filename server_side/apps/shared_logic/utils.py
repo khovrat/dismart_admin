@@ -279,6 +279,7 @@ def add_audience_type_translation_single(data, language):
     type_ = crud.read_audience_type_translation_language_id(
         data["type"]["id"], language
     )
+    data["type_id"] = data["type"]["id"]
     if type_ != "":
         data["type"] = type_.name
     else:

@@ -1629,3 +1629,129 @@ TypeError: string indices must be integers
 2021-05-27 10:48:26,365 INFO Watching for file changes with StatReloader
 2021-05-27 10:51:17,180 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py changed, reloading.
 2021-05-27 10:51:19,523 INFO Watching for file changes with StatReloader
+2021-05-27 11:14:03,986 INFO Watching for file changes with StatReloader
+2021-05-27 11:14:23,710 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 666, in forecast_audience
+    "indicators": af_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"])
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py", line 7, in make_prediction
+    conservatism = find_conservatism(audience)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py", line 16, in find_conservatism
+    left_conservatism = preprocessing.normalize(int(audience['age_left']))
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\sklearn\utils\validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\sklearn\preprocessing\_data.py", line 1905, in normalize
+    estimator='the normalize function', dtype=FLOAT_DTYPES)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\sklearn\utils\validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\sklearn\utils\validation.py", line 691, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got scalar array instead:
+array=20.0.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2021-05-27 11:16:33,353 INFO Watching for file changes with StatReloader
+2021-05-27 11:16:40,536 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 666, in forecast_audience
+    "indicators": af_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"])
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py", line 7, in make_prediction
+    conservatism = find_conservatism(audience)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py", line 16, in find_conservatism
+    left_conservatism = preprocessing.normalize([int(audience['age_left']), 1])[0]
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\sklearn\utils\validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\sklearn\preprocessing\_data.py", line 1905, in normalize
+    estimator='the normalize function', dtype=FLOAT_DTYPES)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\sklearn\utils\validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\sklearn\utils\validation.py", line 698, in check_array
+    "if it contains a single sample.".format(array))
+ValueError: Expected 2D array, got 1D array instead:
+array=[20.  1.].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2021-05-27 11:21:47,258 INFO Watching for file changes with StatReloader
+2021-05-27 11:21:54,948 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 666, in forecast_audience
+    "indicators": af_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"])
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py", line 7, in make_prediction
+    conservatism = find_conservatism(audience)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py", line 17, in find_conservatism
+    left_conservatism = ((age_left - min(age_left)) / (max(age_left) - min(age_left)))[1]
+TypeError: unsupported operand type(s) for -: 'list' and 'int'
+2021-05-27 14:36:48,296 INFO Watching for file changes with StatReloader
+2021-05-27 14:51:55,140 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\crud.py changed, reloading.
+2021-05-27 14:52:04,993 INFO Watching for file changes with StatReloader
+2021-05-27 14:58:19,073 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\additional_modules\constants.py changed, reloading.
+2021-05-27 14:58:22,184 INFO Watching for file changes with StatReloader
+2021-05-27 14:59:43,597 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\additional_modules\danger_test.py changed, reloading.
+2021-05-27 14:59:47,262 INFO Watching for file changes with StatReloader
+2021-05-27 19:07:44,384 INFO Watching for file changes with StatReloader
+2021-05-27 19:13:23,516 INFO Watching for file changes with StatReloader
+2021-05-27 20:39:00,622 INFO Watching for file changes with StatReloader
+2021-05-27 20:40:20,442 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 666, in forecast_audience
+    "indicators": af_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"])
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py", line 14, in make_prediction
+    profile = find_profile(audience, language)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py", line 54, in find_profile
+    text = clean_text(audience.about)
+AttributeError: 'ReturnDict' object has no attribute 'about'
+2021-05-27 20:43:17,697 INFO Watching for file changes with StatReloader
+2021-05-27 20:46:06,185 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py changed, reloading.
+2021-05-27 20:46:14,066 INFO Watching for file changes with StatReloader
+2021-05-27 20:46:45,104 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'company'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 575, in get_audience
+    crud.read_audiences_company(request.GET["company"])
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'company'
+2021-05-27 20:52:46,938 INFO Watching for file changes with StatReloader
+2021-05-27 20:53:32,155 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 666, in forecast_audience
+    "indicators": af_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"])
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py", line 34, in make_prediction
+    "value": get_normalize((profile["Happy"] - profile["Sad"]) * main_indicator, main_indicator)
+TypeError: unhashable type: 'dict'
+2021-05-27 20:55:00,525 INFO Watching for file changes with StatReloader
+2021-05-27 20:56:03,756 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 666, in forecast_audience
+    "indicators": af_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"])
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py", line 34, in make_prediction
+    "value": get_normalize((profile["Happy"] - profile["Sad"]) * main_indicator, main_indicator)
+TypeError: unhashable type: 'dict'
+2021-05-27 20:57:00,124 INFO Watching for file changes with StatReloader
+2021-05-27 21:07:56,687 INFO Watching for file changes with StatReloader
+2021-05-27 21:09:16,561 INFO Watching for file changes with StatReloader
+2021-05-27 21:11:29,989 INFO Watching for file changes with StatReloader
+2021-05-27 21:11:40,457 INFO Watching for file changes with StatReloader
+2021-05-27 21:13:04,755 INFO Watching for file changes with StatReloader
+2021-05-27 21:16:21,775 INFO Watching for file changes with StatReloader
+2021-05-27 21:17:23,031 INFO Watching for file changes with StatReloader
+2021-05-27 21:18:01,305 INFO Watching for file changes with StatReloader
+2021-05-27 21:21:32,897 INFO Watching for file changes with StatReloader

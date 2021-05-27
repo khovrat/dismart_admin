@@ -286,6 +286,16 @@ def read_disaster_user_type(username, type_id):
     return dm.Disaster.objects.filter(user__user__username=username, type_id=type_id)
 
 
+def read_disaster_id(id_disaster):
+    if dm.Disaster.objects.filter(pk=id_disaster).exists():
+        return dm.Disaster.objects.get(pk=id_disaster)
+    return ''
+
+
+def read_disasters():
+    return dm.Disaster.objects.all()
+
+
 def read_audiences_company(company):
     return dm.TargetAudience.objects.filter(company_id=company)
 
@@ -294,6 +304,10 @@ def read_audiences_id(id_audience):
     if dm.TargetAudience.objects.filter(pk=id_audience).exists():
         return dm.TargetAudience.objects.get(pk=id_audience)
     return ''
+
+
+def read_audiences():
+    return dm.TargetAudience.objects.all()
 
 
 def update_profile_password(data):
@@ -385,6 +399,7 @@ def update_disaster(data):
     disaster.readiness_degree = data["readiness"]
     disaster.type_id = data["type"]
     disaster.about = data["about"]
+    disaster.about_clean = ""
     disaster.save()
     return True
 
@@ -397,6 +412,7 @@ def update_audience(data):
     audience.size = data["size"]
     audience.age_group = data["age_left"] + '-' + data["age_right"]
     audience.features = data["features"]
+    audience.features_clean = ""
     audience.save()
     return True
 
@@ -405,6 +421,18 @@ def update_telegram_user(user, language):
     user = dm.TelegramUser.objects.get(user=user)
     user.language = language
     user.save()
+
+
+def update_audience_features(id_audience, text):
+    audience = dm.TargetAudience.objects.get(pk=id_audience)
+    audience.features_clean = text
+    audience.save()
+
+
+def update_disaster_about(id_disaster, text):
+    disaster = dm.Disaster.objects.get(pk=id_disaster)
+    disaster.about_clean = text
+    disaster.save()
 
 
 def delete_companies_id(id_company):

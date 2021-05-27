@@ -1614,3 +1614,15 @@ server_side.apps.data_interaction.models.TelegramUser.MultipleObjectsReturned: g
 2021-05-26 19:01:03,931 INFO Watching for file changes with StatReloader
 2021-05-26 19:02:25,409 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py changed, reloading.
 2021-05-26 19:02:27,830 INFO Watching for file changes with StatReloader
+2021-05-27 09:41:48,030 INFO Watching for file changes with StatReloader
+2021-05-27 09:43:02,367 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 655, in forecast_audience
+    data = utils.add_img(data)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 338, in add_img
+    item["img"] = item["type"]["img"]
+TypeError: string indices must be integers
+2021-05-27 09:44:06,539 INFO Watching for file changes with StatReloader
+2021-05-27 09:46:47,544 INFO Watching for file changes with StatReloader

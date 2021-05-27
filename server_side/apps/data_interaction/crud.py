@@ -290,6 +290,12 @@ def read_audiences_company(company):
     return dm.TargetAudience.objects.filter(company_id=company)
 
 
+def read_audiences_id(id_audience):
+    if dm.TargetAudience.objects.filter(pk=id_audience).exists():
+        return dm.TargetAudience.objects.get(pk=id_audience)
+    return ''
+
+
 def update_profile_password(data):
     user = dm.User.objects.get(username=data["username"])
     user.set_password(data["password"])

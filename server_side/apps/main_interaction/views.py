@@ -632,12 +632,34 @@ def filter_audience(request):
         data = utils.add_audience_type_translation(
             data, request.GET["language"]
         )
+        data = utils.transform_age_group(data)
         data = {
             "audiences": data,
             "types": utils.get_audience_type(request.GET["language"]),
             "max_size": utils.get_max_size(data),
         }
-        data = utils.transform_age_group(data)
         data["audiences"] = utils.filter_audiences(data["audiences"], request.GET)
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def forecast_audience(request):
+    if request.method == "GET":
+        audience = crud.read_audiences_id(request.GET["id"])
+        if audience == '':
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        data = serializers_wrapper.get_serialize_audience(audience)
+        data = utils.add_img_single(data)
+        data = utils.add_audience_type_translation_single(
+             data, request.GET["language"]
+        )
+        data = utils.transform_age_group_single(data)
+        data = {
+            "audience": data,
+            "indicators": []
+        }
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

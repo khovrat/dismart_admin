@@ -49,4 +49,5 @@ urlpatterns = [
     path('audience/update/', views.update_audience),
     path('audience/delete/', views.delete_audience),
     path('audience/filter/', views.filter_audience),
+    path('audience/forecast/', views.forecast_audience),
 ]

@@ -204,11 +204,12 @@ def get_max_size(data):
             max_ = item["size"]
     return max_
 
+
 def filter_aid(data, filter_):
     new_data = []
     for advice in data:
         if float(advice["rating"]) <= float(filter_["rating"]) and float(
-            advice["amount"]
+                advice["amount"]
         ) <= float(filter_["amount"]):
             new_data.append(advice)
     return new_data
@@ -218,9 +219,9 @@ def filter_disasters(data, filter_):
     new_data = []
     for disaster in data:
         if (
-            float(disaster["intensity"]) <= float(filter_["intensity"])
-            and float(disaster["term"]) <= float(filter_["term"])
-            and float(disaster["readiness_degree"]) <= float(filter_["readiness"])
+                float(disaster["intensity"]) <= float(filter_["intensity"])
+                and float(disaster["term"]) <= float(filter_["term"])
+                and float(disaster["readiness_degree"]) <= float(filter_["readiness"])
         ):
             new_data.append(disaster)
     return new_data
@@ -230,9 +231,9 @@ def filter_audiences(data, filter_):
     new_data = []
     for audience in data:
         if (
-            float(audience["size"]) <= float(filter_["size"])
-            and float(audience["age_left"]) >= float(filter_["age_left"])
-            and float(audience["age_right"]) <= float(filter_["age_right"])
+                float(audience["size"]) <= float(filter_["size"])
+                and float(audience["age_left"]) >= float(filter_["age_left"])
+                and float(audience["age_right"]) <= float(filter_["age_right"])
         ):
             new_data.append(audience)
     return new_data
@@ -271,6 +272,17 @@ def add_audience_type_translation(data, language):
             item["type"] = type_.name
         else:
             item["type"] = type_
+    return data
+
+
+def add_audience_type_translation_single(data, language):
+    type_ = crud.read_audience_type_translation_language_id(
+        data["type"]["id"], language
+    )
+    if type_ != "":
+        data["type"] = type_.name
+    else:
+        data["type"] = type_
     return data
 
 
@@ -339,6 +351,11 @@ def add_img(data):
     return data
 
 
+def add_img_single(data):
+    data["img"] = data["type"]["img"]
+    return data
+
+
 def transform_age_group(data):
     for item in data:
         age_group = item["age_group"]
@@ -346,4 +363,13 @@ def transform_age_group(data):
         ages = age_group.split("-")
         item["age_left"] = ages[0]
         item["age_right"] = ages[1]
+    return data
+
+
+def transform_age_group_single(data):
+    age_group = data["age_group"]
+    data.pop("age_group")
+    ages = age_group.split("-")
+    data["age_left"] = ages[0]
+    data["age_right"] = ages[1]
     return data

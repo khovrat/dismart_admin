@@ -1626,3 +1626,6 @@ Traceback (most recent call last):
 TypeError: string indices must be integers
 2021-05-27 09:44:06,539 INFO Watching for file changes with StatReloader
 2021-05-27 09:46:47,544 INFO Watching for file changes with StatReloader
+2021-05-27 10:48:26,365 INFO Watching for file changes with StatReloader
+2021-05-27 10:51:17,180 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\audience_forecast\prediction.py changed, reloading.
+2021-05-27 10:51:19,523 INFO Watching for file changes with StatReloader

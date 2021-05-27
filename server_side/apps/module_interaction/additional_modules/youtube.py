@@ -1,7 +1,7 @@
 import random
 from youtubesearchpython import VideosSearch
 
-from server_side.apps.module_interaction.modules.constants import SEARCH_ENGINE, LIMIT
+from server_side.apps.module_interaction.additional_modules.constants import SEARCH_ENGINE, LIMIT
 
 
 def get_text():

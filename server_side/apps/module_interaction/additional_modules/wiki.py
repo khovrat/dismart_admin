@@ -2,7 +2,7 @@ import wikipedia
 import random
 from wikipedia.exceptions import DisambiguationError, PageError
 
-from server_side.apps.module_interaction.modules.constants import LIMIT, SEARCH_ENGINE
+from server_side.apps.module_interaction.additional_modules.constants import LIMIT, SEARCH_ENGINE
 
 
 def get_text():

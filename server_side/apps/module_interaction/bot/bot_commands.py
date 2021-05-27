@@ -2,8 +2,8 @@ from decouple import config
 from django.http import JsonResponse
 from django.utils import translation
 from django.utils.translation import ugettext as _
-from server_side.apps.module_interaction.modules.df_response_lib import *
-from server_side.apps.module_interaction.modules import articles, youtube, wiki
+from server_side.apps.module_interaction.additional_modules.df_response_lib import *
+from server_side.apps.module_interaction.additional_modules import articles, youtube, wiki
 
 
 def send_welcome(language, base_language):

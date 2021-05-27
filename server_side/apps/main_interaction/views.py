@@ -12,6 +12,10 @@ from server_side.apps.data_interaction import crud, serializers_wrapper
 from server_side.apps.main_interaction.views_base import authenticate_base
 from server_side.apps.shared_logic import utils
 from server_side.apps.shared_logic.loggers import view_status_logger
+from server_side.apps.module_interaction.audience_forecast import prediction as af_prediction
+from server_side.apps.module_interaction.company_forecast import prediction as cf_prediction
+from server_side.apps.module_interaction.company_test import prediction as ct_prediction
+from server_side.apps.module_interaction.market_forecast import prediction as mf_prediction
 
 
 @api_view(["PATCH"])
@@ -659,7 +663,7 @@ def forecast_audience(request):
         data = utils.transform_age_group_single(data)
         data = {
             "audience": data,
-            "indicators": []
+            "indicators": af_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"])
         }
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

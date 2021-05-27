@@ -3,7 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from server_side import settings
 from server_side.apps.data_interaction import crud
-from server_side.apps.module_interaction.bot_commands import *
+from server_side.apps.module_interaction.bot.bot_commands import *
 
 from server_side.apps.shared_logic import utils
 

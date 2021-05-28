@@ -161,7 +161,13 @@ class Disaster(models.Model):
     )
     about = models.TextField(verbose_name=_("about"), help_text=_("about_help"))
 
-    about_clean = models.TextField(verbose_name=_("about"), help_text=_("about_help"), null=True, blank=True, default="")
+    about_clean = models.TextField(
+        verbose_name=_("about"),
+        help_text=_("about_help"),
+        null=True,
+        blank=True,
+        default="",
+    )
 
     @class_status_logger
     def __str__(self):
@@ -322,7 +328,9 @@ class ArticleRating(models.Model):
 
 
 class Market(models.Model):
-    ticker = models.TextField(default="MCD", null=True, verbose_name=_("ticker"), help_text=_("ticker_help"))
+    ticker = models.TextField(
+        default="MCD", null=True, verbose_name=_("ticker"), help_text=_("ticker_help")
+    )
     img = models.URLField(
         default=config("BASE_URL"),
         null=False,
@@ -379,7 +387,9 @@ class Company(models.Model):
     name = models.CharField(max_length=200, null=False, verbose_name=_("name"))
     location = models.CharField(max_length=200, null=False, verbose_name=_("location"))
     size = models.IntegerField(default=1, null=False, verbose_name=_("size"))
-    revenue = models.FloatField(default=1.0, null=True, verbose_name=_("size"), blank=True)
+    revenue = models.FloatField(
+        default=1.0, null=True, verbose_name=_("size"), blank=True
+    )
     website = models.URLField(
         null=True, verbose_name=_("website"), help_text=_("help_website"), blank=True
     )
@@ -391,6 +401,13 @@ class Company(models.Model):
     )
     description = models.TextField(
         verbose_name=_("description"), help_text=_("description_help")
+    )
+    description_clean = models.TextField(
+        null=True,
+        blank=True,
+        default="",
+        verbose_name=_("description"),
+        help_text=_("description_help"),
     )
 
     @class_status_logger
@@ -421,14 +438,14 @@ class Workplace(models.Model):
     @class_status_logger
     def __str__(self):
         result = (
-            _("company")
-            + ": "
-            + str(self.company.id)
-            + "; "
-            + _("user")
-            + ": "
-            + self.user.user.username
-            + "; "
+                _("company")
+                + ": "
+                + str(self.company.id)
+                + "; "
+                + _("user")
+                + ": "
+                + self.user.user.username
+                + "; "
         )
         return result
 
@@ -505,19 +522,25 @@ class TargetAudience(models.Model):
     features = models.TextField(
         verbose_name=_("features"), help_text=_("features_help")
     )
-    features_clean = models.TextField(verbose_name=_("features"), help_text=_("features_help"), null=True, blank=True, default="")
+    features_clean = models.TextField(
+        verbose_name=_("features"),
+        help_text=_("features_help"),
+        null=True,
+        blank=True,
+        default="",
+    )
 
     @class_status_logger
     def __str__(self):
         return (
-            _("company")
-            + ": "
-            + str(self.company.id)
-            + "; "
-            + _("target_audience_type")
-            + ": "
-            + str(self.type.id)
-            + "; "
+                _("company")
+                + ": "
+                + str(self.company.id)
+                + "; "
+                + _("target_audience_type")
+                + ": "
+                + str(self.type.id)
+                + "; "
         )
 
     class Meta:
@@ -541,14 +564,14 @@ class MarketForecast(models.Model):
     @class_status_logger
     def __str__(self):
         return (
-            _("market")
-            + ": "
-            + str(self.market.id)
-            + "; "
-            + _("disaster")
-            + ": "
-            + str(self.disaster.id)
-            + "; "
+                _("market")
+                + ": "
+                + str(self.market.id)
+                + "; "
+                + _("disaster")
+                + ": "
+                + str(self.disaster.id)
+                + "; "
         )
 
     class Meta:
@@ -572,14 +595,14 @@ class CompanyForecast(models.Model):
     @class_status_logger
     def __str__(self):
         return (
-            _("company")
-            + ": "
-            + str(self.company.id)
-            + "; "
-            + _("disaster")
-            + ": "
-            + str(self.disaster.id)
-            + "; "
+                _("company")
+                + ": "
+                + str(self.company.id)
+                + "; "
+                + _("disaster")
+                + ": "
+                + str(self.disaster.id)
+                + "; "
         )
 
     class Meta:
@@ -603,14 +626,14 @@ class CompanyStressTest(models.Model):
     @class_status_logger
     def __str__(self):
         return (
-            _("company")
-            + ": "
-            + str(self.company.id)
-            + "; "
-            + _("disaster")
-            + ": "
-            + str(self.disaster.id)
-            + "; "
+                _("company")
+                + ": "
+                + str(self.company.id)
+                + "; "
+                + _("disaster")
+                + ": "
+                + str(self.disaster.id)
+                + "; "
         )
 
     class Meta:
@@ -637,14 +660,14 @@ class TargetAudienceBehaviour(models.Model):
     @class_status_logger
     def __str__(self):
         return (
-            _("target_audience")
-            + ": "
-            + str(self.audience.id)
-            + "; "
-            + _("disaster")
-            + ": "
-            + str(self.disaster.id)
-            + "; "
+                _("target_audience")
+                + ": "
+                + str(self.audience.id)
+                + "; "
+                + _("disaster")
+                + ": "
+                + str(self.disaster.id)
+                + "; "
         )
 
     class Meta:
@@ -663,14 +686,14 @@ class TelegramUser(models.Model):
     @class_status_logger
     def __str__(self):
         return (
-            _("user")
-            + ": "
-            + str(self.user)
-            + "; "
-            + _("language")
-            + ": "
-            + str(self.language)
-            + "; "
+                _("user")
+                + ": "
+                + str(self.user)
+                + "; "
+                + _("language")
+                + ": "
+                + str(self.language)
+                + "; "
         )
 
     class Meta:

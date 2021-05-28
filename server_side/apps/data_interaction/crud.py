@@ -160,6 +160,34 @@ def create_market_forecast(id_market, id_disaster, forecast):
     market_forecast.save()
 
 
+def create_company_stresstest(id_company, id_disaster, test_result):
+    if dm.CompanyStressTest.objects.filter(company_id=id_company, disaster_id=id_disaster).exists():
+        update_company_stresstest(id_company, id_disaster, test_result)
+        return
+    company_stresstest = dm.CompanyStressTest(
+        company_id=id_company,
+        disaster_id=id_disaster,
+        test_result=test_result
+    )
+    company_stresstest.save()
+
+
+def create_company_forecast(id_company, id_disaster, forecast):
+    if dm.CompanyForecast.objects.filter(company_id=id_company, disaster_id=id_disaster).exists():
+        update_company_forecast(id_company, id_disaster, forecast)
+        return
+    company_forecast = dm.CompanyForecast(
+        company_id=id_company,
+        disaster_id=id_disaster,
+        forecast=forecast
+    )
+    company_forecast.save()
+
+
+def read_companies():
+    return dm.Company.objects.all()
+
+
 def read_amount_users():
     return dm.User.objects.count()
 
@@ -346,6 +374,12 @@ def read_companies_market_id(id_market):
     return dm.Company.objects.filter(market_id=id_market)
 
 
+def read_market_translation_language_id(id_market, language):
+    if dm.MarketTranslation.objects.filter(market_id=id_market, language=language).exists():
+        return dm.MarketTranslation.objects.get(market_id=id_market, language=language)
+    return ''
+
+
 def update_profile_password(data):
     user = dm.User.objects.get(username=data["username"])
     user.set_password(data["password"])
@@ -465,6 +499,12 @@ def update_audience_features(id_audience, text):
     audience.save()
 
 
+def update_company_description(id_company, text):
+    company = dm.Company.objects.get(pk=id_company)
+    company.description_clean = text
+    company.save()
+
+
 def update_disaster_about(id_disaster, text):
     disaster = dm.Disaster.objects.get(pk=id_disaster)
     disaster.about_clean = text
@@ -483,6 +523,20 @@ def update_market_forecast(id_market, id_disaster, forecast):
     market_forecast.forecast = forecast
     market_forecast.last_update = datetime.datetime.now()
     market_forecast.save()
+
+
+def update_company_stresstest(id_company, id_disaster, test_result):
+    company_stresstest = dm.CompanyStressTest.objects.get(company_id=id_company, disaster_id=id_disaster)
+    company_stresstest.test_result = test_result
+    company_stresstest.last_update = datetime.datetime.now()
+    company_stresstest.save()
+
+
+def update_company_forecast(id_company, id_disaster, forecast):
+    company_forecast = dm.CompanyForecast.objects.get(company_id=id_company, disaster_id=id_disaster)
+    company_forecast.forecast = forecast
+    company_forecast.last_update = datetime.datetime.now()
+    company_forecast.save()
 
 
 def delete_companies_id(id_company):

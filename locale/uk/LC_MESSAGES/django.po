@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-25 13:31+0300\n"
+"POT-Creation-Date: 2021-05-28 21:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,60 +20,6 @@ msgstr ""
 "11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
-
-#: .\dismartbot\processors.py:52
-#: .\server_side\apps\module_interaction\bot_commands.py:11
-msgid "Welcome_message_telegram"
-msgstr "Вітаємо у нашому телеграмі. Оберіть бажану опцію"
-
-#: .\dismartbot\processors.py:57
-#: .\server_side\apps\module_interaction\bot_commands.py:14
-msgid "Go_to_site"
-msgstr "Сайт"
-
-#: .\dismartbot\processors.py:58
-#: .\server_side\apps\module_interaction\bot_commands.py:15
-msgid "Change_language"
-msgstr "Мова"
-
-#: .\dismartbot\processors.py:59
-#: .\server_side\apps\module_interaction\bot_commands.py:16
-msgid "Start_conversation"
-msgstr "Дія"
-
-#: .\dismartbot\processors.py:69
-#: .\server_side\apps\module_interaction\bot_commands.py:80
-msgid "Change_language_message"
-msgstr "Яку бажаєте мову?"
-
-#: .\dismartbot\processors.py:86
-#: .\server_side\apps\module_interaction\bot_commands.py:96
-msgid "Start_conversation_message"
-msgstr "Яку бажаєте дію?"
-
-#: .\dismartbot\processors.py:92 .\dismartbot\processors.py:108
-#: .\dismartbot\processors.py:124 .\dismartbot\processors.py:140
-#: .\server_side\apps\module_interaction\bot_commands.py:69
-#: .\server_side\apps\module_interaction\bot_commands.py:99
-msgid "Article"
-msgstr "Стаття"
-
-#: .\dismartbot\processors.py:92 .\dismartbot\processors.py:108
-#: .\dismartbot\processors.py:124 .\dismartbot\processors.py:140
-#: .\server_side\apps\module_interaction\bot_commands.py:70
-#: .\server_side\apps\module_interaction\bot_commands.py:100
-msgid "Video"
-msgstr "Відео"
-
-#: .\dismartbot\processors.py:102 .\dismartbot\processors.py:118
-#: .\dismartbot\processors.py:134
-msgid "Your_link"
-msgstr "Посилання"
-
-#: .\dismartbot\processors.py:150
-#: .\server_side\apps\module_interaction\bot_commands.py:27
-msgid "Go_to_expert: "
-msgstr "Експерт тут: "
 
 #: .\server_side\apps\data_interaction\admin.py:9
 msgid "Dismart_Admin_Panel"
@@ -106,7 +52,9 @@ msgstr "Консультація"
 
 #: .\server_side\apps\data_interaction\models.py:16
 #: .\server_side\apps\data_interaction\models.py:37
-#: .\server_side\apps\data_interaction\models.py:425
+#: .\server_side\apps\data_interaction\models.py:445
+#: .\server_side\apps\data_interaction\models.py:680
+#: .\server_side\apps\data_interaction\models.py:689
 msgid "user"
 msgstr "Користувач"
 
@@ -119,12 +67,12 @@ msgid "subscription_help"
 msgstr "Виберіть тип підписки"
 
 #: .\server_side\apps\data_interaction\models.py:27
-#: .\server_side\apps\data_interaction\models.py:386
+#: .\server_side\apps\data_interaction\models.py:399
 msgid "img_user"
 msgstr "Зображення"
 
 #: .\server_side\apps\data_interaction\models.py:28
-#: .\server_side\apps\data_interaction\models.py:387
+#: .\server_side\apps\data_interaction\models.py:400
 msgid "help_img_user"
 msgstr "Вставте посилання на зображення"
 
@@ -132,14 +80,14 @@ msgstr "Вставте посилання на зображення"
 #: .\server_side\apps\data_interaction\models.py:57
 #: .\server_side\apps\data_interaction\models.py:69
 #: .\server_side\apps\data_interaction\models.py:145
-#: .\server_side\apps\data_interaction\models.py:234
-#: .\server_side\apps\data_interaction\models.py:301
-#: .\server_side\apps\data_interaction\models.py:414
+#: .\server_side\apps\data_interaction\models.py:242
+#: .\server_side\apps\data_interaction\models.py:309
+#: .\server_side\apps\data_interaction\models.py:434
 msgid "profile"
 msgstr "Профіль"
 
 #: .\server_side\apps\data_interaction\models.py:41
-#: .\server_side\settings.py:147
+#: .\server_side\settings.py:145
 msgid "profiles"
 msgstr "Профілі"
 
@@ -149,8 +97,8 @@ msgstr "Відгук"
 
 #: .\server_side\apps\data_interaction\models.py:60
 #: .\server_side\apps\data_interaction\models.py:72
-#: .\server_side\apps\data_interaction\models.py:243
-#: .\server_side\apps\data_interaction\models.py:310
+#: .\server_side\apps\data_interaction\models.py:251
+#: .\server_side\apps\data_interaction\models.py:318
 msgid "time"
 msgstr "Час"
 
@@ -184,23 +132,23 @@ msgstr "Користувацькі питання"
 
 #: .\server_side\apps\data_interaction\models.py:90
 #: .\server_side\apps\data_interaction\models.py:98
-#: .\server_side\apps\data_interaction\models.py:178
-#: .\server_side\apps\data_interaction\models.py:193
-#: .\server_side\apps\data_interaction\models.py:259
-#: .\server_side\apps\data_interaction\models.py:285
-#: .\server_side\apps\data_interaction\models.py:326
-#: .\server_side\apps\data_interaction\models.py:334
-#: .\server_side\apps\data_interaction\models.py:397
-#: .\server_side\apps\data_interaction\models.py:441
-#: .\server_side\apps\data_interaction\models.py:449
+#: .\server_side\apps\data_interaction\models.py:186
+#: .\server_side\apps\data_interaction\models.py:201
+#: .\server_side\apps\data_interaction\models.py:267
+#: .\server_side\apps\data_interaction\models.py:293
+#: .\server_side\apps\data_interaction\models.py:337
+#: .\server_side\apps\data_interaction\models.py:345
+#: .\server_side\apps\data_interaction\models.py:417
+#: .\server_side\apps\data_interaction\models.py:461
+#: .\server_side\apps\data_interaction\models.py:469
 msgid "img"
 msgstr "Зображення"
 
 #: .\server_side\apps\data_interaction\models.py:91
-#: .\server_side\apps\data_interaction\models.py:179
-#: .\server_side\apps\data_interaction\models.py:260
-#: .\server_side\apps\data_interaction\models.py:327
-#: .\server_side\apps\data_interaction\models.py:442
+#: .\server_side\apps\data_interaction\models.py:187
+#: .\server_side\apps\data_interaction\models.py:268
+#: .\server_side\apps\data_interaction\models.py:338
+#: .\server_side\apps\data_interaction\models.py:462
 msgid "help_img"
 msgstr "Вставте посилання на зображення"
 
@@ -217,31 +165,33 @@ msgid "disaster_types"
 msgstr "Типи катастроф"
 
 #: .\server_side\apps\data_interaction\models.py:121
-#: .\server_side\apps\data_interaction\models.py:213
-#: .\server_side\apps\data_interaction\models.py:274
-#: .\server_side\apps\data_interaction\models.py:354
-#: .\server_side\apps\data_interaction\models.py:472
+#: .\server_side\apps\data_interaction\models.py:221
+#: .\server_side\apps\data_interaction\models.py:282
+#: .\server_side\apps\data_interaction\models.py:365
+#: .\server_side\apps\data_interaction\models.py:492
+#: .\server_side\apps\data_interaction\models.py:683
+#: .\server_side\apps\data_interaction\models.py:693
 msgid "language"
 msgstr "Мова"
 
 #: .\server_side\apps\data_interaction\models.py:123
-#: .\server_side\apps\data_interaction\models.py:215
-#: .\server_side\apps\data_interaction\models.py:276
-#: .\server_side\apps\data_interaction\models.py:356
-#: .\server_side\apps\data_interaction\models.py:376
-#: .\server_side\apps\data_interaction\models.py:474
+#: .\server_side\apps\data_interaction\models.py:223
+#: .\server_side\apps\data_interaction\models.py:284
+#: .\server_side\apps\data_interaction\models.py:367
+#: .\server_side\apps\data_interaction\models.py:387
+#: .\server_side\apps\data_interaction\models.py:494
 msgid "name"
 msgstr "Назва"
 
 #: .\server_side\apps\data_interaction\models.py:124
-#: .\server_side\apps\data_interaction\models.py:216
-#: .\server_side\apps\data_interaction\models.py:475
+#: .\server_side\apps\data_interaction\models.py:224
+#: .\server_side\apps\data_interaction\models.py:495
 msgid "content"
 msgstr "Зміст"
 
 #: .\server_side\apps\data_interaction\models.py:124
-#: .\server_side\apps\data_interaction\models.py:216
-#: .\server_side\apps\data_interaction\models.py:475
+#: .\server_side\apps\data_interaction\models.py:224
+#: .\server_side\apps\data_interaction\models.py:495
 msgid "content_help"
 msgstr "Вставте необхідне текстовий зміст"
 
@@ -278,399 +228,518 @@ msgid "readiness_degree_help"
 msgstr "Виберіть ступінь готовності соціуму до катастрофи"
 
 #: .\server_side\apps\data_interaction\models.py:162
+#: .\server_side\apps\data_interaction\models.py:165
 msgid "about"
 msgstr "Опис"
 
 #: .\server_side\apps\data_interaction\models.py:162
+#: .\server_side\apps\data_interaction\models.py:166
 msgid "about_help"
 msgstr "Додайте текстовий опис катастрофи"
 
-#: .\server_side\apps\data_interaction\models.py:166
-#: .\server_side\apps\data_interaction\models.py:170
-#: .\server_side\apps\data_interaction\models.py:529
-#: .\server_side\apps\data_interaction\models.py:544
-#: .\server_side\apps\data_interaction\models.py:560
-#: .\server_side\apps\data_interaction\models.py:575
-#: .\server_side\apps\data_interaction\models.py:591
-#: .\server_side\apps\data_interaction\models.py:606
-#: .\server_side\apps\data_interaction\models.py:625
-#: .\server_side\apps\data_interaction\models.py:640
+#: .\server_side\apps\data_interaction\models.py:174
+#: .\server_side\apps\data_interaction\models.py:178
+#: .\server_side\apps\data_interaction\models.py:556
+#: .\server_side\apps\data_interaction\models.py:571
+#: .\server_side\apps\data_interaction\models.py:587
+#: .\server_side\apps\data_interaction\models.py:602
+#: .\server_side\apps\data_interaction\models.py:618
+#: .\server_side\apps\data_interaction\models.py:633
+#: .\server_side\apps\data_interaction\models.py:652
+#: .\server_side\apps\data_interaction\models.py:667
 msgid "disaster"
 msgstr "Катастрофа"
 
-#: .\server_side\apps\data_interaction\models.py:171
-#: .\server_side\settings.py:159
+#: .\server_side\apps\data_interaction\models.py:179
+#: .\server_side\settings.py:157
 msgid "disasters"
 msgstr "Катастрофи"
 
-#: .\server_side\apps\data_interaction\models.py:185
+#: .\server_side\apps\data_interaction\models.py:193
 msgid "advice_type"
 msgstr "Тип поради"
 
-#: .\server_side\apps\data_interaction\models.py:186
+#: .\server_side\apps\data_interaction\models.py:194
 msgid "advice_type_help"
 msgstr "Виберіть тип поради"
 
-#: .\server_side\apps\data_interaction\models.py:197
-#: .\server_side\apps\data_interaction\models.py:200
-#: .\server_side\apps\data_interaction\models.py:206
-#: .\server_side\apps\data_interaction\models.py:220
-#: .\server_side\apps\data_interaction\models.py:231
-#: .\server_side\apps\data_interaction\models.py:247
-#: .\server_side\apps\data_interaction\models.py:363
+#: .\server_side\apps\data_interaction\models.py:205
+#: .\server_side\apps\data_interaction\models.py:208
+#: .\server_side\apps\data_interaction\models.py:214
+#: .\server_side\apps\data_interaction\models.py:228
+#: .\server_side\apps\data_interaction\models.py:239
+#: .\server_side\apps\data_interaction\models.py:255
+#: .\server_side\apps\data_interaction\models.py:374
 msgid "advice"
 msgstr "Порада"
 
-#: .\server_side\apps\data_interaction\models.py:201
-#: .\server_side\settings.py:168
+#: .\server_side\apps\data_interaction\models.py:209
+#: .\server_side\settings.py:166
 msgid "advices"
 msgstr "Поради"
 
-#: .\server_side\apps\data_interaction\models.py:224
+#: .\server_side\apps\data_interaction\models.py:232
 msgid "advice_translation"
 msgstr "Переклад поради"
 
-#: .\server_side\apps\data_interaction\models.py:225
+#: .\server_side\apps\data_interaction\models.py:233
 msgid "advices_translation"
 msgstr "Переклад порад"
 
-#: .\server_side\apps\data_interaction\models.py:240
-#: .\server_side\apps\data_interaction\models.py:241
-#: .\server_side\apps\data_interaction\models.py:307
-#: .\server_side\apps\data_interaction\models.py:308
+#: .\server_side\apps\data_interaction\models.py:248
+#: .\server_side\apps\data_interaction\models.py:249
+#: .\server_side\apps\data_interaction\models.py:315
+#: .\server_side\apps\data_interaction\models.py:316
 msgid "rating"
 msgstr "Рейтинг"
 
-#: .\server_side\apps\data_interaction\models.py:250
+#: .\server_side\apps\data_interaction\models.py:258
 msgid "advice_rating"
 msgstr "Рейтинг поради"
 
-#: .\server_side\apps\data_interaction\models.py:251
+#: .\server_side\apps\data_interaction\models.py:259
 msgid "advices_rating"
 msgstr "Рейтинги порад"
 
-#: .\server_side\apps\data_interaction\models.py:266
+#: .\server_side\apps\data_interaction\models.py:274
 msgid "article_type"
 msgstr "Тип статті"
 
-#: .\server_side\apps\data_interaction\models.py:267
+#: .\server_side\apps\data_interaction\models.py:275
 msgid "article_type_help"
 msgstr "Виберіть необхідний тип статті"
 
-#: .\server_side\apps\data_interaction\models.py:277
+#: .\server_side\apps\data_interaction\models.py:285
 msgid "author"
 msgstr "Автор"
 
-#: .\server_side\apps\data_interaction\models.py:278
-#: .\server_side\apps\data_interaction\models.py:532
-#: .\server_side\apps\data_interaction\models.py:563
-#: .\server_side\apps\data_interaction\models.py:594
-#: .\server_side\apps\data_interaction\models.py:628
+#: .\server_side\apps\data_interaction\models.py:286
+#: .\server_side\apps\data_interaction\models.py:559
+#: .\server_side\apps\data_interaction\models.py:590
+#: .\server_side\apps\data_interaction\models.py:621
+#: .\server_side\apps\data_interaction\models.py:655
 msgid "date"
 msgstr "Дата"
 
-#: .\server_side\apps\data_interaction\models.py:279
+#: .\server_side\apps\data_interaction\models.py:287
 msgid "article_text"
 msgstr "Текст статті"
 
-#: .\server_side\apps\data_interaction\models.py:289
-#: .\server_side\apps\data_interaction\models.py:292
-#: .\server_side\apps\data_interaction\models.py:298
-#: .\server_side\apps\data_interaction\models.py:314
+#: .\server_side\apps\data_interaction\models.py:297
+#: .\server_side\apps\data_interaction\models.py:300
+#: .\server_side\apps\data_interaction\models.py:306
+#: .\server_side\apps\data_interaction\models.py:322
 msgid "article"
 msgstr "Стаття"
 
-#: .\server_side\apps\data_interaction\models.py:293
-#: .\server_side\settings.py:177
+#: .\server_side\apps\data_interaction\models.py:301
+#: .\server_side\settings.py:175
 msgid "articles"
 msgstr "Статті"
 
-#: .\server_side\apps\data_interaction\models.py:317
-#: .\server_side\apps\data_interaction\models.py:318
+#: .\server_side\apps\data_interaction\models.py:325
+#: .\server_side\apps\data_interaction\models.py:326
 msgid "article_rating"
 msgstr "Рейтинг статті"
 
-#: .\server_side\apps\data_interaction\models.py:338
-#: .\server_side\apps\data_interaction\models.py:341
-#: .\server_side\apps\data_interaction\models.py:347
-#: .\server_side\apps\data_interaction\models.py:374
-#: .\server_side\apps\data_interaction\models.py:526
-#: .\server_side\apps\data_interaction\models.py:540
+#: .\server_side\apps\data_interaction\models.py:332
+msgid "ticker"
+msgstr "Тікер"
+
+#: .\server_side\apps\data_interaction\models.py:332
+msgid "ticker_help"
+msgstr "Впишіть тікер"
+
+#: .\server_side\apps\data_interaction\models.py:349
+#: .\server_side\apps\data_interaction\models.py:352
+#: .\server_side\apps\data_interaction\models.py:358
+#: .\server_side\apps\data_interaction\models.py:385
+#: .\server_side\apps\data_interaction\models.py:553
+#: .\server_side\apps\data_interaction\models.py:567
 msgid "market"
 msgstr "Ринок"
 
-#: .\server_side\apps\data_interaction\models.py:342
-#: .\server_side\settings.py:182
+#: .\server_side\apps\data_interaction\models.py:353
+#: .\server_side\settings.py:180
 msgid "markets"
 msgstr "Ринки"
 
-#: .\server_side\apps\data_interaction\models.py:358
-#: .\server_side\apps\data_interaction\models.py:390
+#: .\server_side\apps\data_interaction\models.py:369
+#: .\server_side\apps\data_interaction\models.py:403
+#: .\server_side\apps\data_interaction\models.py:409
 msgid "description"
 msgstr "Опис"
 
-#: .\server_side\apps\data_interaction\models.py:358
-#: .\server_side\apps\data_interaction\models.py:390
+#: .\server_side\apps\data_interaction\models.py:369
+#: .\server_side\apps\data_interaction\models.py:403
+#: .\server_side\apps\data_interaction\models.py:410
 msgid "description_help"
 msgstr "Введіть докладний опис ринку"
 
-#: .\server_side\apps\data_interaction\models.py:367
+#: .\server_side\apps\data_interaction\models.py:378
 msgid "market_translation"
 msgstr "Переклад ринку"
 
-#: .\server_side\apps\data_interaction\models.py:368
+#: .\server_side\apps\data_interaction\models.py:379
 msgid "markets_translation"
 msgstr "Переклад ринків"
 
-#: .\server_side\apps\data_interaction\models.py:377
+#: .\server_side\apps\data_interaction\models.py:388
 msgid "location"
 msgstr "Месторосположеніе"
 
-#: .\server_side\apps\data_interaction\models.py:378
-#: .\server_side\apps\data_interaction\models.py:379
-#: .\server_side\apps\data_interaction\models.py:501
+#: .\server_side\apps\data_interaction\models.py:389
+#: .\server_side\apps\data_interaction\models.py:391
+#: .\server_side\apps\data_interaction\models.py:521
 msgid "size"
 msgstr "Розмір"
 
-#: .\server_side\apps\data_interaction\models.py:381
+#: .\server_side\apps\data_interaction\models.py:394
 msgid "website"
 msgstr "Веб-сайт"
 
-#: .\server_side\apps\data_interaction\models.py:381
+#: .\server_side\apps\data_interaction\models.py:394
 msgid "help_website"
 msgstr "Додайте посилання на веб-сайт"
 
-#: .\server_side\apps\data_interaction\models.py:401
-#: .\server_side\apps\data_interaction\models.py:405
-#: .\server_side\apps\data_interaction\models.py:411
 #: .\server_side\apps\data_interaction\models.py:421
-#: .\server_side\apps\data_interaction\models.py:496
-#: .\server_side\apps\data_interaction\models.py:509
-#: .\server_side\apps\data_interaction\models.py:557
-#: .\server_side\apps\data_interaction\models.py:571
-#: .\server_side\apps\data_interaction\models.py:588
-#: .\server_side\apps\data_interaction\models.py:602
+#: .\server_side\apps\data_interaction\models.py:425
+#: .\server_side\apps\data_interaction\models.py:431
+#: .\server_side\apps\data_interaction\models.py:441
+#: .\server_side\apps\data_interaction\models.py:516
+#: .\server_side\apps\data_interaction\models.py:536
+#: .\server_side\apps\data_interaction\models.py:584
+#: .\server_side\apps\data_interaction\models.py:598
+#: .\server_side\apps\data_interaction\models.py:615
+#: .\server_side\apps\data_interaction\models.py:629
 msgid "company"
 msgstr "Компанія"
 
-#: .\server_side\apps\data_interaction\models.py:406
+#: .\server_side\apps\data_interaction\models.py:426
 msgid "companies"
 msgstr "Компанії"
 
-#: .\server_side\apps\data_interaction\models.py:416
+#: .\server_side\apps\data_interaction\models.py:436
 msgid "position"
 msgstr "Посада"
 
-#: .\server_side\apps\data_interaction\models.py:433
+#: .\server_side\apps\data_interaction\models.py:453
 msgid "workplace"
 msgstr "Робоче місце"
 
-#: .\server_side\apps\data_interaction\models.py:434
+#: .\server_side\apps\data_interaction\models.py:454
 msgid "workplaces"
 msgstr "Робочі місця"
 
-#: .\server_side\apps\data_interaction\models.py:453
-#: .\server_side\apps\data_interaction\models.py:456
-#: .\server_side\apps\data_interaction\models.py:465
-#: .\server_side\apps\data_interaction\models.py:493
+#: .\server_side\apps\data_interaction\models.py:473
+#: .\server_side\apps\data_interaction\models.py:476
+#: .\server_side\apps\data_interaction\models.py:485
 #: .\server_side\apps\data_interaction\models.py:513
+#: .\server_side\apps\data_interaction\models.py:540
 msgid "target_audience_type"
 msgstr "Тип аудиторії"
 
-#: .\server_side\apps\data_interaction\models.py:457
+#: .\server_side\apps\data_interaction\models.py:477
 msgid "target_audience_types"
 msgstr "Типи аудиторії"
 
-#: .\server_side\apps\data_interaction\models.py:479
-#: .\server_side\apps\data_interaction\models.py:520
-#: .\server_side\apps\data_interaction\models.py:622
-#: .\server_side\apps\data_interaction\models.py:636
+#: .\server_side\apps\data_interaction\models.py:499
+#: .\server_side\apps\data_interaction\models.py:547
+#: .\server_side\apps\data_interaction\models.py:649
+#: .\server_side\apps\data_interaction\models.py:663
 msgid "target_audience"
 msgstr "Цільова аудиторія"
 
-#: .\server_side\apps\data_interaction\models.py:483
+#: .\server_side\apps\data_interaction\models.py:503
 msgid "target_audience_type_translation"
 msgstr "Переклад аудиторії"
 
-#: .\server_side\apps\data_interaction\models.py:484
+#: .\server_side\apps\data_interaction\models.py:504
 msgid "target_audience_types_translation"
 msgstr "Переклад аудиторій"
 
-#: .\server_side\apps\data_interaction\models.py:499
+#: .\server_side\apps\data_interaction\models.py:519
 msgid "age_group"
 msgstr "Вікова група"
 
-#: .\server_side\apps\data_interaction\models.py:503
+#: .\server_side\apps\data_interaction\models.py:523
+#: .\server_side\apps\data_interaction\models.py:526
 msgid "features"
 msgstr "Особливості"
 
-#: .\server_side\apps\data_interaction\models.py:503
+#: .\server_side\apps\data_interaction\models.py:523
+#: .\server_side\apps\data_interaction\models.py:527
 msgid "features_help"
 msgstr "Опишіть особливості цільової аудиторії"
 
-#: .\server_side\apps\data_interaction\models.py:521
-#: .\server_side\settings.py:187
+#: .\server_side\apps\data_interaction\models.py:548
+#: .\server_side\settings.py:185
 msgid "target_audiences"
 msgstr "Цільові аудиторії"
 
-#: .\server_side\apps\data_interaction\models.py:531
-#: .\server_side\apps\data_interaction\models.py:562
-#: .\server_side\apps\data_interaction\models.py:627
+#: .\server_side\apps\data_interaction\models.py:558
+#: .\server_side\apps\data_interaction\models.py:589
+#: .\server_side\apps\data_interaction\models.py:654
 msgid "forecast"
 msgstr "Прогноз"
 
-#: .\server_side\apps\data_interaction\models.py:534
-#: .\server_side\apps\data_interaction\models.py:565
-#: .\server_side\apps\data_interaction\models.py:596
-#: .\server_side\apps\data_interaction\models.py:630
+#: .\server_side\apps\data_interaction\models.py:561
+#: .\server_side\apps\data_interaction\models.py:592
+#: .\server_side\apps\data_interaction\models.py:623
+#: .\server_side\apps\data_interaction\models.py:657
 msgid "last_update"
 msgstr "Останнє оновлення"
 
-#: .\server_side\apps\data_interaction\models.py:551
+#: .\server_side\apps\data_interaction\models.py:578
 msgid "market_forecast"
 msgstr "Прогноз ринку"
 
-#: .\server_side\apps\data_interaction\models.py:552
+#: .\server_side\apps\data_interaction\models.py:579
 msgid "market_forecasts"
 msgstr "Прогнози ринків"
 
-#: .\server_side\apps\data_interaction\models.py:582
+#: .\server_side\apps\data_interaction\models.py:609
 msgid "company_forecast"
 msgstr "Прогноз компанії"
 
-#: .\server_side\apps\data_interaction\models.py:583
+#: .\server_side\apps\data_interaction\models.py:610
 msgid "company_forecasts"
 msgstr "Прогнози компаній"
 
-#: .\server_side\apps\data_interaction\models.py:593
+#: .\server_side\apps\data_interaction\models.py:620
 msgid "test_result"
 msgstr "Результати тесту"
 
-#: .\server_side\apps\data_interaction\models.py:613
+#: .\server_side\apps\data_interaction\models.py:640
 msgid "company_stress_test"
 msgstr "Стрес-тестування"
 
-#: .\server_side\apps\data_interaction\models.py:614
+#: .\server_side\apps\data_interaction\models.py:641
 msgid "company_stress_tests"
 msgstr "Стрес-тестування"
 
-#: .\server_side\apps\data_interaction\models.py:647
+#: .\server_side\apps\data_interaction\models.py:674
 msgid "target_audience_behaviour"
 msgstr "Поведінка аудиторії"
 
-#: .\server_side\apps\data_interaction\models.py:648
+#: .\server_side\apps\data_interaction\models.py:675
 msgid "target_audiences_behaviours"
 msgstr "Поведінка аудиторій"
 
-#: .\server_side\apps\main_interaction\views.py:91
-#: .\server_side\apps\main_interaction\views.py:246
+#: .\server_side\apps\data_interaction\models.py:680
+msgid "user_help"
+msgstr "Виберіть користувача"
+
+#: .\server_side\apps\data_interaction\models.py:683
+msgid "language_help"
+msgstr "Мова"
+
+#: .\server_side\apps\data_interaction\models.py:700
+msgid "user_telegram"
+msgstr "Користува телеграму"
+
+#: .\server_side\apps\data_interaction\models.py:701
+msgid "users_telegram"
+msgstr "Користувачі телеграму"
+
+#: .\server_side\apps\main_interaction\views.py:101
+#: .\server_side\apps\main_interaction\views.py:260
 msgid "Thanks, "
-msgstr ""
+msgstr "Дякуємо, "
 
-#: .\server_side\apps\main_interaction\views.py:94
+#: .\server_side\apps\main_interaction\views.py:104
 msgid "YourReviewIsVeryImportantForUs"
-msgstr ""
+msgstr "Ваш відгук дуже важливий для нас. Дякуємо!"
 
-#: .\server_side\apps\main_interaction\views.py:249
+#: .\server_side\apps\main_interaction\views.py:263
 msgid "YourCompanyIsVeryImportantForUs"
-msgstr ""
+msgstr "Ваша компанія дуже важлива для нашої програмної системи. У разі необхідності зверніться за електронною адресою"
 
-#: .\server_side\apps\module_interaction\bot_commands.py:38
+#: .\server_side\apps\module_interaction\audience_forecast\prediction.py:21
+msgid "sympathy"
+msgstr "Симпатія"
+
+#: .\server_side\apps\module_interaction\audience_forecast\prediction.py:26
+msgid "indifference"
+msgstr "Байдужість"
+
+#: .\server_side\apps\module_interaction\audience_forecast\prediction.py:31
+msgid "fear"
+msgstr "Страх"
+
+#: .\server_side\apps\module_interaction\audience_forecast\prediction.py:36
+msgid "integrity"
+msgstr "Сумлінність"
+
+#: .\server_side\apps\module_interaction\audience_forecast\prediction.py:41
+msgid "responsibility"
+msgstr "Відповідальність"
+
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:11
+msgid "Welcome_message_telegram"
+msgstr "Вітаємо у нашому телеграмі. Оберіть бажану опцію"
+
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:14
+msgid "Go_to_site"
+msgstr "Сайт"
+
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:15
+msgid "Change_language"
+msgstr "Мова"
+
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:16
+msgid "Start_conversation"
+msgstr "Дія"
+
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:29
+msgid "Go_to_expert: "
+msgstr "Експерт тут: "
+
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:42
 msgid "Bye"
 msgstr "Щасти"
 
-#: .\server_side\apps\module_interaction\bot_commands.py:71
-#: .\server_side\apps\module_interaction\bot_commands.py:101
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:75
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:109
+msgid "Article"
+msgstr "Стаття"
+
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:76
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:110
+msgid "Video"
+msgstr "Відео"
+
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:77
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:111
 msgid "Archive"
 msgstr "Архів"
 
-#: .\server_side\settings.py:121
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:88
+msgid "Change_language_message"
+msgstr "Яку бажаєте мову?"
+
+#: .\server_side\apps\module_interaction\bot\bot_commands.py:106
+msgid "Start_conversation_message"
+msgstr "Яку бажаєте дію?"
+
+#: .\server_side\apps\module_interaction\company_test\prediction.py:18
+msgid "profitability"
+msgstr "Прибутковість"
+
+#: .\server_side\apps\module_interaction\company_test\prediction.py:23
+msgid "perplexity"
+msgstr "Розгубленість"
+
+#: .\server_side\apps\module_interaction\company_test\prediction.py:28
+msgid "spontaneity"
+msgstr "Спонтанність"
+
+#: .\server_side\apps\module_interaction\company_test\prediction.py:33
+msgid "stability"
+msgstr "Стабільність"
+
+#: .\server_side\apps\module_interaction\company_test\prediction.py:38
+msgid "stress_tolerance"
+msgstr "Стресостійкість"
+
+#: .\server_side\apps\module_interaction\market_forecast\prediction.py:44
+msgid "Varmax_low"
+msgstr "Нижчий показник"
+
+#: .\server_side\apps\module_interaction\market_forecast\prediction.py:49
+msgid "Varmax_high"
+msgstr "Вищий показник"
+
+#: .\server_side\settings.py:119
 msgid "English"
 msgstr "Англійська"
 
-#: .\server_side\settings.py:122
+#: .\server_side\settings.py:120
 msgid "Ukrainian"
 msgstr "Українська"
 
-#: .\server_side\settings.py:123
+#: .\server_side\settings.py:121
 msgid "German"
 msgstr "Німецька"
 
-#: .\server_side\settings.py:124
+#: .\server_side\settings.py:122
 msgid "Russian"
 msgstr "Російська"
 
-#: .\server_side\settings.py:125
+#: .\server_side\settings.py:123
 msgid "Belarusian"
 msgstr "Білоруська"
 
-#: .\server_side\settings.py:142
+#: .\server_side\settings.py:140
 msgid "groups_admin"
 msgstr "Адміністрація"
 
-#: .\server_side\settings.py:196
+#: .\server_side\settings.py:194
 msgid "forecasts"
 msgstr "Прогнози"
 
-#: .\server_side\settings.py:261
+#: .\server_side\settings.py:259
 msgid "Welcome"
 msgstr "Для реєстрація зверніться за адресою dismart.inc@gmail.com"
 
-#: .\server_side\settings.py:266
+#: .\server_side\settings.py:264
 msgid "Home"
 msgstr "Додому"
 
-#: .\server_side\settings.py:268
+#: .\server_side\settings.py:266
 msgid "Open_client"
 msgstr "Відкрити сайт"
 
-#: .\server_side\settings.py:277
+#: .\server_side\settings.py:275
 msgid "Download_Backup"
 msgstr "Завантажити резервну копію"
 
-#: .\server_side\settings.py:283
+#: .\server_side\settings.py:281
 msgid "Upload_Backup"
 msgstr "Вивантажити резервну копію"
 
-#: .\server_side\settings.py:289
+#: .\server_side\settings.py:287
 msgid "Watch_Logs"
 msgstr "Переглянути логи"
 
-#: .\server_side\settings.py:295
+#: .\server_side\settings.py:293
 msgid "Download_Logs"
 msgstr "Завантажити логи"
 
-#: .\server_side\settings.py:301
+#: .\server_side\settings.py:299
 msgid "Open_Google"
 msgstr "Відкрити Google"
 
-#: .\server_side\settings.py:307
+#: .\server_side\settings.py:305
 msgid "Open_Github"
 msgstr "Відкрити Github"
 
 #: .\templates\errors\error404.html:8 .\templates\errors\error500.html:8
 msgid "sadly_rhetor"
-msgstr ""
+msgstr "Сумний Dismart"
 
 #: .\templates\errors\error404.html:15 .\templates\errors\error500.html:15
 msgid "error"
-msgstr ""
+msgstr "Помилка"
 
 #: .\templates\errors\error404.html:16
 msgid "page_not_found"
-msgstr ""
+msgstr "Сторінка не знайдена"
 
 #: .\templates\errors\error404.html:30 .\templates\errors\error500.html:30
 msgid "sorry_about_that"
-msgstr ""
+msgstr "Вибачте за це"
 
 #: .\templates\errors\error404.html:33 .\templates\errors\error500.html:33
 msgid "return_home"
-msgstr ""
+msgstr "Повернутися додому"
 
 #: .\templates\errors\error500.html:16
 msgid "internal_server_error"
-msgstr ""
+msgstr "Внутрішня помилка серверу"
+
+#~ msgid "Your_link"
+#~ msgstr "Посилання"
 
 #~ msgid "many"
 #~ msgstr "Користувачі"

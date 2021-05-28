@@ -1853,3 +1853,231 @@ UnboundLocalError: local variable 'varmax_high' referenced before assignment
 2021-05-28 16:12:46,552 INFO Watching for file changes with StatReloader
 2021-05-28 17:14:24,521 INFO Watching for file changes with StatReloader
 2021-05-28 17:14:43,400 INFO Watching for file changes with StatReloader
+2021-05-28 17:59:13,620 INFO Watching for file changes with StatReloader
+2021-05-28 18:03:06,218 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py changed, reloading.
+2021-05-28 18:03:22,862 INFO Watching for file changes with StatReloader
+2021-05-28 18:03:52,353 INFO Watching for file changes with StatReloader
+2021-05-28 20:51:16,878 INFO Watching for file changes with StatReloader
+2021-05-28 20:52:52,839 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'en'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 719, in test_company
+    data, request.GET["language"]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py", line 311, in add_company_market_translation_single
+    language, data["market"]["id"]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\crud.py", line 378, in read_market_translation_language_id
+    if dm.MarketTranslation.objects.filter(market_id=id_market, language=language).exists():
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\sql\query.py", line 1413, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\sql\query.py", line 1345, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\sql\query.py", line 1191, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\fields\related_lookups.py", line 117, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1827, in get_prep_value
+    ) from e
+ValueError: Field 'id' expected a number but got 'en'.
+2021-05-28 20:53:43,229 INFO Watching for file changes with StatReloader
+2021-05-28 20:56:22,738 INFO Watching for file changes with StatReloader
+2021-05-28 21:03:56,780 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py changed, reloading.
+2021-05-28 21:04:04,150 INFO Watching for file changes with StatReloader
+2021-05-28 21:13:26,836 ERROR Internal Server Error: /api/company-forecast
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\utils\deprecation.py", line 116, in __call__
+    response = self.process_request(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\django\middleware\common.py", line 95, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/company-forecast/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2021-05-28 21:14:05,612 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 759, in forecast_company
+    request.data["data"]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 24, in make_prediction
+    main_indicator = find_main_indicator(company, language, info, danger)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 69, in find_main_indicator
+    indicator = make_content_analysis(text, language, company["id"])
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 105, in make_content_analysis
+    dictionary = make_dictionary(id_company)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 127, in make_dictionary
+    if company.about_clean != "" and company.id != id_company:
+AttributeError: 'Company' object has no attribute 'about_clean'
+2021-05-28 21:15:14,967 INFO Watching for file changes with StatReloader
+2021-05-28 21:15:40,896 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 759, in forecast_company
+    request.data["data"]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 25, in make_prediction
+    varmax = make_varmax_forecast(data["data"], market_values, main_indicator)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 79, in make_varmax_forecast
+    model = VARMAX(data, exog=exogenous_data, order=(1, 1))
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\tsa\statespace\varmax.py", line 201, in __init__
+    endog, exog=exog, k_states=k_states, k_posdef=k_posdef, **kwargs
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\tsa\statespace\mlemodel.py", line 138, in __init__
+    missing='none')
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\tsa\base\tsa_model.py", line 412, in __init__
+    **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\model.py", line 237, in __init__
+    super(LikelihoodModel, self).__init__(endog, exog, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\model.py", line 78, in __init__
+    **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\model.py", line 101, in _handle_data
+    data = handle_data(endog, exog, missing, hasconst, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\data.py", line 673, in handle_data
+    **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\data.py", line 87, in __init__
+    self._handle_constant(hasconst)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\data.py", line 132, in _handle_constant
+    if not np.isfinite(exog_max).all():
+TypeError: ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+2021-05-28 21:17:03,498 INFO Watching for file changes with StatReloader
+2021-05-28 21:18:49,007 INFO Watching for file changes with StatReloader
+2021-05-28 21:19:19,863 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 759, in forecast_company
+    request.data["data"]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 25, in make_prediction
+    varmax = make_varmax_forecast(data["data"], market_values, main_indicator)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 79, in make_varmax_forecast
+    model = VARMAX(data, exog=exogenous_data, order=(1, 1))
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\tsa\statespace\varmax.py", line 201, in __init__
+    endog, exog=exog, k_states=k_states, k_posdef=k_posdef, **kwargs
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\tsa\statespace\mlemodel.py", line 138, in __init__
+    missing='none')
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\tsa\base\tsa_model.py", line 412, in __init__
+    **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\model.py", line 237, in __init__
+    super(LikelihoodModel, self).__init__(endog, exog, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\model.py", line 78, in __init__
+    **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\model.py", line 101, in _handle_data
+    data = handle_data(endog, exog, missing, hasconst, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\data.py", line 673, in handle_data
+    **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\data.py", line 87, in __init__
+    self._handle_constant(hasconst)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\data.py", line 131, in _handle_constant
+    exog_max = np.max(self.exog, axis=0)
+  File "<__array_function__ internals>", line 6, in amax
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\numpy\core\fromnumeric.py", line 2706, in amax
+    keepdims=keepdims, initial=initial, where=where)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\numpy\core\fromnumeric.py", line 87, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+TypeError: cannot perform reduce with flexible type
+2021-05-28 21:22:19,565 INFO Watching for file changes with StatReloader
+2021-05-28 21:23:31,229 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\tsa\statespace\mlemodel.py", line 1758, in _validate_out_of_sample_exog
+    exog = exog.reshape(required_exog_shape)
+ValueError: cannot reshape array of size 1 into shape (15,1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 759, in forecast_company
+    request.data["data"]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 25, in make_prediction
+    varmax = make_varmax_forecast(data["data"], market_values, main_indicator)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 82, in make_varmax_forecast
+    forecast = model_fit.forecast(exog=danger_exogenous, steps=constants.STEPS)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\base\wrapper.py", line 113, in wrapper
+    obj = data.wrap_output(func(results, *args, **kwargs), how)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\tsa\statespace\mlemodel.py", line 3416, in forecast
+    return self.predict(start=self.nobs, end=end, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\tsa\statespace\mlemodel.py", line 3388, in predict
+    prediction_results = self.get_prediction(start, end, dynamic, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\tsa\statespace\varmax.py", line 981, in get_prediction
+    exog = self.model._validate_out_of_sample_exog(exog, out_of_sample)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\statsmodels\tsa\statespace\mlemodel.py", line 1763, in _validate_out_of_sample_exog
+    str(exog.shape)))
+ValueError: Provided exogenous values are not of the appropriate shape. Required (15, 1), got (1, 1).
+2021-05-28 21:25:55,321 INFO Watching for file changes with StatReloader
+2021-05-28 21:27:20,573 INFO Watching for file changes with StatReloader
+2021-05-28 21:33:18,931 INFO Watching for file changes with StatReloader
+2021-05-28 21:36:37,320 INFO Watching for file changes with StatReloader
+2021-05-28 21:39:44,287 INFO Watching for file changes with StatReloader
+2021-05-28 21:41:29,168 INFO Watching for file changes with StatReloader
+2021-05-28 21:43:34,664 INFO Watching for file changes with StatReloader
+2021-05-28 21:45:18,164 INFO Watching for file changes with StatReloader
+2021-05-28 21:45:29,161 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 759, in forecast_company
+    request.data["data"]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 25, in make_prediction
+    varmax = make_varmax_forecast(data["data"], market_values, main_indicator)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 74, in make_varmax_forecast
+    danger = 1 / danger
+ZeroDivisionError: float division by zero
+2021-05-28 21:45:53,647 INFO Watching for file changes with StatReloader
+2021-05-28 21:46:06,625 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 759, in forecast_company
+    request.data["data"]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 25, in make_prediction
+    varmax = make_varmax_forecast(data["data"], market_values, main_indicator)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 74, in make_varmax_forecast
+    danger = 1 / danger
+ZeroDivisionError: float division by zero
+2021-05-28 21:46:24,113 INFO Watching for file changes with StatReloader
+2021-05-28 21:46:37,365 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 759, in forecast_company
+    request.data["data"]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 25, in make_prediction
+    varmax = make_varmax_forecast(data["data"], market_values, main_indicator)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 74, in make_varmax_forecast
+    danger = 1 / danger
+ZeroDivisionError: float division by zero
+2021-05-28 21:46:49,563 INFO Watching for file changes with StatReloader
+2021-05-28 21:47:24,921 INFO Watching for file changes with StatReloader
+2021-05-28 21:47:38,601 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 759, in forecast_company
+    request.data["data"]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 25, in make_prediction
+    varmax = make_varmax_forecast(data["data"], market_values, main_indicator)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 74, in make_varmax_forecast
+    danger = 1 / danger
+ZeroDivisionError: float division by zero
+2021-05-28 21:47:51,665 INFO Watching for file changes with StatReloader
+2021-05-28 21:49:01,718 INFO Watching for file changes with StatReloader

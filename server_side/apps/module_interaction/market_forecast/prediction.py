@@ -78,8 +78,10 @@ def make_varmax_forecast(values_low, values_high, danger):
         data.append(row)
     model = VARMAX(data, order=(1, 1))
     model_fit = model.fit(disp=False)
-    data_exog = [[danger]]
-    forecast = model_fit.forecast(exog=data_exog, steps=constants.STEPS)
+    danger_exogenous = []
+    for i in range(constants.STEPS):
+        danger_exogenous.append([danger])
+    forecast = model_fit.forecast(exog=danger_exogenous, steps=constants.STEPS)
     for item in forecast:
         values_low.append(item[0])
         values_high.append(item[1])

@@ -12,10 +12,16 @@ from server_side.apps.data_interaction import crud, serializers_wrapper
 from server_side.apps.main_interaction.views_base import authenticate_base
 from server_side.apps.shared_logic import utils
 from server_side.apps.shared_logic.loggers import view_status_logger
-from server_side.apps.module_interaction.audience_forecast import prediction as af_prediction
-from server_side.apps.module_interaction.company_forecast import prediction as cf_prediction
+from server_side.apps.module_interaction.audience_forecast import (
+    prediction as af_prediction,
+)
+from server_side.apps.module_interaction.company_forecast import (
+    prediction as cf_prediction,
+)
 from server_side.apps.module_interaction.company_test import prediction as ct_prediction
-from server_side.apps.module_interaction.market_forecast import prediction as mf_prediction
+from server_side.apps.module_interaction.market_forecast import (
+    prediction as mf_prediction,
+)
 
 
 @api_view(["PATCH"])
@@ -575,14 +581,12 @@ def get_audience(request):
             crud.read_audiences_company(request.GET["company"])
         )
         data = utils.add_img(data)
-        data = utils.add_audience_type_translation(
-            data, request.GET["language"]
-        )
+        data = utils.add_audience_type_translation(data, request.GET["language"])
         data = utils.transform_age_group(data)
         data = {
-             "audiences": data,
-             "types": utils.get_audience_type(request.GET["language"]),
-             "max_size": utils.get_max_size(data),
+            "audiences": data,
+            "types": utils.get_audience_type(request.GET["language"]),
+            "max_size": utils.get_max_size(data),
         }
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
@@ -633,9 +637,7 @@ def filter_audience(request):
             crud.read_audiences_company(request.GET["company"])
         )
         data = utils.add_img(data)
-        data = utils.add_audience_type_translation(
-            data, request.GET["language"]
-        )
+        data = utils.add_audience_type_translation(data, request.GET["language"])
         data = utils.transform_age_group(data)
         data = {
             "audiences": data,
@@ -653,21 +655,23 @@ def filter_audience(request):
 def forecast_audience(request):
     if request.method == "GET":
         audience = crud.read_audiences_id(request.GET["id"])
-        if audience == '':
+        if audience == "":
             return Response(status=status.HTTP_404_NOT_FOUND)
         data = serializers_wrapper.get_serialize_audience(audience)
         data = utils.add_img_single(data)
-        data = utils.add_audience_type_translation_single(
-             data, request.GET["language"]
-        )
+        data = utils.add_audience_type_translation_single(data, request.GET["language"])
         data = utils.transform_age_group_single(data)
         data = {
             "audience": data,
-            "indicators": af_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"])
+            "indicators": af_prediction.make_prediction(
+                data, request.GET["disaster"], request.GET["language"]
+            ),
         }
-        if data["indicators"] == '':
+        if data["indicators"] == "":
             return Response(status=status.HTTP_418_IM_A_TEAPOT)
-        crud.create_audience_forecast(request.GET["id"], request.GET["disaster"], data["indicators"])
+        crud.create_audience_forecast(
+            request.GET["id"], request.GET["disaster"], data["indicators"]
+        )
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
@@ -678,19 +682,87 @@ def forecast_audience(request):
 def forecast_market(request):
     if request.method == "GET":
         market = crud.read_market_company_id(request.GET["id"])
-        if market == '':
+        if market == "":
             return Response(status=status.HTTP_404_NOT_FOUND)
         data = serializers_wrapper.get_serialize_market(market)
-        data = utils.add_market_translation_single(
-            data, request.GET["language"]
-        )
+        data = utils.add_market_translation_single(data, request.GET["language"])
         data = utils.add_market_size(data)
         data = {
             "market": data,
-            "data": mf_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"], request.GET["method"])
+            "data": mf_prediction.make_prediction(
+                data,
+                request.GET["disaster"],
+                request.GET["language"],
+                request.GET["method"],
+            ),
         }
-        if data["data"] == '':
+        if data["data"] == "":
             return Response(status=status.HTTP_418_IM_A_TEAPOT)
-        crud.create_market_forecast(request.GET["id"], request.GET["disaster"], data["data"])
+        crud.create_market_forecast(
+            request.GET["id"], request.GET["disaster"], data["data"]
+        )
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["POST"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def test_company(request):
+    if request.method == "POST":
+        company = crud.read_companies_id(request.data["id"])
+        if company == "":
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        data = serializers_wrapper.get_serialize_company(company)
+        data = utils.add_amount_users(data, request.data["id"])
+        data = utils.add_company_market_translation_single(
+            data, request.data["language"]
+        )
+        data = {
+            "company": data,
+            "indicators": ct_prediction.make_prediction(
+                data,
+                request.data["disaster"],
+                request.data["language"],
+                request.data["info"],
+            ),
+        }
+        if data["indicators"] == "":
+            return Response(status=status.HTTP_418_IM_A_TEAPOT)
+        crud.create_company_stresstest(
+            request.data["id"], request.data["disaster"], data["indicators"]
+        )
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["POST"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def forecast_company(request):
+    if request.method == "POST":
+        company = crud.read_companies_id(request.data["id"])
+        if company == "":
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        data = serializers_wrapper.get_serialize_company(company)
+        data = utils.add_amount_users(data, request.data["id"])
+        data = utils.add_company_market_translation_single(
+            data, request.data["language"]
+        )
+        data = {
+            "company": data,
+            "data": cf_prediction.make_prediction(
+                data,
+                request.data["disaster"],
+                request.data["language"],
+                request.data["info"],
+                request.data["data"]
+            ),
+        }
+        if data["data"] == "":
+            return Response(status=status.HTTP_418_IM_A_TEAPOT)
+        crud.create_company_forecast(
+            request.data["id"], request.data["disaster"], data["data"]
+        )
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

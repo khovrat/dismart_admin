@@ -56,6 +56,12 @@ def translate_market(data, language):
     return data
 
 
+def add_amount_users(data, id_company):
+    users = crud.read_workplace_company(id_company)
+    data["users_count"] = users.count()
+    return data
+
+
 def add_users(data, id_company):
     users = crud.read_workplace_company(id_company)
     data["users_count"] = users.count()
@@ -297,6 +303,17 @@ def add_market_translation_single(data, language):
     else:
         data["name"] = translation_
         data["description"] = translation_
+    return data
+
+
+def add_company_market_translation_single(data, language):
+    translation_ = crud.read_market_translation_language_id(
+       data["market"]["id"], language
+    )
+    if translation_ != "":
+        data["market"]["name"] = translation_.name
+    else:
+        data["market"]["name"] = translation_
     return data
 
 

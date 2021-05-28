@@ -1851,3 +1851,5 @@ Traceback (most recent call last):
     'data': varmax_high[constants.NUMBERS:],
 UnboundLocalError: local variable 'varmax_high' referenced before assignment
 2021-05-28 16:12:46,552 INFO Watching for file changes with StatReloader
+2021-05-28 17:14:24,521 INFO Watching for file changes with StatReloader
+2021-05-28 17:14:43,400 INFO Watching for file changes with StatReloader

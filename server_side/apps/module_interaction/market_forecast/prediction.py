@@ -33,7 +33,7 @@ def make_prediction(market, id_disaster, language, method="fast"):
     last_date = datetime.datetime.strptime(dates[0], '%Y-%m-%d')
     for i in range(constants.STEPS):
         last_date += datetime.timedelta(days=constants.DELTA)
-        dates.insert(0, last_date.strftime('%Y-%m-%d'))
+        dates.insert(0, last_date.strftime('%Y-%m-%d*'))
     dates.reverse()
     base_language = translation.get_language()
     translation.activate(language)

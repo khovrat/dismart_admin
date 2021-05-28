@@ -1,5 +1,4 @@
 import json
-
 import stripe
 from django.contrib.auth import logout
 from django.core.mail import send_mail
@@ -8,7 +7,11 @@ from rest_framework import status
 from rest_framework.decorators import renderer_classes, api_view
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
+from rq import Queue
+from rq.job import Job
+from rq import get_current_job
 
+from worker import conn
 from server_side import settings
 from server_side.apps.data_interaction import crud, serializers_wrapper
 from server_side.apps.main_interaction.views_base import authenticate_base
@@ -24,6 +27,8 @@ from server_side.apps.module_interaction.company_test import prediction as ct_pr
 from server_side.apps.module_interaction.market_forecast import (
     prediction as mf_prediction,
 )
+
+q = Queue(connection=conn)
 
 
 @api_view(["PATCH"])
@@ -753,13 +758,13 @@ def forecast_company(request):
         )
         data = {
             "company": data,
-            "data": cf_prediction.make_prediction(
-                data,
-                request.data["disaster"],
-                request.data["language"],
-                request.data["info"],
-                json.loads(request.data["values"])
-            ),
+            "data": q.enqueue(cf_prediction.make_prediction,
+                              data,
+                              request.data["disaster"],
+                              request.data["language"],
+                              request.data["info"],
+                              json.loads(request.data["values"])
+                              ),
         }
         if data["data"] == "":
             return Response(status=status.HTTP_418_IM_A_TEAPOT)

@@ -1,3 +1,5 @@
+import json
+
 import stripe
 from django.contrib.auth import logout
 from django.core.mail import send_mail
@@ -756,7 +758,7 @@ def forecast_company(request):
                 request.data["disaster"],
                 request.data["language"],
                 request.data["info"],
-                request.data["data"]
+                json.loads(request.data["values"])
             ),
         }
         if data["data"] == "":

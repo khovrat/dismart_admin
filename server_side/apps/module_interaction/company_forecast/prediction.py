@@ -71,7 +71,7 @@ def find_main_indicator(company, language, info, danger):
 
 
 def make_varmax_forecast(endogenous_data, exogenous_data, danger):
-    danger = 1 / 0.0001 if danger == 0 else 1 / danger
+    danger = 1 / 0.001 if danger == 0 else 1 / danger
     data = list()
     length_ = len(list(endogenous_data[0].values())[0])
     for i in range(length_):

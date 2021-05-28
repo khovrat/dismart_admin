@@ -2081,3 +2081,38 @@ Traceback (most recent call last):
 ZeroDivisionError: float division by zero
 2021-05-28 21:47:51,665 INFO Watching for file changes with StatReloader
 2021-05-28 21:49:01,718 INFO Watching for file changes with StatReloader
+2021-05-28 22:41:50,776 INFO Watching for file changes with StatReloader
+2021-05-28 22:43:22,696 INFO Watching for file changes with StatReloader
+2021-05-28 22:46:16,199 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 759, in forecast_company
+    request.data["data"]
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\module_interaction\company_forecast\prediction.py", line 22, in make_prediction
+    market_values = get_market_dates_values(company["market"]["ticker"], data["dates"])
+TypeError: string indices must be integers
+2021-05-28 22:46:52,337 INFO Watching for file changes with StatReloader
+2021-05-28 22:47:04,918 INFO Watching for file changes with StatReloader
+2021-05-28 22:51:09,956 INFO Watching for file changes with StatReloader
+2021-05-28 22:52:31,702 INFO Watching for file changes with StatReloader
+2021-05-28 22:55:37,303 INFO Watching for file changes with StatReloader
+2021-05-28 22:55:47,366 ERROR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Errors happened~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Traceback (most recent call last):
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\loggers.py", line 19, in wrapper
+    res = func(*args, **kwargs)
+  File "D:\University\Diploma\Dismart\server_side\server_side\apps\main_interaction\views.py", line 746, in forecast_company
+    dd = json.loads(request.data)
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\request.py", line 216, in data
+    self._load_data_and_files()
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\request.py", line 279, in _load_data_and_files
+    self._data, self._files = self._parse()
+  File "D:\University\Diploma\Dismart\server_side\venv\lib\site-packages\rest_framework\request.py", line 351, in _parse
+    raise exceptions.UnsupportedMediaType(media_type)
+rest_framework.exceptions.UnsupportedMediaType: Unsupported media type "text/plain" in request.
+2021-05-28 22:56:05,190 INFO Watching for file changes with StatReloader
+2021-05-28 22:56:36,779 INFO Watching for file changes with StatReloader
+2021-05-28 23:00:07,403 INFO Watching for file changes with StatReloader
+2021-05-28 23:03:00,267 INFO Watching for file changes with StatReloader
+2021-05-28 23:29:54,450 INFO Watching for file changes with StatReloader
+2021-05-28 23:32:09,883 INFO Watching for file changes with StatReloader

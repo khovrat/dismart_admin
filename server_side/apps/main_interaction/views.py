@@ -758,16 +758,32 @@ def forecast_company(request):
         )
         data = {
             "company": data,
-            "data": q.enqueue(cf_prediction.make_prediction,
-                              data,
-                              request.data["disaster"],
-                              request.data["language"],
-                              request.data["info"],
-                              json.loads(request.data["values"])
-                              ),
+            "key": q.enqueue(cf_prediction.make_prediction,
+                             data,
+                             request.data["disaster"],
+                             request.data["language"],
+                             request.data["info"],
+                             json.loads(request.data["values"])
+                             ).key,
         }
-        if data["data"] == "":
+        if data["key"] == "":
             return Response(status=status.HTTP_418_IM_A_TEAPOT)
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["POST"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def forecast_company_done(request):
+    if request.method == "POST":
+        job_key = request.data["key"].replace("rq:job:", "")
+        job = Job.fetch(job_key, connection=conn)
+        if not job.is_finished:
+            return Response(status=status.HTTP_406_NOT_ACCEPTABLE)
+        data = {
+            "data": job.result
+        }
         crud.create_company_forecast(
             request.data["id"], request.data["disaster"], data["data"]
         )

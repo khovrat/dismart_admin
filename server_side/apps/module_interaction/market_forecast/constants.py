@@ -1,4 +1,4 @@
-STEPS = 5
+STEPS = 15
 
 DELTA = 30
 

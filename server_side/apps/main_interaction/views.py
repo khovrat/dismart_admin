@@ -666,7 +666,31 @@ def forecast_audience(request):
             "indicators": af_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"])
         }
         if data["indicators"] == '':
-            return Response(data, status=status.HTTP_418_IM_A_TEAPOT)
+            return Response(status=status.HTTP_418_IM_A_TEAPOT)
         crud.create_audience_forecast(request.GET["id"], request.GET["disaster"], data["indicators"])
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["GET"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def forecast_market(request):
+    if request.method == "GET":
+        market = crud.read_market_company_id(request.GET["id"])
+        if market == '':
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        data = serializers_wrapper.get_serialize_market(market)
+        data = utils.add_market_translation_single(
+            data, request.GET["language"]
+        )
+        data = utils.add_market_size(data)
+        data = {
+            "market": data,
+            "data": mf_prediction.make_prediction(data, request.GET["disaster"], request.GET["language"], request.GET["method"])
+        }
+        if data["data"] == '':
+            return Response(status=status.HTTP_418_IM_A_TEAPOT)
+        crud.create_market_forecast(request.GET["id"], request.GET["disaster"], data["data"])
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

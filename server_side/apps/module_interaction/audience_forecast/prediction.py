@@ -16,7 +16,7 @@ def make_prediction(audience, id_disaster, language):
     profile = find_profile(audience, language)
     base_language = translation.get_language()
     translation.activate(language)
-    return [
+    data = [
         {
             "name": _("sympathy"),
             "importance": 1,
@@ -43,6 +43,8 @@ def make_prediction(audience, id_disaster, language):
             "value": get_normalize((profile["Happy"] - profile["Sad"]) * main_indicator, main_indicator)
         },
     ]
+    translation.activate(base_language)
+    return data
 
 
 def find_conservatism(audience):

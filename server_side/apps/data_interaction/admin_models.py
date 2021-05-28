@@ -93,8 +93,9 @@ class ArticleRatingAdmin(admin.ModelAdmin):
 
 
 class MarketAdmin(admin.ModelAdmin):
-    list_display = ('id', 'img_tag')
+    list_display = ('id', 'ticker', 'img_tag')
     change_list_template = 'smuggler/change_list.html'
+    search_fields = ('ticker',)
 
 
 class MarketTranslationAdmin(admin.ModelAdmin):

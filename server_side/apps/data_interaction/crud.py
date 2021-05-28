@@ -147,6 +147,17 @@ def create_audience_forecast(id_audience, id_disaster, forecast):
     audience_forecast.save()
 
 
+def create_market_forecast(id_market, id_disaster, forecast):
+    if dm.MarketForecast.objects.filter(market_id=id_market, disaster_id=id_disaster).exists():
+        update_market_forecast(id_market, id_disaster, forecast)
+    market_forecast = dm.MarketForecast(
+        market_id=id_market,
+        disaster_id=id_disaster,
+        forecast=forecast
+    )
+    market_forecast.save()
+
+
 def read_amount_users():
     return dm.User.objects.count()
 
@@ -323,6 +334,16 @@ def read_audiences():
     return dm.TargetAudience.objects.all()
 
 
+def read_market_company_id(id_company):
+    if dm.Company.objects.filter(pk=id_company).exists():
+        return dm.Company.objects.get(pk=id_company).market
+    return ''
+
+
+def read_companies_market_id(id_market):
+    return dm.Company.objects.filter(market_id=id_market)
+
+
 def update_profile_password(data):
     user = dm.User.objects.get(username=data["username"])
     user.set_password(data["password"])
@@ -453,6 +474,13 @@ def update_audience_forecast(id_audience, id_disaster, forecast):
     audience_forecast.forecast = forecast
     audience_forecast.last_update = datetime.datetime.now()
     audience_forecast.save()
+
+
+def update_market_forecast(id_market, id_disaster, forecast):
+    market_forecast = dm.MarketForecast.objects.get(market_id=id_market, disaster_id=id_disaster)
+    market_forecast.forecast = forecast
+    market_forecast.last_update = datetime.datetime.now()
+    market_forecast.save()
 
 
 def delete_companies_id(id_company):

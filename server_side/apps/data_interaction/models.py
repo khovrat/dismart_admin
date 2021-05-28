@@ -322,6 +322,7 @@ class ArticleRating(models.Model):
 
 
 class Market(models.Model):
+    ticker = models.TextField(default="MCD", null=True, verbose_name=_("ticker"), help_text=_("ticker_help"))
     img = models.URLField(
         default=config("BASE_URL"),
         null=False,

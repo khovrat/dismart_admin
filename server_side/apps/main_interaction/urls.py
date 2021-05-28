@@ -50,4 +50,5 @@ urlpatterns = [
     path('audience/delete/', views.delete_audience),
     path('audience/filter/', views.filter_audience),
     path('audience/forecast/', views.forecast_audience),
+    path('market-forecast/', views.forecast_market)
 ]

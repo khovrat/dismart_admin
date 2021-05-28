@@ -287,6 +287,19 @@ def add_audience_type_translation_single(data, language):
     return data
 
 
+def add_market_translation_single(data, language):
+    translation_ = crud.read_market_translation_language_id(
+        language, data["id"]
+    )
+    if translation_ != "":
+        data["name"] = translation_.name
+        data["description"] = translation_.description
+    else:
+        data["name"] = translation_
+        data["description"] = translation_
+    return data
+
+
 def get_search_request(language):
     search = ""
     disasters = crud.read_disaster_type_translation_language(language=language)
@@ -373,4 +386,10 @@ def transform_age_group_single(data):
     ages = age_group.split("-")
     data["age_left"] = ages[0]
     data["age_right"] = ages[1]
+    return data
+
+
+def add_market_size(data):
+    companies = crud.read_companies_market_id(data["id"])
+    data["size"] = companies.count()
     return data

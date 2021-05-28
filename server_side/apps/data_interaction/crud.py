@@ -139,6 +139,7 @@ def create_telegram_user(user, language):
 def create_audience_forecast(id_audience, id_disaster, forecast):
     if dm.TargetAudienceBehaviour.objects.filter(audience_id=id_audience, disaster_id=id_disaster).exists():
         update_audience_forecast(id_audience, id_disaster, forecast)
+        return
     audience_forecast = dm.TargetAudienceBehaviour(
         audience_id=id_audience,
         disaster_id=id_disaster,
@@ -150,6 +151,7 @@ def create_audience_forecast(id_audience, id_disaster, forecast):
 def create_market_forecast(id_market, id_disaster, forecast):
     if dm.MarketForecast.objects.filter(market_id=id_market, disaster_id=id_disaster).exists():
         update_market_forecast(id_market, id_disaster, forecast)
+        return
     market_forecast = dm.MarketForecast(
         market_id=id_market,
         disaster_id=id_disaster,

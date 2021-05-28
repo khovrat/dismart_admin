@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib.auth.models import User
 
 import server_side.apps.data_interaction.models as dm
@@ -132,6 +134,17 @@ def create_telegram_user(user, language):
         return
     user = dm.TelegramUser(user=user, language=language)
     user.save()
+
+
+def create_audience_forecast(id_audience, id_disaster, forecast):
+    if dm.TargetAudienceBehaviour.objects.filter(audience_id=id_audience, disaster_id=id_disaster).exists():
+        update_audience_forecast(id_audience, id_disaster, forecast)
+    audience_forecast = dm.TargetAudienceBehaviour(
+        audience_id=id_audience,
+        disaster_id=id_disaster,
+        forecast=forecast
+    )
+    audience_forecast.save()
 
 
 def read_amount_users():
@@ -433,6 +446,13 @@ def update_disaster_about(id_disaster, text):
     disaster = dm.Disaster.objects.get(pk=id_disaster)
     disaster.about_clean = text
     disaster.save()
+
+
+def update_audience_forecast(id_audience, id_disaster, forecast):
+    audience_forecast = dm.TargetAudienceBehaviour.objects.get(audience_id=id_audience, disaster_id=id_disaster)
+    audience_forecast.forecast = forecast
+    audience_forecast.last_update = datetime.datetime.now()
+    audience_forecast.save()
 
 
 def delete_companies_id(id_company):

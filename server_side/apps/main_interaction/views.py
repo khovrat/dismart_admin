@@ -667,5 +667,6 @@ def forecast_audience(request):
         }
         if data["indicators"] == '':
             return Response(data, status=status.HTTP_418_IM_A_TEAPOT)
+        crud.create_audience_forecast(request.GET["id"], request.GET["disaster"], data["indicators"])
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

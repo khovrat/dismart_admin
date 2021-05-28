@@ -1,4 +1,6 @@
 import text2emotion as te
+from django.utils import translation
+from django.utils.translation import ugettext as _
 from server_side.apps.data_interaction import crud
 from server_side.apps.module_interaction.audience_forecast import constants
 from server_side.apps.module_interaction.additional_modules.danger_test import find_danger, process_text, clean_text
@@ -12,29 +14,31 @@ def make_prediction(audience, id_disaster, language):
     conformity = find_conformity(audience)
     main_indicator = danger * conformity * conservatism
     profile = find_profile(audience, language)
+    base_language = translation.get_language()
+    translation.activate(language)
     return [
         {
-            "name": "sympathy",
+            "name": _("sympathy"),
             "importance": 1,
             "value": get_normalize(profile["Happy"] * main_indicator, main_indicator)
         },
         {
-            "name": "indifference",
+            "name": _("indifference"),
             "importance": 1,
             "value": get_normalize(profile["Sad"] / main_indicator, 1 / main_indicator)
         },
         {
-            "name": "fear",
+            "name": _("fear"),
             "importance": 2,
             "value": get_normalize((profile["Fear"] + profile["Angry"]) / main_indicator, 2 / main_indicator)
         },
         {
-            "name": "integrity",
+            "name": _("integrity"),
             "importance": 2,
             "value": get_normalize((profile["Happy"] + profile["Surprise"]) * main_indicator, 2 * main_indicator)
         },
         {
-            "name": "responsibility",
+            "name": _("responsibility"),
             "importance": 3,
             "value": get_normalize((profile["Happy"] - profile["Sad"]) * main_indicator, main_indicator)
         },

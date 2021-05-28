@@ -1755,3 +1755,7 @@ TypeError: unhashable type: 'dict'
 2021-05-27 21:17:23,031 INFO Watching for file changes with StatReloader
 2021-05-27 21:18:01,305 INFO Watching for file changes with StatReloader
 2021-05-27 21:21:32,897 INFO Watching for file changes with StatReloader
+2021-05-28 09:32:53,394 INFO Watching for file changes with StatReloader
+2021-05-28 09:35:47,114 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\admin_models.py changed, reloading.
+2021-05-28 09:35:55,804 INFO Watching for file changes with StatReloader
+2021-05-28 09:37:31,925 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\data_interaction\admin_models.py changed, reloading.

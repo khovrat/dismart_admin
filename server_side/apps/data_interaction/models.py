@@ -531,7 +531,7 @@ class MarketForecast(models.Model):
     disaster = models.ForeignKey(
         Disaster, on_delete=models.CASCADE, null=False, verbose_name=_("disaster")
     )
-    forecast = models.BinaryField(verbose_name=_("forecast"))
+    forecast = models.JSONField(verbose_name=_("forecast"))
     date = models.DateField(auto_now_add=True, blank=True, verbose_name=_("date"))
     last_update = models.DateTimeField(
         auto_now_add=True, blank=True, verbose_name=_("last_update")
@@ -562,7 +562,7 @@ class CompanyForecast(models.Model):
     disaster = models.ForeignKey(
         Disaster, on_delete=models.CASCADE, null=False, verbose_name=_("disaster")
     )
-    forecast = models.BinaryField(verbose_name=_("forecast"))
+    forecast = models.JSONField(verbose_name=_("forecast"))
     date = models.DateField(auto_now_add=True, blank=True, verbose_name=_("date"))
     last_update = models.DateTimeField(
         auto_now_add=True, blank=True, verbose_name=_("last_update")
@@ -593,7 +593,7 @@ class CompanyStressTest(models.Model):
     disaster = models.ForeignKey(
         Disaster, on_delete=models.CASCADE, null=False, verbose_name=_("disaster")
     )
-    test_result = models.BinaryField(verbose_name=_("test_result"))
+    test_result = models.JSONField(verbose_name=_("test_result"))
     date = models.DateField(auto_now_add=True, blank=True, verbose_name=_("date"))
     last_update = models.DateTimeField(
         auto_now_add=True, blank=True, verbose_name=_("last_update")
@@ -627,7 +627,7 @@ class TargetAudienceBehaviour(models.Model):
     disaster = models.ForeignKey(
         Disaster, on_delete=models.CASCADE, null=False, verbose_name=_("disaster")
     )
-    forecast = models.BinaryField(verbose_name=_("forecast"))
+    forecast = models.JSONField(verbose_name=_("forecast"))
     date = models.DateField(auto_now_add=True, blank=True, verbose_name=_("date"))
     last_update = models.DateTimeField(
         auto_now_add=True, blank=True, verbose_name=_("last_update")

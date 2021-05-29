@@ -774,7 +774,7 @@ def forecast_company(request):
 @renderer_classes([JSONRenderer])
 def forecast_company_done(request):
     if request.method == "POST":
-        redis_conn = django_rq.get_connection()
+        redis_conn = django_rq.get_connection('high')
         job_key = request.data["key"].replace("rq:job:", "")
         job = Job.fetch(job_key, connection=redis_conn)
         if not job.is_finished:

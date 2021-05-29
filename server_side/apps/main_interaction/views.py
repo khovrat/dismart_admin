@@ -718,7 +718,7 @@ def forecast_market_done(request):
             "data": job.result
         }
         crud.create_market_forecast(
-            request.GET["id"], request.GET["disaster"], data["data"]
+            request.data["id"], request.data["disaster"], data["data"]
         )
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

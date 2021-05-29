@@ -696,7 +696,7 @@ def forecast_market(request):
                 request.GET["disaster"],
                 request.GET["language"],
                 request.GET["method"],
-            ),
+            ).key,
         }
         if data["key"] == "":
             return Response(status=status.HTTP_418_IM_A_TEAPOT)

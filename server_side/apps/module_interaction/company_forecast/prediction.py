@@ -24,7 +24,7 @@ def make_prediction(company, id_disaster, language, info, data):
     main_indicator = get_normalize(find_main_indicator(company, language, info, danger))
     varmax = make_varmax_forecast(data["data"], market_values, main_indicator)
     last_date = datetime.datetime.strptime(data["dates"][-1], "%Y-%m-%d")
-    for i in range(constants.STEPS):
+    for i in range(int(config("STEPS_COMPANY"))):
         last_date += datetime.timedelta(days=constants.DELTA)
         data["dates"].insert(len(data["dates"]), last_date.strftime("%Y-%m-%d*"))
     base_language = translation.get_language()
@@ -81,10 +81,10 @@ def make_varmax_forecast(endogenous_data, exogenous_data, danger):
     model_fit = model.fit(disp=False)
     danger_exogenous = []
     random.seed(danger)
-    for i in range(constants.STEPS):
+    for i in range(int(config("STEPS_COMPANY"))):
         danger_exogenous.append([danger])
         danger += random.random()
-    forecast = model_fit.forecast(exog=danger_exogenous, steps=constants.STEPS)
+    forecast = model_fit.forecast(exog=danger_exogenous, steps=int(config("STEPS_COMPANY")))
     for item in forecast:
         for index, value in enumerate(endogenous_data):
             list(value.values())[0].append(item[index])

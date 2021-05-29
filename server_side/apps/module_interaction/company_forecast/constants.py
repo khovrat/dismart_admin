@@ -1,5 +1,3 @@
-STEPS = 15
-
 DELTA = 30
 
 NUMBERS = -100

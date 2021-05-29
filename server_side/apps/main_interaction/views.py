@@ -774,8 +774,9 @@ def forecast_company(request):
 @renderer_classes([JSONRenderer])
 def forecast_company_done(request):
     if request.method == "POST":
+        redis_conn = django_rq.get_connection()
         job_key = request.data["key"].replace("rq:job:", "")
-        job = Job.fetch(job_key, connection=conn)
+        job = Job.fetch(job_key, connection=redis_conn)
         if not job.is_finished:
             return Response(status=status.HTTP_406_NOT_ACCEPTABLE)
         data = {

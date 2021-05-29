@@ -1,4 +1,6 @@
 import json
+
+import django_rq
 import stripe
 from django.contrib.auth import logout
 from django.core.mail import send_mail
@@ -27,8 +29,6 @@ from server_side.apps.module_interaction.company_test import prediction as ct_pr
 from server_side.apps.module_interaction.market_forecast import (
     prediction as mf_prediction,
 )
-
-q = Queue(connection=conn)
 
 
 @api_view(["PATCH"])
@@ -756,6 +756,7 @@ def forecast_company(request):
         data = utils.add_company_market_translation_single(
             data, request.data["language"]
         )
+        q = django_rq.get_queue('high')
         data = {
             "company": data,
             "key": q.enqueue(cf_prediction.make_prediction,

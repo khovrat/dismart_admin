@@ -35,7 +35,8 @@ urlpatterns += [
     path('admin/logs/download/', download_logs, name='download_logs'),
     path('admin/logs/watch/', watch_logs, name='watch_logs'),
     path('api/', include('server_side.apps.main_interaction.urls')),
-    path('bot/', include('server_side.apps.module_interaction.urls'))
+    path('bot/', include('server_side.apps.module_interaction.urls')),
+    path('django-rq/', include('django_rq.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

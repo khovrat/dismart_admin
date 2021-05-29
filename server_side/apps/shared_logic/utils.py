@@ -247,9 +247,7 @@ def filter_audiences(data, filter_):
 
 def add_disaster_type_translation_advice(data, language):
     for item in data:
-        type_ = crud.read_disaster_type_translation_language_id(
-            item["advice"]["type"]["id"], language
-        )
+        type_ = crud.read_disaster_type_translation_language_id(id_type=item["advice"]["type"]["id"], language=language)
         if type_ != "":
             item["advice"]["type"] = type_.name
         else:
@@ -259,9 +257,7 @@ def add_disaster_type_translation_advice(data, language):
 
 def add_disaster_type_translation_article(data, language):
     for item in data:
-        type_ = crud.read_disaster_type_translation_language_id(
-            item["type"]["id"], language
-        )
+        type_ = crud.read_disaster_type_translation_language_id(id_type=item["type"]["id"], language=language)
         if type_ != "":
             item["type"] = type_.name
         else:
@@ -271,9 +267,7 @@ def add_disaster_type_translation_article(data, language):
 
 def add_audience_type_translation(data, language):
     for item in data:
-        type_ = crud.read_audience_type_translation_language_id(
-            item["type"]["id"], language
-        )
+        type_ = crud.read_audience_type_translation_language_id(id_type=item["type"]["id"], language=language)
         if type_ != "":
             item["type"] = type_.name
         else:
@@ -282,9 +276,7 @@ def add_audience_type_translation(data, language):
 
 
 def add_audience_type_translation_single(data, language):
-    type_ = crud.read_audience_type_translation_language_id(
-        data["type"]["id"], language
-    )
+    type_ = crud.read_audience_type_translation_language_id(id_type=data["type"]["id"], language=language)
     data["type_id"] = data["type"]["id"]
     if type_ != "":
         data["type"] = type_.name
@@ -294,9 +286,7 @@ def add_audience_type_translation_single(data, language):
 
 
 def add_market_translation_single(data, language):
-    translation_ = crud.read_market_translation_language_id(
-        language, data["id"]
-    )
+    translation_ = crud.read_market_translation_language_id(id_market=data["id"], language=language)
     if translation_ != "":
         data["name"] = translation_.name
         data["description"] = translation_.description
@@ -307,9 +297,7 @@ def add_market_translation_single(data, language):
 
 
 def add_company_market_translation_single(data, language):
-    translation_ = crud.read_market_translation_language_id(
-       data["market"]["id"], language
-    )
+    translation_ = crud.read_market_translation_language_id(id_market=data["market"]["id"], language=language)
     if translation_ != "":
         data["market"]["name"] = translation_.name
     else:

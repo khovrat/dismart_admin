@@ -345,9 +345,7 @@ def get_advices(request):
 def filter_advices(request):
     if request.method == "GET":
         data = serializers_wrapper.get_serialize_advice_translation(
-            crud.read_advice_translation_language_type(
-                request.GET["language"], request.GET["type"]
-            )
+            crud.read_advice_translation_language_type(language=request.GET["language"], id_type=request.GET["type"])
         )
         data = utils.add_rating_advices(data, request.GET["username"])
         data = utils.add_disaster_type_translation_advice(data, request.GET["language"])
@@ -688,7 +686,7 @@ def forecast_market(request):
         if market == "":
             return Response(status=status.HTTP_404_NOT_FOUND)
         data = serializers_wrapper.get_serialize_market(market)
-        data = utils.add_market_translation_single(data, request.GET["language"])
+        data = utils.add_market_translation_single(data=data, language=request.GET["language"])
         data = utils.add_market_size(data)
         q = django_rq.get_queue('default')
         data = {
@@ -736,9 +734,7 @@ def test_company(request):
             return Response(status=status.HTTP_404_NOT_FOUND)
         data = serializers_wrapper.get_serialize_company(company)
         data = utils.add_amount_users(data, request.data["id"])
-        data = utils.add_company_market_translation_single(
-            data, request.data["language"]
-        )
+        data = utils.add_company_market_translation_single(data=data, language=request.data["language"])
         data = {
             "company": data,
             "indicators": ct_prediction.make_prediction(
@@ -767,9 +763,7 @@ def forecast_company(request):
             return Response(status=status.HTTP_404_NOT_FOUND)
         data = serializers_wrapper.get_serialize_company(company)
         data = utils.add_amount_users(data, request.data["id"])
-        data = utils.add_company_market_translation_single(
-            data, request.data["language"]
-        )
+        data = utils.add_company_market_translation_single(data=data, language=request.data["language"])
         q = django_rq.get_queue('default')
         data = {
             "company": data,

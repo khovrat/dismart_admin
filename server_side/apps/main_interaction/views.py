@@ -690,17 +690,35 @@ def forecast_market(request):
         data = serializers_wrapper.get_serialize_market(market)
         data = utils.add_market_translation_single(data, request.GET["language"])
         data = utils.add_market_size(data)
+        q = django_rq.get_queue('default')
         data = {
             "market": data,
-            "data": mf_prediction.make_prediction(
+            "key": q.enqueue(mf_prediction.make_prediction,
                 data,
                 request.GET["disaster"],
                 request.GET["language"],
                 request.GET["method"],
             ),
         }
-        if data["data"] == "":
+        if data["key"] == "":
             return Response(status=status.HTTP_418_IM_A_TEAPOT)
+        return Response(data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(["POST"])
+@view_status_logger
+@renderer_classes([JSONRenderer])
+def forecast_market_done(request):
+    if request.method == "POST":
+        redis_conn = django_rq.get_connection('default')
+        job_key = request.data["key"].replace("rq:job:", "")
+        job = Job.fetch(job_key, connection=redis_conn)
+        if not job.is_finished:
+            return Response(status=status.HTTP_406_NOT_ACCEPTABLE)
+        data = {
+            "data": job.result
+        }
         crud.create_market_forecast(
             request.GET["id"], request.GET["disaster"], data["data"]
         )

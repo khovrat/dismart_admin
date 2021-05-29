@@ -51,6 +51,7 @@ urlpatterns = [
     path('audience/filter/', views.filter_audience),
     path('audience/forecast/', views.forecast_audience),
     path('market-forecast/', views.forecast_market),
+    path('market-forecast/done/', views.forecast_market_done),
     path('company-stresstest/', views.test_company),
     path('company-forecast/', views.forecast_company),
     path('company-forecast/done/', views.forecast_company_done)

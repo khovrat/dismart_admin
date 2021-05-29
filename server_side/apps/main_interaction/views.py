@@ -9,11 +9,7 @@ from rest_framework import status
 from rest_framework.decorators import renderer_classes, api_view
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
-from rq import Queue
 from rq.job import Job
-from rq import get_current_job
-
-from worker import conn
 from server_side import settings
 from server_side.apps.data_interaction import crud, serializers_wrapper
 from server_side.apps.main_interaction.views_base import authenticate_base

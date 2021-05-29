@@ -752,7 +752,7 @@ def forecast_company(request):
         data = utils.add_company_market_translation_single(
             data, request.data["language"]
         )
-        q = django_rq.get_queue('high')
+        q = django_rq.get_queue('default')
         data = {
             "company": data,
             "key": q.enqueue(cf_prediction.make_prediction,
@@ -774,7 +774,7 @@ def forecast_company(request):
 @renderer_classes([JSONRenderer])
 def forecast_company_done(request):
     if request.method == "POST":
-        redis_conn = django_rq.get_connection('high')
+        redis_conn = django_rq.get_connection('default')
         job_key = request.data["key"].replace("rq:job:", "")
         job = Job.fetch(job_key, connection=redis_conn)
         if not job.is_finished:

@@ -106,7 +106,7 @@ def add_markets(data, language):
                 {
                     "market_id": market.id,
                     "name": crud.read_market_translation_language_id(
-                        language, market.id
+                        id_market=market.id, language=language
                     ),
                 }
             )

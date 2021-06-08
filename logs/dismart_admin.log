@@ -2116,3 +2116,7 @@ rest_framework.exceptions.UnsupportedMediaType: Unsupported media type "text/pla
 2021-05-28 23:03:00,267 INFO Watching for file changes with StatReloader
 2021-05-28 23:29:54,450 INFO Watching for file changes with StatReloader
 2021-05-28 23:32:09,883 INFO Watching for file changes with StatReloader
+2021-06-08 11:08:23,624 INFO Watching for file changes with StatReloader
+2021-06-08 11:16:37,610 INFO Watching for file changes with StatReloader
+2021-06-08 11:18:34,576 INFO D:\University\Diploma\Dismart\server_side\server_side\apps\shared_logic\utils.py changed, reloading.
+2021-06-08 11:18:36,941 INFO Watching for file changes with StatReloader
